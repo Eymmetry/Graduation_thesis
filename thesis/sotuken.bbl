@@ -1,0 +1,54 @@
+\begin{thebibliography}{1}
+
+\bibitem{st}
+Saito Keiji.
+\newblock fluidndj and elastic mechanics lecture note.
+\newblock 2022.
+
+\bibitem{PhysRevLett.119.077202}
+D.~Kobayashi, T.~Yoshikawa, M.~Matsuo, R.~Iguchi, S.~Maekawa, E.~Saitoh, and
+  Y.~Nozaki.
+\newblock Spin current generation using a surface acoustic wave generated via
+  spin-rotation coupling.
+\newblock {\em Phys. Rev. Lett.}, Vol. 119, p. 077202, Aug 2017.
+
+\bibitem{PhysRevB.102.174413}
+Yuki Kurimune, Mamoru Matsuo, Sadamichi Maekawa, and Yukio Nozaki.
+\newblock Highly nonlinear frequency-dependent spin-wave resonance excited via
+  spin-vorticity coupling.
+\newblock {\em Phys. Rev. B}, Vol. 102, p. 174413, Nov 2020.
+
+\bibitem{landau}
+L.~D. Landau and E.~M. Lifshitz.
+\newblock {\em Theory of elasticity}.
+\newblock Addison-Wesley physics books LCA:130. Pergamon Press, London, 1959.
+
+\bibitem{physrevb.96.020401}
+M.~Matsuo, Y.~Ohnuma, and S.~Maekawa.
+\newblock Theory of spin hydrodynamic generation.
+\newblock {\em Phys. Rev. B}, Vol.~96, p. 020401, Jul 2017.
+
+\bibitem{PhysRevB.87.180402}
+Mamoru Matsuo, Jun'ichi Ieda, Kazuya Harii, Eiji Saitoh, and Sadamichi Maekawa.
+\newblock Mechanical generation of spin current by spin-rotation coupling.
+\newblock {\em Phys. Rev. B}, Vol.~87, p. 180402, May 2013.
+
+\bibitem{Peskin}
+Michael~E. Peskin.
+\newblock {\em An Introduction To Quantum Field Theory}.
+\newblock Frontiers in Physics. CRC Press, Boca Raton, FL, first edition.
+  edition, 2018.
+
+\bibitem{spin_oxford}
+Maekawa Sadamichi, Sergio O.Valenzuela, Saitoh Eiji, and Kimura Takashi.
+\newblock {\em Spin current}.
+\newblock Series on semiconductor science and technology ; 22. Oxford
+  University Press, Oxford, second edition. edition, 2017.
+
+\bibitem{TakahashiR2016Shg}
+R~Takahashi, M~Matsuo, M~Ono, K~Harii, H~Chudo, S~Okayasu, J~Ieda, S~Takahashi,
+  S~Maekawa, and E~Saitoh.
+\newblock Spin hydrodynamic generation.
+\newblock {\em Nature physics}, Vol.~12, No.~1, pp. 52--56, 2016.
+
+\end{thebibliography}

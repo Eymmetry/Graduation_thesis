@@ -1,16 +1,41 @@
 \RequirePackage{plautopatch}
 \documentclass[dvipdfmx]{jsreport}
 \usepackage{amsmath,amssymb,mathrsfs}
-\usepackage{color}
 \usepackage{bm}
 \usepackage{cite}
-\usepackage[version=3]{mhchem}
-\usepackage{hyperref}
 \usepackage{float}
-\usepackage{graphicx}
 \usepackage{url}
 \usepackage{braket}
 \usepackage{mathtools}
+%%
+\usepackage{amsthm}
+\usepackage{slashed}
+%\usepackage[numers,sort]{natbib}
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{40\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.2in}
+\setlength{\topmargin}{-5pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{23.5cm}
+\addtolength{\footskip}{3mm}
+\usepackage{wrapfig}%¥図の周りに文章を回り込ませる
+\usepackage[dvipdfmx]{graphicx,color}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{intersections,calc,arrows.meta,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage[version=3]{mhchem}
+\usepackage{physics}
+\usepackage{tcolorbox}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{tikz}
+\usepackage{subfigure}
+\hypersetup{colorlinks=true}
+%%
 \numberwithin{equation}{chapter}
 \numberwithin{table}{chapter}
 
@@ -60,16 +85,734 @@
 
 \chapter{序論}
 \section{研究背景}
+物質の性質のほとんどを決めているのは主に物質に含まれる電子である。
+電子はマイナスの電荷を持っておりさらに角運動量であるスピンと呼ばれる内部自由度を持つ。
+
+現代社会においてエレクトロニクスは家電製品や情報通信機器など日常生活のあらゆる場面で必要な技術となっているが、基本的にこれは物質中の電荷と電流によって駆動されている。
+一方で電子のスピンを利用してきた学問領域が磁気工学(マグネティクス)であり、磁化の起源である電子スピンの性質を理解して制御することで性能の良い磁石などがつくられ、磁気工学は物性物理学の格好の応用例となった。
+
+こうして電子の電荷とスピンがエレクトロニクスと磁気工学にそれぞれ活用された状況は1990年代にナノテクノロジーが大きく進展することによって統合されて新しい学理体系が構築された。これはスピントロニクスとよばれ、巨大磁気抵抗効果という強磁性層と非磁性層を交互に積み重ねた素子に電流を流すと電気抵抗が大きく変化する効果などで成果をあげ、またたく間に実用化された。
+
+スピントロニクスの研究が進むにつれ電子スピンの流れであるスピン流に注目が集まるようになった。物質中でスピン流はごく短い
+距離で減衰してしまうが、近年のナノテクノロジーの進展によってスピン流が減衰する距離よりも短いスケールの物性が調べられるように
+なり、スピン流のもたらす現象が次々と発見されるようになった。特にスピン流による磁化反転現象によりナノサイズの強磁性体の磁化方向を磁場を印加せずにスピン流を強磁性体に流すことで制御できるようになり、磁性体を利用した新しいメモリ素子であるスピンランダムアクセスメモリ(Magnetic Random Access Memory: SpinRAM)を可能にした。
+
+スピン流の生成方法については数多くの研究がなされている。
+例えば強磁性体からの非局所スピン流注入や強磁性体の温度勾配によるスピンゼーベック効果などがある。
+他にも強磁性体の磁化の歳差運動によって、接合された非磁性金属にスピン角運動量が受け渡されてスピン流が注入されるスピンポンピングや
+スピン軌道相互作用(spin-orbit interaction: SOI)の大きな重金属に電流を流したときアップスピンとダウンスピンが互いに逆向きに電流と垂直方向に散乱されることでスピン流が生成されるスピンホール効果やラシュバエーデルシュタイン効果という
+界面でのSOIによって空間反転対称性が破れて面内方向の電流が面直方向のスピン流に変換される効果もある。
+
+これらの手法はすべて強磁性体、SOIの強い重金属やレアメタルを必要とし、これらを用いずにスピン流を生成することはスピントロニクスにおいて重要な課題である。
+
 \section{先行研究}
+近年、ミクロなスピン角運動量とマクロな力学的回転運動との結合であるスピン回転結合(spin-rotation coupling: SRC)によって、スピン軌道相互作用の弱い非磁性金属を用いた新たなスピン流生成理論がMatuoらによって提唱された。Matuoらは表面弾性波(surface acoustic wave: SAW)や流体運動の作る渦度と電子スピンとの相互作用であるスピン渦度結合(spin-vorticity coupling: SVC)を利用して、渦度勾配中でスピン流が生成されると説明した。
+
+このスピン流生成方法は、Kobayasiらが\ce{Cu}/\ce{NiFe}二層膜にRayleigh型表面弾性波(R-SAW)を注入し、実証実験がなされた。
+さらにKurimuneらは\ce{Cu}と\ce{Pt},\ce{Ti}におけるSAWによるSVC由来のスピン流を比較し、この方法によるスピン流生成においてSOIの影響は大きくはないと結論づけた。
 \section{研究目的}
+先行研究によってSAWによるSVCを介したスピン流生成が実験で検証されて報告されているが、このスピン流生成法におけるSOIの寄与については以前として明らかになっていないところも多い。そこで本研究ではスピンホール角が正の材料と負の材料を用いて生成されるスピン流の量を評価することにより、SOIの寄与について調べた。
 \chapter{原理}
 \section{Rayleigh波}
+\subsection{弾性体のひずみテンソル}
+弾性体は引っ張るたりねじったりすると変形する。
+変形する前の物質の場所(固体なら格子)の座標を$\bm{r},\bm{r}'$で指定し
+その本来の場所$\bm{r},\bm{r}'$ からどれだけ歪んでいるかのベクトルを
+$ \bm{u},\bm{u}'$で表す。このとき弾性体が歪むことによって相対位置ベクトルは次のように変化する。
+\begin{equation}
+\label{eq:1}
+\bm{r}'-\bm{r} \to (\bm{r}'+\bm{u}')-(\bm{r}+\bm{u})=(\bm{r}'-\bm{r})+\delta \bm{u}
+.\end{equation}
+$\delta \bm{u}$は場所$\bm{r},\delta \bm{r}$の関数であり、$\delta r$ の一次までで展開して行列表示すると
+\begin{equation}
+\label{eq:2}
+\begin{pmatrix} \delta u_1\\\delta u_2\\\delta u_3 \end{pmatrix} =
+\begin{pmatrix} 
+\frac{\partial u_1}{\partial x_1 }&\frac{\partial u_1}{\partial x_2 }&\frac{\partial u_1}{\partial x_3} \\ \frac{\partial u_2}{\partial x_1}&\frac{\partial u_2}{\partial x_2}&\frac{\partial u_2}{\partial x_3 }\\ \frac{\partial u_3}{\partial x_1} & \frac{\partial u_3}{\partial x_2} &\frac{\partial u_3}{\partial x_3} \end{pmatrix} 
+\begin{pmatrix} \delta x_1\\\delta x_2 \\ \delta x_3 \end{pmatrix} 
+.\end{equation}
+この行列を相対変位テンソルといい、$D(\bm{r})$ で表すと\eqref{eq:2}は次のように書かれる。
+\begin{equation}
+\label{eq:3}
+	\delta \bm{u} = D(\bm{r}) \delta \bm{r}
+.\end{equation}
+$D(\bm{r})\neq 0$でないときに変位が場所により変化しており弾性体は歪んでいるという。
+
+ここで$D$ を対称成分と反対称成分に分離する。
+$\varepsilon=(D+D^{T}) /2$ および$\varphi= (D-D^{T}) /2$ を用いて
+以下のように分離できる。
+\begin{equation}
+\label{eq:4}
+	D=\varepsilon+\varphi
+.\end{equation}
+$\varepsilon$ はひずみテンソルと呼ばれる対称行列であり、
+直交行列を使って対角化することができる。このように対角化したときの新しい座標軸は主軸と呼ばれこのときの$\varepsilon$ の対角成分
+$\varepsilon_{11},\varepsilon_{22},\varepsilon_{33}$ はひずみの主値と呼ばれる。
+対角和$\mathrm{Tr}\,\varepsilon$ は体積膨張率と一致し変形前の体積を$V$,変形後の体積を$V'$ とすると
+\begin{equation}
+\label{eq:5}
+	\frac{V'-V}{V}\simeq \frac{\partial u_1}{\partial x_1} +\frac{\partial u_2}{\partial x_2} +\frac{\partial u_3}{\partial x_3} =\mathrm{div} \bm{u}=\mathrm{Tr}\,\varepsilon
+.\end{equation}
+一方で反対称テンソル$\varphi$ は
+\begin{equation}
+\label{eq:6}
+\bm{\Omega'}=\frac{1}{2}\nabla \times \bm{u}
+\end{equation}
+を用いて次のように書ける。
+\begin{equation}
+\label{eq:7}
+\varphi=\begin{pmatrix} 0&-\Omega'_3&\Omega'_2\\\Omega'_3&0&-\Omega'_1\\-\Omega'_2&\Omega'_1&0\\ \end{pmatrix} 
+.\end{equation}
+このとき
+\begin{equation}
+\label{eq:8}
+	\varphi \delta \bm{r}=\begin{pmatrix} \Omega'_2 \delta x_3-\Omega'_3 \delta x_2\\ \Omega'_3 \delta x_1-\Omega'_1 \delta x_3\\\Omega'_1 \delta x_2- \Omega'_2 \delta x_1 \end{pmatrix} =  \bm{\Omega'}\times  \delta \bm{r}
+\end{equation}
+となり、これはベクトル$\bm{\Omega'}$ まわりの回転を表す。
+\subsection{ひずみと応力}
+物体が歪んだときに物体の内部に働く力は応力と呼ばれる。これは以下で定義される応力テンソル$\sigma_{ij}$で表される。
+\begin{equation}
+\label{eq:9}
+	\sigma_{ij}dS_j \,:\quad \text{j軸に垂直な微小面$dS_j$ に正の側からはたらく$i$方向の力}
+.\end{equation}
+このとき微小体積要素$dV$に周囲から働く合力の$i$ 成分は次のように表される。
+\begin{equation}
+\label{eq:10}
+	F_i dV = \sum_{j}^{} \frac{\partial \sigma_{ij}}{\partial x_j} dV
+.\end{equation}
+
+一般に弾性体に対してひずみと応力の関係は複雑であるが、
+ひずみテンソルが一様であるときには次の定義がある。
+
+\begin{equation}
+\label{eq:11}
+	\sigma_{ij}=\lambda (\mathrm{div}\bm{u})\delta_{ij}+2\mu \varepsilon_{ij}
+.\end{equation}
+ここで$\sigma_{ij}=\sigma_{ji}$ は応力テンソルであり、$\varepsilon_{ij}=\varepsilon_{ji}$ はひずみの対称テンソル、
+$\lambda,\mu$ はそれぞれラメ係数と呼ばれる量である。
+物体の弾性体としての性質はこのラメ係数を用いて表される。
+
+例えば直方体の棒を$x$ 軸方向から単位面積あたりの力$f$ で引っ張る場合を考える。
+このとき
+\begin{equation}
+\label{eq:12}
+	\text{$x$ 方向}:\quad f=\lambda(\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33})+2\mu \varepsilon_{11}
+.\end{equation}
+\begin{equation}
+\label{eq:13}
+	\text{$y$ 方向}:\quad 0=\lambda(\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33})+2\mu \varepsilon_{22}
+.\end{equation}
+\begin{equation}
+\label{eq:14}
+	\text{$z$ 方向}:\quad 0=\lambda(\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33})+2\mu \varepsilon_{33}
+.\end{equation}
+なお、それ以外の成分については$\varepsilon_{ij}(i\neq j)=0$ である。
+\eqref{eq:12}\eqref{eq:13}\eqref{eq:14}を足すと
+\begin{equation}
+\label{eq:15}
+	\varepsilon_{11}+\varepsilon_{22}+\varepsilon_{33}=\frac{f}{3\lambda+2\mu}
+.\end{equation}
+\begin{equation}
+\label{eq:16}
+	\varepsilon_{11}=\frac{\lambda+\mu}{\mu(3\lambda+2\mu)}f,\quad \varepsilon_{22}=\varepsilon_{33}=-\frac{\lambda}{2\mu(3\lambda+2\mu)}f
+.\end{equation}
+これは$x$ 方向には引っ張った分だけ伸び、$y,z$ 方向には逆に縮むということを示している。
+ここでヤング率$E$ 及びポアソン比$\nu$ が以下のように定義される。
+\begin{equation}
+\label{eq:17}
+	E:=\frac{f}{\varepsilon_{11}},\quad \nu:=-\frac{\varepsilon_{22}}{\varepsilon_{11}}\left( =-\frac{\varepsilon_{33}}{\varepsilon_{11}} \right) 
+.\end{equation}
+ヤング率$E$ は引っ張るときの伸び率を表し、ポアソン比$\nu$は縦伸びに対する横縮みの比率を表す。\eqref{eq:16}を代入するとこれらはラメ係数を用いて以下のように表される。
+\begin{equation}
+\label{eq:18}
+	E=\frac{\mu(3\lambda+2\mu)}{\lambda+\mu},\quad \nu=\frac{\lambda}{2(\lambda+\mu)}
+.\end{equation}
+\subsection{弾性体を伝わる波}
+弾性体の位置$\bm{r}$にある微小な体積要素$dV$ の微小変位$\bm{u}(\bm{r})$ の時間発展を考える。
+$\bm{r}$における質量密度を$\rho(\bm{r})$ とするとNewtonの運動方程式$m \ddot{\bm{r}}=\bm{F}$は\eqref{eq:10}
+を考慮して次のように書き表される。
+\begin{equation}
+\label{eq:19}
+	\rho(\bm{r})\frac{\partial ^2 u_i}{\partial t^2} =\sum_{k}^{} \frac{\partial \sigma_{ik}}{\partial x_k} 
+.\end{equation}
+ここで\eqref{eq:11}を\eqref{eq:19}に代入する。そうすると
+\begin{equation}
+\label{eq:20}
+	\sum_{k}^{} \frac{\partial \sigma_{ik}}{\partial x_k} =\lambda \frac{\partial }{\partial x_i} (\nabla \cdot \bm{u})+2\mu \sum_{k}^{} \frac{\partial \varepsilon_{ik}}{\partial x_k} 
+.\end{equation}
+この最終項はさらに以下のように計算される。
+\begin{align*}
+	\label{eq:21}
+	\sum_{k}^{} \frac{\partial \varepsilon_{ik}}{\partial x_k} &= \sum_{k}^{} \frac{\partial }{\partial x_k} \frac{1}{2}\left( \frac{\partial u_i}{\partial x_k} +\frac{\partial u_k}{\partial x_i}  \right)  \\
+	&= \frac{1}{2}\left( \sum_{k}^{} \frac{\partial ^2}{\partial x_k^2}  \right)u_i+\frac{1}{2}\frac{\partial }{\partial x_i} \sum_{k}^{} \frac{\partial u_k}{\partial x_k}   \\
+	&= \frac{1}{2}\nabla ^2u_i+\frac{1}{2}\frac{\partial }{\partial x_i} (\nabla \cdot \bm{u}) 
+	\stepcounter{equation}\tag{\theequation} 
+.\end{align*}
+\eqref{eq:21}を\eqref{eq:20}に代入すると
+\begin{equation}
+\label{eq:22}
+	\sum_{k}^{} \frac{\partial \sigma_{ik}}{\partial x_k} =(\lambda+\mu)\frac{\partial }{\partial x_i} (\nabla \cdot \bm{u})+\mu \nabla ^2u_i
+.\end{equation}
+\eqref{eq:22}を\eqref{eq:19}に代入することで結局以下の式が得られる。
+\begin{equation}
+\label{eq:23}
+	\rho(\bm{r})\frac{\partial ^2\bm{u}}{\partial t^2} =(\lambda+\mu)\nabla (\nabla \cdot \bm{u})+\mu\nabla ^2\bm{u}
+.\end{equation}
+これはナビエの方程式と呼ばれる。
+
+ここで無限等方媒質内の弾性平面波を考える。伝搬方向を$x$ 軸方向とすると
+$\bm{u}=(u_x,u_y,u_z)$ は$x$ 及び時間$t$ の関数であり、
+\begin{equation}
+\label{eq:24}
+	u_j(x,t)\qquad j=x:\text{縦波},\quad j=y,z:\text{横波}
+.\end{equation}
+\eqref{eq:24}を\eqref{eq:23}に代入して整理すると
+\begin{equation}
+\label{eq:25}
+	\frac{\partial ^2u_x}{\partial t^2} -c_l^2 \frac{\partial ^2u_x}{\partial x^2} =0.\end{equation}
+\begin{equation}
+\label{eq:26}
+	\frac{\partial ^2u_y}{\partial t^2} -c_t^2 \frac{\partial ^2u_y}{\partial x^2} =0
+.\end{equation}
+\begin{equation}
+\label{eq:27}
+	\frac{\partial ^2u_z}{\partial t^2} -c_t^2 \frac{\partial ^2u_z}{\partial x^2} =0.\end{equation}
+
+ここで
+\begin{equation}
+\label{eq:28}
+	c_l=\sqrt{\frac{\lambda+2\mu}{\rho}} ,\quad c_t=\sqrt{\frac{\mu}{\rho}} 
+\end{equation}
+であり、$c_l>c_t$ であるので縦波の速度の方が速い。
+
+横波においては$\mathrm{div}\,\bm{u}=0$であり、物質の体積変化には関係しない。これに対して縦波では$\mathrm{div}\,\bm{u}\neq 0$
+であり物質内の圧縮や膨張に関係する。
+この互いに異なる速度で独立に伝搬する2つの波への分割はより一般の(必ずしも平面波ではない)無限空間内の弾性波の場合にも成り立つ。
+\eqref{eq:23}を速度$c_l,c_t$をもって書き直してみると
+
+\begin{equation}
+\label{eq:29}
+	\ddot{\bm{u}}=c_t^2 \nabla ^2\bm{u}+(c_l^2-c_t^2)\mathrm{grad}\,\mathrm{div}\,\bm{u}
+.\end{equation}
+ここでベクトル$\bm{u}$ を以下のように2つの部分に分解する。
+\begin{equation}
+\label{eq:30}
+	\bm{u}=\bm{u}_l+\bm{u}_t
+.\end{equation}
+ただしそれぞれ次のような条件を満足する。
+\begin{equation}
+\label{eq:31}
+\mathrm{div}\,\bm{u}_t=0
+.\end{equation}
+\begin{equation}
+\label{eq:32}
+\mathrm{rot}\,\bm{u}_l=0
+.\end{equation}
+このような分解した表示はベクトル解析から常に可能である。
+\eqref{eq:29}に$\bm{u}=\bm{u}_t+\bm{u}_l$ を代入すると
+\begin{equation}
+\label{eq:33}
+	\ddot{\bm{u}}_l+\ddot{\bm{u}}_t=c_{l}^2 \nabla ^2(\bm{u}_l+\bm{u}_t)+(c_l^2-c_t^2)\mathrm{grad}\,\mathrm{div}\,\bm{u}_l
+.\end{equation}
+両辺の発散をとれば、$\mathrm{div}\,\bm{u}_t=0$より
+\begin{equation}
+\label{eq:34}
+	\mathrm{div}\ddot{\bm{u}}_l=c_t^2\nabla ^2\mathrm{div}\,\bm{u}_l+(c_l^2-c_t^2)\nabla ^2 \mathrm{div}\,\bm{u}_l
+.\end{equation}
+整理して
+\begin{equation}
+\label{eq:35}
+	\mathrm{div}\,(\ddot{\bm{u}}_l-c_l^2\nabla ^2\bm{u}_l)=0
+.\end{equation}
+一方で、この表式の括弧内の$\mathrm{rot}$ をとれば\eqref{eq:32}によって$0$ となる。あるベクトルの$\mathrm{rot}$ および$\mathrm{div}$ が全空間で$0$ となるときはこのベクトルは定数を除いて恒等的に$0$ となる。よって
+\begin{equation}
+\label{eq:36}
+	\frac{\partial ^2\bm{u}_l}{\partial t^2} -c_l^2\nabla ^2\bm{u}_l=0
+.\end{equation}
+同様に\eqref{eq:33}の$\mathrm{rot}$ とると、$\mathrm{rot}\,\bm{u}_l=0$ および$\mathrm{rot}\,\mathrm{grad}=0$ であるので
+\begin{equation}
+\label{eq:37}
+	\mathrm{rot}(\ddot{\bm{u}}_t-c_t^2\nabla ^2\bm{u}_t)=0
+\end{equation}
+が得られる。また上の括弧内の式の$\mathrm{div}$ もまた$0$ であるから\eqref{eq:36}と同じような方程式が得られ、
+\begin{equation}
+\label{eq:38}
+	\frac{\partial ^2\bm{u}_t}{\partial t^2} -c_t^2\nabla ^2\bm{u}_t=0
+.\end{equation}
+
+方程式\eqref{eq:36}および\eqref{eq:38}は三次元の波動方程式である。これらはそれぞれ速度$c_l$ および$c_t$ をもつ弾性波の伝播を表している。波$\bm{u}_t$ は体積変化に関係しないが($\mathrm{div}\,\bm{u}_t=0$)、波$\bm{u}_l$ は体積の圧縮や膨張を伴う。
+\subsection{Rayleigh波}
+ここからは物体表面付近で伝播し、深部に達しない波であるSAWについて考える。
+SAWの中でも変位ベクトル$\bm{u}$ が表面に対して垂直で伝搬方向を通って引かれる平面内に横たわる波をRayleigh型表面弾性波という。
+
+\eqref{eq:36}および\eqref{eq:38}の形の波動方程式をまとめて
+\begin{equation}
+\label{eq:39}
+	\frac{\partial ^2u}{\partial t^2} -c^2 \nabla ^2u=0
+.\end{equation}
+と書いておく。ここに$u$ はベクトル$\bm{u}_l,\bm{u}_t$ のある成分であり、$c$ は対応する速度$c_l$ または$c_t$である。
+
+弾性媒質の表面は無限平面と仮定する。この平面を$xz$ 平面としてとり、媒質は$y<0$ に渡って広がっているとする。
+
+ここで$x$ 軸に沿って伝わっていく平面単色の表面波を考える。
+すなわち$u$ として
+\begin{equation}
+\label{eq:40}
+	u=e^{i(kx-\omega t)}f(y)
+\end{equation}
+という形を仮定する。そこでこれを\eqref{eq:39}に代入すれば関数$f(y)$ に対して次の方程式が得られる。
+\begin{equation}
+\label{eq:41}
+	\frac{d^2f}{dy^2}=\left( k^2-\frac{\omega^2}{c^2} \right) f
+.\end{equation}
+$k^2 - \omega^2 /c^2<0$ であるならば関数$f$ として周期関数を与えてしまうことになり、
+物質の内部で決して減衰することのない平面波が得られてしまう。
+故に$k^2 -\omega^2 /c^2>0$ であると仮定する。このとき解$f$ は次のような形を取る。
+\begin{equation}
+\label{eq:42}
+	f(y)=\mathrm{const}\, \exp \left( \pm y\sqrt{k^2-\frac{\omega^2}{c^2}}  \right) 
+.\end{equation}
+負符号の解は$y\to -\infty$ にしたがってとどめなく増大してしまう解に対応し不適であるので結局解としては次のような形になる。
+\begin{equation}
+\label{eq:43}
+	u=\mathrm{const}\,e^{i(kx-\omega t)}e^{\kappa y}
+.\end{equation}
+ここで
+\begin{equation}
+\label{eq:44}
+	\kappa = \sqrt{k^2-\frac{\omega^2}{c^2}} 
+.\end{equation}
+は減衰定数である。
+これは物体内部に向かって指数関数的に減衰する波を表しており、表面付近を伝播する波となっている。
+
+実際の変位ベクトル$\bm{u}$ はベクトル$\bm{u}_t$ と$\bm{u}_l$ との和になっており、それぞれの成分は
+\eqref{eq:39}で$\bm{u}_l$ に対しては速度$c=c_l$ 、$\bm{u}_t$ に対しては$c=c_t$ とおいた方程式を満足する。無限媒質内の体積波の場合にはこれら2つの部分は独立に伝播していくが、表面波の場合には境界条件が存在するために独立ではなくなる。
+
+実際の変位ベクトル$\bm{u}$を与える$\bm{u}_l$ と$\bm{u}_t$ の線型結合の係数を決定づけるためには物体表面の境界条件を考える必要があり、これより波数ベクトル
+$\bm{k}$ と周波数$\omega$ との分散関係が決定され、したがって波の伝搬速度が決定される。
+自由境界上では$\sigma_{ik}n_k=0$という条件が成立しなければならない。境界の法線ベクトル$\bm{n}$ は
+$y$ 軸に平行であるから
+\begin{equation}
+\label{eq:45}
+	\sigma_{xy}=\sigma_{yy}=\sigma_{zy}=0
+.\end{equation}
+\eqref{eq:11}より従って
+\begin{equation}
+\label{eq:46}
+	\frac{\partial u_y}{\partial x} +\frac{\partial u_x}{\partial y} =0
+.\end{equation}
+\begin{equation}
+\label{eq:47}
+	\frac{\partial u_z}{\partial y} +\frac{\partial u_y}{\partial z} =0
+.\end{equation}
+\begin{equation}
+\label{eq:48}
+	\nu (\frac{\partial u_x}{\partial x} +\frac{\partial u_z}{\partial z} )+(1-\nu)\frac{\partial u_y}{\partial y}=0 
+.\end{equation}
+$u_{ij}$のすべての値は$z$ に依存しないので\eqref{eq:47}より
+\begin{equation}
+\label{eq:49}
+	\frac{\partial u_z}{\partial y} =0
+.\end{equation}
+\eqref{eq:43}を用いて次のような結論を得る。
+\begin{equation}
+\label{eq:50}
+	u_{z}=0
+\end{equation}
+このように表面波における変形ベクトル$\bm{u}$ は表面に対して垂直で伝播方向を通って引かれる平面内に横たわる。
+
+横波部分$\bm{u}_t$ は条件\eqref{eq:31}すなわち
+\begin{equation}
+\label{eq:51}
+	\frac{\partial u_{tx}}{\partial x} +\frac{\partial u_{ty}}{\partial y} =0
+\end{equation}
+を満足せねばならない。$u_{tx},u_{ty}$の$x,y$ 依存性は因子$\exp (ikx+\kappa_ty)$ によって決定される。
+ここで$\kappa_t$ は$c=c_t$ とした\eqref{eq:44}、すなわち
+\begin{equation}
+\label{eq:52}
+	\kappa_t=\sqrt{k^2-\frac{\omega^2}{c_t^2}} 
+\end{equation}
+によって与えられる。故に\eqref{eq:51}は次の等式を導く
+\begin{equation}
+\label{eq:53}
+	iku_{tx}+\kappa_tu_{ty}=0
+.\end{equation}
+もしくは変形して
+\begin{equation}
+\label{eq:54}
+	\frac{u_{tx}}{u_{ty}}=-\frac{\kappa_t}{ik}
+.\end{equation}
+よって$a$ をある定数として
+\begin{equation}
+\label{eq:55}
+	u_{tx}=\kappa_ta\exp (ikx+\kappa_t y-i\omega t),\quad u_{ty}=-ika\exp (ikx + \kappa_t y -i\omega t)
+.\end{equation}
+縦波部分$\bm{u}_{l}$は条件\eqref{eq:32}すなわち
+\begin{equation}
+\label{eq:56}
+\frac{\partial u_{lx}}{\partial y} -\frac{\partial u_{ly}}{\partial x} =0
+.\end{equation}
+を満足する。したがって
+\begin{equation}
+\label{eq:57}
+	iku_{ly}-\kappa_lu_{lx}=0,\quad \qty(\kappa_l=\sqrt{k^2-\frac{\omega^2}{c_l^2}} )
+.\end{equation}
+よって$b$ を定数として以下の表式を得る。
+\begin{equation}
+\label{eq:58}
+	u_{lx}=kb\exp (ikx+\kappa_ly-i\omega t),\quad u_{ly}=-i\kappa_lb\exp (ikx +\kappa_l y -i\omega t)
+.\end{equation}
+
+続いて\eqref{eq:46},\eqref{eq:48}を用いる。これらを速度$c_l$と$c_t$ を導入して書き換える。
+\eqref{eq:28}と\eqref{eq:18}から
+\begin{equation}
+\label{eq:59}
+	\nu=\frac{c_l^2-2c_t^2}{2(c_l^2-c_t^2)}
+\end{equation}
+であるので
+\begin{equation}
+\label{eq:60}
+	\frac{\partial u_x}{\partial y} +\frac{\partial u_y}{\partial x} =0
+.\end{equation}
+\begin{equation}
+\label{eq:61}
+	c_{l}^2\frac{\partial u_y}{\partial y} +(c_l^2-2c_t^2)\frac{\partial u_x}{\partial x} =0
+.\end{equation}
+ここで
+\begin{equation}
+\label{eq:62}
+	u_x=u_{lx}+u_{tx},\quad u_{y}=u_{ly}+u_{ty}
+\end{equation}
+と置くことができるから\eqref{eq:60}より境界$y=0$ での条件であることに注意して
+\begin{equation}
+\label{eq:63}
+	a(k^2+\kappa^2_t)+2bk\kappa_l=0
+.\end{equation}
+同様に\eqref{eq:61}
+から以下の式を得る。
+\begin{equation}
+\label{eq:64}
+	2ac_t^2\kappa_tk+b\left[ c_l^2(\kappa_l^2-k^2)+2c_t^2k^2 \right] =0
+.\end{equation}
+この式を$c_t^2$ で割ってさらに
+\begin{equation}
+\label{eq:65}
+	\kappa_l^2-k^2=-\frac{\omega^2}{c_l^2}=-(k^2-\kappa_t^2) \frac{c_t^2}{c_l^2}
+\end{equation}
+を代入すると次のような形に書くことができる。
+\begin{equation}
+\label{eq:66}
+	2a\kappa_tk+b(k^2+\kappa_t^2)=0
+.\end{equation}
+$a,b$ についての同時方程式系\eqref{eq:63},\eqref{eq:66}が非自明な解を持つための条件は
+\begin{equation}
+\label{eq:67}
+	(k^2+\kappa_t^2)^2=4k^2\kappa_t\kappa_l
+.\end{equation}
+両辺の平方をとって$\kappa_t^2,\kappa_l^2$ の値の置き換えを行えば
+\begin{equation}
+\label{eq:68}
+\left( 2k^2-\frac{\omega^2}{c_t^2} \right) ^{4}=16k^{4}\left( k^2-\frac{\omega^2}{c_t^2} \right) \left( k^2-\frac{\omega^2}{c_l^2} \right) 
+.\end{equation}
+この方程式から$\omega$ と$k$ の関係が定まる。ここで$\xi$という無次元量を導入して次のように置くと便利である。
+\begin{equation}
+\label{eq:69}
+	\omega=c_t k\xi
+.\end{equation}
+そうすると、この方程式系の両辺の$k^{8}$ の項はキャンセルされ、展開すると結局次のような$\xi$ の代数方程式が得られる。
+\begin{equation}
+\label{eq:70}
+	\xi^{6}-8\xi^{4}+8\xi^2\left( 3-2 \frac{c_t^2}{c_l^2} \right) -16\left( 1- \frac{c_t^2}{c_l^2} \right) =0
+.\end{equation}
+ここからわかる重要なことは$\xi$ が$c_t /c_l$という比の値だけに依存し、これはある与えられた物質に対して一定であり、言い換えればポアソン係数だけに依存するという特徴を持つことである。
+すなわち
+\begin{equation}
+\label{eq:71}
+	\frac{c_t}{c_l}=\sqrt{\frac{1-2\nu}{2(1-\nu)}} 
+.\end{equation}
+$\xi$ はもちろん正の実数値をとり、$\kappa_t,\kappa_l$ が実数であるために$\xi<1$ である。
+方程式\eqref{eq:70}はそのような条件を満たす根を唯一つ持ち、したがって与えられた$c_t /c_l$ に対して$\xi$ の値はただ一つしか得られる。
+
+以上より表面波でも体積波でも周波数は波数ベクトルの大きさ$k$ に比例し、その比例係数$U$ は波の伝搬速度であり
+\begin{equation}
+\label{eq:72}
+	U=c_t\xi
+.\end{equation}
+これは表面弾性波(SAW)の伝播速度であり、体積波の横波および縦波速度$c_l,c_t$ によって与えられる。
+横波部分と縦波部分の振幅比は\eqref{eq:66}に$\kappa_t^2=k^2-\omega^2 /c_t^2=k^2(1-\xi^2)$を代入すると($k>0$ であることに注意して)以下のように与えられる。
+\begin{equation}
+\label{eq:73}
+	\frac{a}{b}=-\frac{2-\xi^2}{2\sqrt{1-\xi^2} }
+.\end{equation}
+比$c_t /c_l$ は実際いろいろな物質に応じて変化し、$\nu$ が$0$ から$1 /2$ まで変化することに対応して$1 /\sqrt{2} $ から$0$ までの間を変化する。
+$\xi$ はこのとき$0.824$ から$0.955$ まで変化する\cite{landau}。
+$\xi$ の$\nu$ に関する関数形は図\ref{fig:fig-nu_xi-png}のようになる。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/nu_xi.png}
+	\caption{$\xi$ の$\nu$ 依存性(\cite{landau}より引用)}
+	\label{fig:fig-nu_xi-png}
+\end{figure}
+以上まとめて\eqref{eq:55}\eqref{eq:58}\eqref{eq:73}から結局、格子変位$\bm{u}=(u_x,u_y,u_z)$ は以下のように計算できる。
+\begin{equation}
+\label{eq:74}
+	u_x=u_0\left( -\sqrt{1-\xi^2} \exp (ikx+\kappa_t y-i\omega t)+\frac{2\sqrt{1-\xi^2} }{2-\xi^2}\exp (ikx + \kappa_l y -i\omega t) \right) 
+.\end{equation}
+
+\begin{equation}
+\label{eq:75}
+	u_y=iu_0\left( \exp (ikx+\kappa_t y-i\omega t)-\frac{2\sqrt{1-\xi^2} \sqrt{1-\xi^2(c_t^2 / c_l^2)} }{2-\xi^2}\exp (ikx+\kappa_ly-i\omega t) \right) 
+.\end{equation}
+\begin{equation}
+\label{eq:76}
+	u_z=0
+.\end{equation}
+ここで$u_0$ は対応する振幅であり、これらの一番目の項が横波に対応し、二番目の項が縦波である。
 \section{スピン渦度結合によるスピン流生成}
 \subsection{スピン流}
+金属中には非常に高い密度の伝導電子がいて自由電子は物質中を高速で運動している。この伝導電子系に電場を与えると、電子の集団はある方向に
+流れることになり、これが電流である。このとき通常の磁性を持たない金属ではスピンの向きはランダムに分布しているのでスピンの流れは
+全体で打ち消されている。一方で例えばアップスピンの電子とダウンスピンの電子が同数でそれぞれ逆向きに運動している場合を考えると、これは電荷の流れとしては打ち消しあっていて正味の電流は$0$ である。一方でスピンの流れは打ち消されずに残る。このようなスピン角運動量の流れをスピン流といい、
+特に上記の例のように電流が$0$ でスピン流だけが流れている状態を純スピン流状態という。
+スピンの$z$ 成分が良い量子数の場合スピン流の$z$成分は$z$ 方向に平行なスピンを持つ電流$\bm{j}_{\uparrow}$ と$z$ 方向に反平行なスピンをもつ電流$\bm{j}_{\downarrow}$の差で表現され
+\begin{equation}
+\label{eq:77}
+	\bm{J}_s=-\frac{\hbar}{2e}(\bm{j}_{\uparrow}-\bm{j}_{\downarrow})
+.\end{equation}
+ここで$e>0$ は電気素量である。一方で電流は
+\begin{equation}
+\label{eq:78}
+	\bm{J}_c=\bm{j}_{\uparrow}+\bm{j}_{\downarrow}
+.\end{equation}
+と書ける。
+スピン流と電流の決定的な違いは電流が一般に保存流であることに対してスピン流は保存流でないということである。
+電荷保存則によって電流は保存流であるが、スピンに対しては保存則はなく、例えばSOIによってある確率で自然にスピンの向きが無秩序に変化してしまう。その結果電子スピン流はある程度の距離を流れると消えてしまう。この距離をスピン拡散長とよび、通常の金属では長くてもマイクロメートルスケールである。
 \subsection{スピン蓄積}
+空間的に非一様なスピン密度があると拡散スピン流が流れる。また電場$\bm{E}$ をかけるとドリフトスピン流が流れる。まずスピン自由度を考慮しないで考えると電流密度$\bm{j}$はドリフト流$\bm{j}_\text{drift} $と拡散流$\bm{j}_\text{diffusion} $ の和、$\bm{j}=\bm{j}_\text{drift} +\bm{j}_\text{diffusion} $で以下のように書かれる
+\begin{equation}
+\label{eq:79}
+	\bm{j}=\sigma \bm{E}+eD\nabla n
+.\end{equation}
+ここで$\sigma$ は電気伝導度であり、$D$ は拡散係数、$n$ は粒子数密度である。
+$\bm{j}_\text{drift} =\sigma \bm{E}$で$\bm{j}_\text{diffusion} =eD\nabla $であり、
+フェルミエネルギー$E_F$ での状態密度を$N(E_F)$と書くと 化学ポテンシャル$\mu^{c}$ と粒子数密度には
+\begin{equation}
+\label{eq:80}
+	N(E_F)\nabla \mu^{c}=\nabla n
+\end{equation}
+の関係が成り立ち、電気化学ポテンシャル$\phi$ を電位$\phi$ と化学ポテンシャル$\mu^{c}$ を用いて$\mu:=\mu^{c}-e\phi$ のように定義するとその勾配は
+\begin{equation}
+\label{eq:81}
+	\nabla \mu = e\bm{E}+\frac{\nabla n}{N(E_F)}
+.\end{equation}
+したがって$\nabla \mu = 0$のとき電流密度
+\begin{equation}
+\label{eq:82}
+	\bm{j}=(\sigma-e^2N(E_F)D)\bm{E}
+\end{equation}
+が$0$ であるとすれば以下のEinsteinの関係式が得られる。
+\begin{equation}
+\label{eq:83}
+	\sigma=e^2N(E_F)D
+.\end{equation}
+\eqref{eq:81}と\eqref{eq:83}から次のようになる。
+\begin{equation}
+\label{eq:84}
+	\bm{j}=\frac{\sigma}{e}\nabla \mu
+.\end{equation}
+この関係式は電気化学ポテンシャルの勾配$\nabla \mu$ が電流の駆動力となっていることを示している。
+ここでスピンの自由度を再び考える。スピン流の駆動力となるのはスピン依存した電気化学ポテンシャル$\mu_{\sigma}$の勾配のアップスピン($\sigma=\uparrow$)とダウンスピン($\sigma=\downarrow$)の差である。
+スピン依存した電流密度$\bm{j}_{\sigma}$ は以下のように表される。
+\begin{equation}
+\label{eq:85}
+	\bm{j}_{\sigma}=\frac{\sigma_{\sigma}}{e}\nabla \mu_{\sigma}
+.\end{equation}
+ここで$\mu_\sigma= \mu_{\sigma}^{c}-e\phi$ はスピン依存電気化学ポテンシャルである。
+電流とスピン流は\eqref{eq:77}、\eqref{eq:78}より
+\begin{equation}
+\label{eq:86}
+	\bm{J}_c=\frac{1}{e}\nabla (\sigma_{\uparrow}\mu_{\uparrow}+\sigma_{\downarrow}\mu_{\downarrow})
+.\end{equation}
+\begin{equation}
+\label{eq:87}
+	\bm{J}_s=-\frac{\hbar}{2e^2}\nabla (\sigma_{\uparrow}\mu_{\uparrow}-\sigma_{\downarrow}\mu_{\downarrow})
+.\end{equation}
+特に非磁性体内では$\sigma_{\uparrow}=\sigma_{\downarrow}=\sigma$ なのでスピン流$\bm{J}_{s}$ は
+\begin{equation}
+\label{eq:88}
+	\bm{J}_s=-\frac{\hbar\sigma}{2e^2}\nabla (\mu_{\uparrow}-\mu_{\downarrow})=-\frac{\hbar\sigma}{2e^2}\nabla \delta\mu
+.\end{equation}
+ここに$\delta\mu:=\mu_{\uparrow}-\mu_{\downarrow}$ はスピン蓄積とよばれ、スピン流を流すためのポテンシャルとなっている。
 \subsection{スピン渦度結合}
+スピン渦度結合(SVC)とはスピン角運動量と格子回転による渦度の結合でありハミルトニアンは
+\begin{equation}
+\label{eq:s1}
+	H_{SVC}=-\bm{S}\cdot \bm{\Omega}=-\frac{\hbar}{2}\bm{\sigma}\cdot \bm{\Omega}
+\end{equation}
+で与えられる。
+SVCの起源は強磁性体におけるEinstein-de Haas効果およびBarnett効果にあり、それぞれ強磁性体を磁化させるとそれに応じて回転する効果およびその逆効果である強磁性体を回転させると磁化する効果である。
+Barnett効果では強磁性体に見かけの有効磁場であるBarnett磁場$\bm{h}_\text{B} $が生じると考えられ、その大きさは剛体回転の角速度$\bm{\Omega}$を後述する磁気回転比$\gamma$ で割った値
+\begin{equation}
+\label{eq:s2}
+	\bm{h}_\text{B} =\frac{\bm{\Omega}}{\gamma}
+\end{equation}
+で与えられる。すなわち力学的回転$\bm{\Omega}$ はその回転軸方向の有効磁場$\bm{h}_\text{B} $ と等価である。
+
+上記の磁気回転効果を強磁性体から非磁性金属へ、そして剛体回転から弾性体の格子回転を利用した局所的な渦度へ拡張した理論がSVCである。
+この局所的な渦度中の電子の運動、すなわち
+非一様な加速度系での電子の運動を考えるにあたって一般共変なDirac方程式を考える必要がある。
+曲がった時空間でのスピン$1 /2$ の粒子を記述するそのような基礎方程式は
+\begin{equation}
+\label{eq:89}
+	\left[ i \gamma^{\mu}(p_{\mu}+eA_{\mu}-i\hbar \Gamma_{\mu})+mc \right] \Psi =0
+.\end{equation}
+ここで$c$は光速で$\hbar$はプランク定数、$m$ は電子の質量である。$A_{\mu}$ はU(1)ゲージポテンシャルであり、$\Gamma_{\mu}$ はスピン接続とよばれる量であり、計量$g_{\mu\nu}(x)$ によって決められる。
+座標依存したClifford代数として
+$\gamma^{\mu}=\gamma^{\mu}(x)$において、
+\begin{equation}
+\label{eq:90}
+\acomm{\gamma^{\mu}(x)}{\gamma^{\nu}(x)}=2g^{\mu\nu}(x),\quad(\mu,\nu=0,1,2,3)
+\end{equation}
+が成り立つ。
+以下では格子変形がつくる速度場$\bm{v}=\dot{\bm{u}}$ のもとでの一電子について考える。
+この速度場$\bm{v}$ がゲージポテンシャル$\Gamma_{\mu}$ の源になる。ここで$\abs{\bm{v}}\ll c$ であると仮定する。
+格子変形速度場の局所静止系から慣性系への座標変換は$d\bm{r}'=d\bm{r}+\bm{v}(x)dt$となり、世界線素$ds$は
+\begin{equation}
+\label{eq:91}
+	ds^2=g_{\mu\nu}dx^{\mu}dx^{\nu}=(-c^2+\bm{v}^2)dt^2+2\bm{v}\cdot d\bm{r} dt + d\bm{r}^2
+.\end{equation}
+このとき計量は
+\begin{equation}
+\label{eq:92}
+	g_{00}=-1+\frac{v^2}{c^2},\quad g_{0i}=g_{i0}=\frac{v_i}{c},\quad g_{ij}=\delta_{ij}
+.\end{equation}
+\eqref{eq:89}、\eqref{eq:92}から局所静止系でのDiracハミルトニアンが導かれ次のようになる。\cite{physrevb.96.020401}
+\begin{equation}
+\label{eq:93}
+	H=\beta m c^2+c \bm{\alpha}\cdot \bm{\pi }-eA_0+\frac{1}{2}e \bm{A}\cdot \bm{v}-\frac{1}{2}\acomm{\bm{v}}{\bm{\pi }}-\frac{1}{2}\bm{\Sigma}\cdot  \bm{\omega}
+.\end{equation}
+ここで$\beta,\bm{\alpha}$はDirac行列$\gamma^{\mu}$ と$\gamma^{0}(x)=i\beta$、$\gamma^{j}(x)=i\beta\alpha_{j}$ の関係があり以下のように表される。
+\begin{equation}
+\label{eq:94}
+\beta = \begin{pmatrix}I &O\\O&-I  \end{pmatrix},\quad \bm{\alpha}=\begin{pmatrix} O&\bm{\sigma} \\ \bm{\sigma}&O\end{pmatrix} 
+.\end{equation}
+ここに$I$ は単位行列で$O$ は零行列、$\bm{\sigma}$ はパウリ行列である。
+\\また$\bm{\Sigma}$はスピン演算子であり、
+\begin{equation}
+\label{eq:95}
+\Sigma_{ij}=\frac{1}{2}\varepsilon_{ijk}\begin{pmatrix} \sigma_k & O\\O&\sigma_k\\ \end{pmatrix} 
+.\end{equation}
+さらに$\bm{\pi }$ は運動量$\bm{p}$ とU(1)ゲージ場$\bm{A}$を用いて$\bm{\pi }=\bm{p}+e\bm{A}$と表される。
+また$\bm{\omega}$ は
+\begin{equation}
+\label{eq:96}
+	\bm{\omega}=\nabla \times \bm{v}
+\end{equation}
+で表される渦度と呼ばれる量である。
+\eqref{eq:93}の最終項$\bm{\Sigma}\cdot \bm{\omega} /2$がSVCハミルトニアン$H_\text{SVC} $である。
+ここで$\bm{v}$ がある定数ベクトル$\bm{\Omega}$ を用いて
+\begin{equation}
+\label{eq:97}
+	\bm{v}=\bm{\Omega}\times \bm{r}
+\end{equation}
+と書かれている場合を考える。
+\eqref{eq:6}、\eqref{eq:8}で考えた格子変位$\bm{u}$ を速度場$\bm{v}$ で置き換えて考えると
+渦度$\bm{\omega}$ と角速度$\bm{\Omega}$ の間には
+\begin{equation}
+\label{eq:98}
+	\bm{\omega} = 2\bm{\Omega}
+\end{equation}
+の関係が成立する。
+このようなとき\eqref{eq:93}の$-\acomm{\bm{v}}{\bm{\pi }} /2$ は回転と軌道角運動量とのカップリングを表す式$-\bm{\Omega}\cdot (\bm{r}\times \bm{\pi })$ になり、また最終項のSVCの項はスピン回転結合の形で$-\bm{\Sigma}\cdot \bm{\Omega}$ となり、回転座標系でのDiracハミルトニアンの表式
+\begin{equation}
+\label{eq:99}
+	H=\beta mc^2+c \bm{\alpha}\cdot \bm{\pi }-(\bm{r}\times \bm{\pi })\cdot \bm{\Omega}-eA_0-\bm{\Sigma}\cdot \bm{\Omega}
+\end{equation}
+が得られる。
+この回転系のDirac方程式から陽電子の自由度を消去した電子の低エネルギー有効理論を求めると$1 /m$ のオーダーで
+\begin{equation}
+\label{eq:100}
+	H^{(1 /m)}_e=\frac{\bm{\pi}^2}{2m}-eA_0-(\bm{r}\times \bm{\pi })\cdot \bm{\Omega}-\frac{e\hbar }{2m}\bm{\sigma}\cdot \bm{B}-\frac{\hbar}{2}\bm{\sigma}\cdot  \bm{\Omega}
+\end{equation}
+となり、運動項やCoriolis項およびZeeman項に加えてやはり最終項にはスピン回転結合が残る。
+このスピン回転結合の項をZeeman項に押し込むと
+\begin{equation}
+\label{eq:101}
+H^{(1 /m)}_e=\frac{\bm{\pi}^2}{2m}-eA_0-(\bm{r}\times \bm{\pi })\cdot \bm{\Omega}-\frac{e\hbar }{2m}\bm{\sigma}\cdot (\bm{B}+\mu_0 \bm{h}_\text{B})
+\end{equation}
+が得られ、\eqref{eq:s2}で表されるBarnett磁場が現れる。ここで$\mu_0$は真空の透磁率である。
+
+このSVCによるスピン流生成機構はStern-Gerlachの実験と同様な原理で説明される。
+Stern-Gerlachの実験では磁場勾配にそってアップスピンとダウンスピンが分裂し、スピン流をつくる。本実験では表面弾性波の渦度が膜厚方向に減衰していくことを利用して渦度勾配、すなわちSVCによる有効磁場の勾配を作り出し、スピン流を生成した。
+ただしStern-Gerlachの実験と異なるのは、SVCによる渦度勾配は時間的にも空間的にも周期的に変化する交流であるので、生成するスピン流も交流スピン流となる点である。
+\subsection{スピン渦度結合によるスピン流生成}
+スピン渦度結合(SVC)によるスピン流生成を記述するスピン拡散方程式を導く。
+
+格子の力学的回転運動の角周波数である$\bm{\Omega}$ は\eqref{eq:96}、\eqref{eq:98}により
+\begin{equation}
+\label{eq:102}
+	\bm{\Omega}=\frac{1}{2} \nabla \times \dot{\bm{u}}
+\end{equation}
+と表される。
+ここで\eqref{eq:31}\eqref{eq:32}より格子回転が横波を持つ場合に\eqref{eq:102}は消えずに残ることがわかる。
+上記の設定と同様に$x$ 方向に伝播して$y$ 方向に減衰する$xz$ 平面内を伝播する表面弾性波を考えると
+$\bm{\Omega}=(0,0,\Omega)$のようになり、$\Omega$ は\eqref{eq:74}\eqref{eq:75}\eqref{eq:76}より次のように計算される。
+\begin{equation}
+\label{eq:103}
+	\Omega(x,y,t)=\frac{\omega^2u_0}{2c_t}\exp \left[ -\kappa_t y+i(kx-\omega t) \right] 
+.\end{equation}
+ただしここで$u_0 \xi$ を改めて$u_0$ と置き直した。
+このように$z$ 軸方向の力学的回転$\Omega$が与えられたとき、SVCハミルトニアン\eqref{eq:s1}により回転軸方向に平行にそろう。このとき電子のエネルギーバンドの底は$\hbar \Omega /2$ だけ変化する。アップ(ダウン)スピンの電子数密度$n_{\uparrow(\downarrow)}$
+は次のように与えられる。
+\begin{equation}
+\label{eq:104}
+	n_{\uparrow(\downarrow)}=\int_{\pm \hbar \Omega /2}^{\mu_{\uparrow(\downarrow)}} d\varepsilon N_0(\varepsilon)
+.\end{equation}
+ここで$ N_0$は電子の状態密度であり、$\mu_{\uparrow(\downarrow)}$ はアップ(ダウン)スピンの化学ポテンシャルである。
+簡単のため状態密度を定数として考えるとこのときのスピン密度は次のように評価される。
+\begin{equation}
+\label{eq:105}
+	n_{\uparrow}-n_{\downarrow}\simeq N_0(\delta\mu-\hbar \Omega)
+.\end{equation}
+ここに$\delta\mu=\mu_{\uparrow}-\mu_{\downarrow}$は\eqref{eq:88}で定義したスピン蓄積である。
+スピンは緩和がおこり、スピン緩和時間$\tau_\text{sf} $および拡散定数$D$を用いてこのスピン緩和のプロセスは次のように表される
+\begin{equation}
+\label{eq:106}
+	\frac{\partial }{\partial t} (n_{\uparrow}-n_{\downarrow})=\frac{1}{\tau_\text{sf} }N_0\delta\mu+D \nabla ^2(N_0\delta\mu)
+.\end{equation}
+\eqref{eq:105}\eqref{eq:106}よりSVCを含んだスピン拡散方程式
+\begin{equation}
+\label{eq:107}
+\left( \frac{\partial }{\partial t} -D \nabla ^2+\frac{1}{\tau_\text{sf} } \right) \delta\mu=\hbar\frac{\partial  \Omega}{\partial t} 
+\end{equation}
+が得られる。\eqref{eq:107}の右辺がSVC由来のスピン蓄積$\delta\mu$ のsource項であり、力学的回転すなわち渦度の時間微分に比例する。スピン流の生成にはもうひとつの機構が提唱されており、Takahashiらは液体\ce{Hg}の流体運動による定常的な渦度から生成されるスピン流を観測し、渦度自体に比例するスピン流生成機構を実験的に検証した\cite{TakahashiR2016Shg}。この方法でのスピン流生成は後にMatuoらによって理論的な説明がなされており結局SVC由来のスピン拡散方程式\eqref{eq:107}は次のように拡張される\cite{PhysRevB.102.174413,physrevb.96.020401}。
+\begin{equation}
+\label{eq:108}
+\left( \frac{\partial }{\partial t} -D \nabla ^2+\frac{1}{\tau_\text{sf} } \right) \delta\mu=\hbar\frac{\partial \Omega}{\partial t} -\frac{\hbar}{\tau_\text{sf} }\zeta\Omega
+.\end{equation}
+ここで$\zeta$ は力学的回転とスピンとの変換効率を表す規格化因子である。
+ここに$\Omega$ の表式\eqref{eq:103}を代入して方程式を解き、得られたスピン蓄積から\eqref{eq:88}を計算すると$z$ 方向に偏極した交流スピン流$J_s$が次のように求まる\cite{PhysRevLett.119.077202,PhysRevB.87.180402,PhysRevB.102.174413}。
+\begin{equation}
+\label{eq:109}
+J_s=\left(\tau_\text{sf} \omega-i\zeta  \right) J_s'e^{i(kx-\omega t)}:=\left( J_s^{\tau_\text{sf}} -iJ_s^{\zeta} \right) e^{i(kx-\omega t)}
+.\end{equation}
+ここで$\kappa_t y\ll 1$という表面付近のスピン流を考えるとすれば、$J_s'$ は$y$ に比例した形で次のように与えられる。
+\begin{equation}
+\label{eq:110}
+	J_s' \simeq \frac{\hbar\sigma\omega^3u_0}{ec_t^2}\left( 1+\frac{\kappa_t^2\lambda_s^2}{1-\xi^2} \right) ^{-1 /4} \frac{\sqrt{1-\xi^2} }{\xi}\frac{y}{\lambda_s}
+.\end{equation}
+ここに$\lambda_s=\sqrt{D \tau_\text{sf} } $ はスピン拡散長である。
+\eqref{eq:109}から見て取れるように、生成されるスピン流は$J_s^{\tau_\text{sf} }$ と記した$\tau_\text{sf} $に比例するの項と、
+$J_s^{\zeta}$ と記した$\zeta$ に比例する項がありそれぞれ\eqref{eq:108}の渦度の時間微分と渦度それ自身に比例する項である。
+もしも前者の機構が支配的であるとすれば、これは$\tau_\text{sf} $に比例するためにスピン軌道相互作用(SOI)が弱く、散乱が起こりにくい材料がスピン流生成に有利であることを表している。
+一方で後者の機構の$\zeta$ に比例するスピン流生成のSOIの寄与についてははっきりとわかってはいない。
+さらに
+\eqref{eq:109}\eqref{eq:110}からSVC由来のスピン流強度は角周波数$\omega$ の3乗ないしは4乗に比例するということがわかる。
+すなわち高い周波数の波を励起するほど、より高いスピン流強度が得られることを示している。
 \section{磁気共鳴}
+SVCによって生成したスピン流が強磁性体に流れ込むと後述するスピントランスファートルクによりスピン波が励起される。本実験ではここに外部磁場をかけて磁気共鳴を起こすことでスピン流を検出した。
 \subsection{LLG方程式}
+
 \subsection{強磁性共鳴}
 \subsection{スピン波共鳴}
 \chapter{実験方法}
@@ -92,5 +835,10 @@
 \chapter{考察}
 \chapter{まとめ}
 \chapter{謝辞}
+
+
+\bibliographystyle{jplain}
+\bibliography{bib}
+\nocite{st,Peskin,spin_oxford}
 
 \end{document}
