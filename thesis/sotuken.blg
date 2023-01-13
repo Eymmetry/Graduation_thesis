@@ -3,47 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: sotuken.aux
 The style file: jplain.bst
 Database file #1: bib.bib
+Warning--empty journal in ku
 Warning--empty journal in st
-You've used 9 entries,
+You've used 14 entries,
             2620 wiz_defined-function locations,
-            660 strings with 6125 characters,
-and the built_in function-call counts, 4186 in all, are:
-= -- 357
-> -- 203
+            686 strings with 6602 characters,
+and the built_in function-call counts, 5592 in all, are:
+= -- 475
+> -- 243
 < -- 11
-+ -- 84
-- -- 74
-* -- 248
-:= -- 595
-add.period$ -- 30
-call.type$ -- 9
-change.case$ -- 63
++ -- 101
+- -- 86
+* -- 294
+:= -- 814
+add.period$ -- 49
+call.type$ -- 14
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 222
-empty$ -- 286
-format.name$ -- 111
-if$ -- 954
+cite$ -- 16
+duplicate$ -- 313
+empty$ -- 426
+format.name$ -- 129
+if$ -- 1275
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 12
-newline$ -- 48
-num.names$ -- 18
-pop$ -- 88
+int.to.str$ -- 14
+missing$ -- 21
+newline$ -- 73
+num.names$ -- 28
+pop$ -- 136
 preamble$ -- 1
-purify$ -- 55
+purify$ -- 71
 quote$ -- 0
-skip$ -- 217
+skip$ -- 288
 stack$ -- 0
-substring$ -- 114
-swap$ -- 73
+substring$ -- 139
+swap$ -- 74
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 30
-warning$ -- 1
-while$ -- 24
-width$ -- 10
-write$ -- 104
-is.kanji.str$ -- 114
-(There was 1 warning)
+type$ -- 42
+warning$ -- 2
+while$ -- 34
+width$ -- 16
+write$ -- 161
+is.kanji.str$ -- 155
+(There were 2 warnings)

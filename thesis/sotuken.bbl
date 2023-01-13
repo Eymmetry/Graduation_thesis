@@ -1,9 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{st}
-Saito Keiji.
-\newblock fluidndj and elastic mechanics lecture note.
-\newblock 2022.
+\bibitem{alma990023076750204034}
+Stephen Blundell.
+\newblock {\em Magnetism in condensed matter}.
+\newblock Oxford master series in condensed matter physics. Oxford University
+  Press, Oxford ;, 2001.
 
 \bibitem{PhysRevLett.119.077202}
 D.~Kobayashi, T.~Yoshikawa, M.~Matsuo, R.~Iguchi, S.~Maekawa, E.~Saitoh, and
@@ -11,6 +12,11 @@ D.~Kobayashi, T.~Yoshikawa, M.~Matsuo, R.~Iguchi, S.~Maekawa, E.~Saitoh, and
 \newblock Spin current generation using a surface acoustic wave generated via
   spin-rotation coupling.
 \newblock {\em Phys. Rev. Lett.}, Vol. 119, p. 077202, Aug 2017.
+
+\bibitem{ku}
+Yuki Kurimune.
+\newblock Master thesis.
+\newblock 2019.
 
 \bibitem{PhysRevB.102.174413}
 Yuki Kurimune, Mamoru Matsuo, Sadamichi Maekawa, and Yukio Nozaki.
@@ -45,10 +51,30 @@ Maekawa Sadamichi, Sergio O.Valenzuela, Saitoh Eiji, and Kimura Takashi.
 \newblock Series on semiconductor science and technology ; 22. Oxford
   University Press, Oxford, second edition. edition, 2017.
 
+\bibitem{st}
+Keiji Saito.
+\newblock fluid and elastic mechanics lecture note.
+\newblock 2022.
+
 \bibitem{TakahashiR2016Shg}
 R~Takahashi, M~Matsuo, M~Ono, K~Harii, H~Chudo, S~Okayasu, J~Ieda, S~Takahashi,
   S~Maekawa, and E~Saitoh.
 \newblock Spin hydrodynamic generation.
 \newblock {\em Nature physics}, Vol.~12, No.~1, pp. 52--56, 2016.
+
+\bibitem{alma990023937250204034}
+齊藤英治, 村上修一.
+\newblock スピン流とトポロジカル絶縁体 : 量子物性とスピントロニクスの発展.
+\newblock 基本法則から読み解く物理学最前線 ; 1. 共立出版, 東京, 2014.
+
+\bibitem{alma9926360528004034}
+太田恵造.
+\newblock 磁気工学の基礎. I, 磁気の物理.
+\newblock 共立全書 ; 200. 共立出版, 東京, 1973.
+
+\bibitem{alma9926360528104034}
+太田恵造.
+\newblock 磁気工学の基礎. II, 磁気の応用.
+\newblock 共立全書 ; 201. 共立出版, 東京, 1973.
 
 \end{thebibliography}

@@ -799,7 +799,7 @@ J_s=\left(\tau_\text{sf} \omega-i\zeta  \right) J_s'e^{i(kx-\omega t)}:=\left( J
 ここで$\kappa_t y\ll 1$という表面付近のスピン流を考えるとすれば、$J_s'$ は$y$ に比例した形で次のように与えられる。
 \begin{equation}
 \label{eq:110}
-	J_s' \simeq \frac{\hbar\sigma\omega^3u_0}{ec_t^2}\left( 1+\frac{\kappa_t^2\lambda_s^2}{1-\xi^2} \right) ^{-1 /4} \frac{\sqrt{1-\xi^2} }{\xi}\frac{y}{\lambda_s}
+	J_s' \simeq -\frac{\hbar^2\sigma\omega^3u_0}{2e^2c_t^2}\left( 1+\frac{\kappa_t^2\lambda_s^2}{1-\xi^2} \right) ^{-1 /4} \frac{\sqrt{1-\xi^2} }{\xi}\frac{y}{\lambda_s}
 .\end{equation}
 ここに$\lambda_s=\sqrt{D \tau_\text{sf} } $ はスピン拡散長である。
 \eqref{eq:109}から見て取れるように、生成されるスピン流は$J_s^{\tau_\text{sf} }$ と記した$\tau_\text{sf} $に比例するの項と、
@@ -812,18 +812,235 @@ $J_s^{\zeta}$ と記した$\zeta$ に比例する項がありそれぞれ\eqref{
 \section{磁気共鳴}
 SVCによって生成したスピン流が強磁性体に流れ込むと後述するスピントランスファートルクによりスピン波が励起される。本実験ではここに外部磁場をかけて磁気共鳴を起こすことでスピン流を検出した。
 \subsection{LLG方程式}
+原子の磁気モーメント$\bm{\mu}$は原子の角運動量$\bm{L}$に比例し平行もしくは反平行になる。電子の場合には反平行となり
+\begin{equation}
+\label{eq:111}
+	\bm{\mu}=-\gamma \bm{L}
+\end{equation}
+と書かれる。ここで$\gamma$ は磁気回転比と呼ばれる量であり、
+\begin{equation}
+\label{eq:112}
+	\gamma=\frac{g\mu_0e}{2m}
+\end{equation}
+で表される。ここに$g>0$ は$g$ 因子であり電子スピンの場合ほぼ$2$ である。$\mu_0$ は真空の透磁率、$e>0$ は電気素量、$m$ は電子の質量である。磁気モーメント$\bm{m}$ が外部磁場$\bm{H}$ の中にあるとき、トルク
+\begin{equation}
+\label{eq:113}
+	\bm{T}=\bm{\mu}\times \bm{H}
+\end{equation}
+がかかり、\eqref{eq:111}から磁気モーメントは角運動量を随伴するのでトルク$\bm{T}$ が角運動量変化を生む。すなわち
+\begin{equation}
+\label{eq:114}
+	\frac{d \bm{\mu}}{dt}=-\gamma \bm{\mu}\times \bm{H}
+.\end{equation}
+あるいは単位体積あたりの磁気モーメントである磁化$\bm{M}$ で書くと
+\begin{equation}
+\label{eq:115}
+	\frac{d \bm{M}}{dt}=-\gamma \bm{M}\times \bm{H}
+.\end{equation}
+これは磁化の変化方向が磁化と外部磁場の両方に直交する方向であり、磁化$\bm{M}$が外部磁場$\bm{H}$を軸に歳差運動をすることを表している。
+例えば外部磁場$\bm{B}$を$z$ 軸方向にかけてはじめ磁化$\bm{M}$ が外部磁場から角度$\theta$だけ傾いた状態で$xz$ 平面内にあるとする。
+このときまず
+\eqref{eq:115}は次のようになる。
+\begin{equation}
+\label{eq:116}
+	\dot{M}_x=-\gamma H M_y
+.\end{equation}
+\begin{equation}
+\label{eq:117}
+	\dot{M}_y=\gamma H M_x
+.\end{equation}
+\begin{equation}
+\label{eq:118}
+	\dot{M}_z=0
+.\end{equation}
+これを解くと
+\begin{equation}
+\label{eq:119}
+	M_x(t)=\abs{\bm{M}}\sin \theta \cos (\omega_0 t)
+.\end{equation}
+\begin{equation}
+\label{eq:119}
+	M_y(t)=\abs{\bm{M}}\sin \theta \sin  (\omega_0 t)
+.\end{equation}
+\begin{equation}
+\label{eq:120}
+	M_z(t)=\abs{\bm{M}}\cos \theta
+.\end{equation}
+このように$M_z$は定数であり$M_x,M_y$ は角周波数
+\begin{equation}
+\label{eq:121}
+	\omega_0=\gamma H
+\end{equation}
+で歳差運動していることがわかる。
+しかしながら実際には外部磁場をかけても磁化が傾き角$\theta$ を変えないまま歳差運動し続けるということは起こらず、スピン軌道相互作用などを介した格子系へのエネルギー散逸により回転は減衰し、最終的に磁化$\bm{M}$ は外部磁場$\bm{H}$ の方向に倒れてくる。
+このような緩和項を現象論的に導入した方程式が Landau、Lifshits、 Gilbertによって提案され、次のように書かれる。
+\begin{equation}
+\label{eq:122}
+	\frac{\partial \bm{M}}{\partial t} =-\gamma \bm{M}\times \bm{H}+\frac{\alpha}{M}\left[ \bm{M}\times \frac{\partial \bm{M}}{\partial t}  \right] 
+.\end{equation}
+ここに$\alpha$ はギルバードダンピング定数とよばれ、歳差運動の減衰時定数$\tau$ をもちいて$\alpha\simeq 1 /(\tau\omega_0)=1 /(\tau\gamma H)$\cite{alma9926360528104034}と書かれ、$\alpha$が大きいほど$\tau$ は短くなり急速に減衰することを示している。
+この\eqref{eq:122}をLandau-Lifshits-Gilbert(LLG)方程式という。
+
+さらにこの磁化をもった強磁性体にスピン流が流れ込んだ場合を考える。
+伝導電子のスピン角運動量が強磁性体の磁化に受け渡され磁化が回転する。
+このときの受け渡されるトルクをスピントランスファートルク(Spin Transfer Torque: STT)という。
+角運動量保存に相当する式
+\begin{equation}
+\label{eq:123}
+\frac{\partial }{\partial t} \bm{M}(\bm{r})=-(-\gamma)\mathrm{div}\,\bm{J}_s(\bm{r})=\gamma\,\mathrm{div}\, \bm{J}_s(\bm{r}) 
+\end{equation}
+を強磁性体内で磁化が一様であるとして全体に対して積分すると
+\begin{equation}
+\label{eq:124}
+	\frac{\partial }{\partial t} \int dV \bm{M}=\gamma \int dV \mathrm{div}\, \bm{J}_s
+.\end{equation}
+強磁性体の磁化は一様なので\eqref{eq:124}の左辺は強磁性体の磁気モーメント$\bm{M}V$ の時間変化$\partial \bm{M}V /\partial t$となり、
+右辺は面積分の形に書き換えて
+\begin{equation}
+\label{eq:125}
+	\frac{1}{\gamma}\frac{\partial }{\partial t} (\bm{M}V)=\int dS \bm{J}_S:=\Delta \bm{J}_s
+.\end{equation}
+ここで\eqref{eq:125}右辺の面積分$\Delta \bm{J}_s$ は磁性体に吸収されたスピン流であり、大きさは$\abs{\bm{j}_s}\hbar /2e$で局所的な向きとしてはスピン偏極方向$\bm{\sigma}$ と逆方向を向くベクトルである。スピントランスファートルクは磁化$\bm{M}$ に垂直な成分で磁化を傾ける向き、すなわちdamping-likeな向きのみであると仮定すると
+\begin{equation}
+\label{eq:126}
+	\Delta \bm{J}_{s\perp}=\bm{m}\times (\bm{m}\times \Delta \bm{J}_s)
+.\end{equation}
+ここで$\bm{m}$ は磁化$\bm{M}$ の単位ベクトルである。
+このスピントランスファートルクを含めて書き直したLLG方程式は
+\begin{equation}
+\label{eq:127}
+\frac{\partial \bm{M}}{\partial t} =-\gamma\bm{M}\times \bm{H}+\frac{\alpha}{M}\left[ \bm{M}\times \frac{\partial \bm{M}}{\partial t}  \right] +\bm{\tau}_\text{STT} 
+.\end{equation}
+ただし
+\begin{equation}
+\label{eq:128}
+	\bm{\tau}_{\text{STT} }=C \bm{M}\times (\bm{M}\times \bm{\sigma})
+\end{equation}
+\begin{equation}
+\label{eq:129}
+	C=-\frac{\gamma\hbar g(\theta) \abs{j_s}}{2dM^2e}
+\end{equation}
+であり、$g(\theta)$ はスピン注入効率とよばれスピン分極ベクトル$\bm{\sigma}$と磁化$\bm{M}$とのなす角$\theta$ に依存する量である\cite{ku}。
 
 \subsection{強磁性共鳴}
+強磁性体が磁場$\bm{H}$の中に置かれると磁化はLLG方程式に従い歳差運動しながら緩和していく。ここで$\bm{H}$ に直角に同じ周波数$\omega_0$ の高周波磁場$\bm{h}$ を加えると、磁化は減衰することなく歳差運動を継続する。この歳差運動が空間的に一様で位相差がない場合、この現象を強磁性共鳴(ferromagnetic resonance: FMR)と呼ぶ。FMRを具体的に記述するために$y$ 方向を深さ方向にもつ薄板形強磁性体に、$x$ 方向に静磁場$H$ を、$yz$ 面内に円偏光交流磁場$\bm{h}_\text{rf} =(0,h_y,h_z)$ を印加する場合を考える。
+磁化のダイナミクスは\eqref{eq:122}のLLG方程式に従い
+\begin{equation}
+\label{eq:130}
+	\frac{\partial \bm{M}}{\partial t} =-\gamma\bm{M}\times \bm{H}_\text{eff}-\gamma \bm{M}\times \bm{h}_\text{rf} +\frac{\alpha}{M_s}\left[ \bm{M}\times \frac{\partial \bm{M}}{\partial t}  \right] 
+.\end{equation}
+ここで$\bm{H}_\text{eff} $ は有効磁場であり、実際に磁化$\bm{M}$ に働く磁場は外部磁場の他にいくつかの磁場を含むが、ここでは異方性磁場などは本実験で用いた$\ce{NiFe}$の場合には小さいとして反磁場$H_\text{d} $ のみを取り出して
+\begin{equation}
+\label{eq:131}
+	\bm{H}_\text{eff} =\bm{H}+\bm{H}_d=\begin{pmatrix} H\\0\\0 \end{pmatrix} -\begin{pmatrix} N_x\\N_y\\N_z \end{pmatrix} \frac{\bm{M}}{\mu_0}
+.\end{equation}
+ここで$N_x,N_y,N_z$ は$N_x+N_y+N_z=1$ をみたす反磁場係数であり、$y$ 方向を深さ方向にもつ薄膜では$N_x,N_z\ll N_y\simeq 1$となる。
+円偏向交流磁場$\bm{h}_\text{rf} $ 及び磁化$\bm{M}$ が角振動数$\omega$ で振動すると仮定し、それぞれ
+\begin{equation}
+\label{eq:132}
+	\bm{h}_\text{rf} =\begin{pmatrix} 0\\h_y\\h_z \end{pmatrix} = \begin{pmatrix} 0\\h_{y0}e^{i\omega t}\\-ih_{z 0}e^{i\omega t} \end{pmatrix} 
+,\end{equation}
+\begin{equation}
+\label{eq:133}
+	\bm{M} =\begin{pmatrix} m_x\\m_y\\m_z \end{pmatrix} = \begin{pmatrix} M_s\\m_{y0}e^{i\omega t}\\-im_{z 0}e^{i\omega t} \end{pmatrix} 
+\end{equation}
+とおく。まず共鳴周波数$\omega_\text{res} $ と静磁場$H$ との関係を導く。\eqref{eq:130}において交流磁場の寄与である第二項が緩和項である第三項を打ち消すと考えることができ、\eqref{eq:132}\eqref{eq:133}を代入して$y,z$ 成分を整理すると
+\begin{equation}
+\label{eq:134}
+\begin{pmatrix} -i \omega_\text{res}  /\gamma&-H-(N_z-N_x) M_s /\mu_0 \\ H+(N_y-N_x) M_s /\mu_0 & -i \omega_\text{res} /\gamma\end{pmatrix} \begin{pmatrix} m_y \\ m_z \end{pmatrix} =0
+\end{equation}
+を得る。$m_y,m_z$が非自明な解を持つことから以下が導かれる。
+\begin{equation}
+\label{eq:135}
+	\omega_\text{res} =\gamma \sqrt{\left( H+(N_z-N_x) \frac{M_s}{\mu_0} \right)\left( H+(N_y-N_x) \frac{M_s}{\mu_0} \right)  } 
+.\end{equation}
+\eqref{eq:135}はKittelの式とよばれる。
+
+FMRにおけるエネルギー吸収については\eqref{eq:130}\eqref{eq:131}に\eqref{eq:132}\eqref{eq:133}を代入し、$m_y,m_z$ について整理すると
+\begin{equation}
+\label{eq:136}
+\begin{pmatrix} m_y\\m_z \end{pmatrix} =\frac{\gamma M_s}{(\gamma H-i\alpha\omega+\gamma M_s /\mu_0)(\gamma H-i\alpha\omega)-\omega^2}\begin{pmatrix} \gamma H-i\alpha\omega&-i\omega\\i\omega &\gamma H-i\alpha\omega+\gamma M_s /\mu_0\end{pmatrix} \begin{pmatrix} h_y\\h_z \end{pmatrix} 
+.\end{equation}
+ただし十分に薄い薄膜を仮定し$N_x=N_z=0,\quad N_y=1$とした。
+これを以下のように書き直す。
+\begin{equation}
+\label{eq:137}
+\begin{pmatrix} m_y\\m_z \end{pmatrix} :=\begin{pmatrix} \chi_{yy}&i\kappa\\-i\kappa&\chi_{zz} \end{pmatrix} \begin{pmatrix} h_y\\h_z \end{pmatrix} 
+.\end{equation}
+このように交流磁場に対する磁化の応答を表したとき、$\chi_{yy}=\chi_{yy}'-i\chi_{yy}''$, $\chi_{zz}=\chi_{zz}'-i\chi_{zz}''$, $\kappa=\kappa'-i\kappa''$ は複素磁化率と呼ばれ、$\alpha^2\ll 1$ の過程を用いて以下のように計算できる\cite{ku}。
+\begin{align}
+	\chi_{yy}'&= \frac{\gamma^2M_s\left[ (\omega_\text{res} ^2-\omega^2)H+\alpha^2\omega^2(H+M_s /\mu_0) \right] }{\left[ \omega^2_\text{res} -\omega^2 \right] ^2+\left[ \alpha\gamma\omega(2H+M_s /\mu_0) \right]^2 } \\
+	\chi_{yy}''&=\frac{\alpha\gamma M_s\omega\left[ (\gamma H)^2+\omega^2 \right] }{\left[ \omega^2_\text{res} -\omega^2 \right] ^2+\left[ \alpha\gamma\omega(2H+M_s /\mu_0) \right] ^2}\\
+	\chi'_{zz}&= \frac{\gamma^2M_s\left[ (\omega^2_\text{res} -\omega^2)(H+M_s /\mu_0)+\alpha^2\omega^2H \right] }{\left[ \omega^2_\text{res} -\omega^2 \right] ^2+\left[ \alpha\gamma\omega(2H+M_s /\mu_0) \right]^2 } \\
+	\chi''_{zz}&= \frac{\alpha\gamma M_s\omega\left[ (\gamma H+\gamma M_s /\mu_0)^2+\omega^2 \right] }{\left[ \omega^2_\text{res} -\omega^2 \right] ^2+\left[ \alpha\gamma\omega(2H+M_s /\mu_0) \right]^2 } \\
+	\kappa'&= \frac{\gamma M_s \omega\left[ \omega^2_\text{res}-\omega^2  \right] }{\left[ \omega^2_\text{res} -\omega^2 \right] ^2+\left[ \alpha\gamma\omega(2H+M_s /\mu_0) \right] ^2} \\
+	\kappa''&= \frac{\alpha\gamma M_s \omega^2\left[ 2\gamma H +\gamma M_s/\mu_0 \right] }{\left[ \omega^2_\text{res} -\omega^2 \right] ^2+\left[ \alpha\gamma\omega(2H+M_s /\mu_0) \right] ^2} 
+.\end{align}
+以上の結果からFMRによって磁化が交流磁場から吸収する単位時間、単位体積あたりのエネルギーは以下のように計算できる\cite{ku}。
+\begin{equation}
+\label{eq:147}
+	P_\text{FMR} =\frac{\omega}{2\pi }\int_{0}^{2\pi  /\omega}  \left[ \Im(\bm{H}_\text{eff}) \cdot \Im\left( \frac{\partial \bm{M}}{\partial t}  \right)   \right] dt=\frac{\omega}{2}\left[ \chi_{y}''h^2_{y0}+2\kappa'' h_{y0}h_{z 0}+\chi_{zz}''h^2_{z 0} \right] 
+.\end{equation}
+つまり磁化が吸収するエネルギーは複素磁化率の虚部によって決まり、周波数に関してLorentz関数形となる。
+
+なお$\kappa''$ に比例する交差項は\eqref{eq:132}\eqref{eq:133}
+で仮定したように交流磁場が円偏向磁場である場合に生じるエネルギー吸収であり、$h_y$ と$h_z$が同位相であるような直線偏向磁場である場合にはゼロになる。
+
 \subsection{スピン波共鳴}
+前節では磁化が一様ですべてのスピンが同位相で歳差運動する場合を考えたがこのような場合はむしろ特別であり、もしひとつのスピンが他と少しずれてしまったとすると隣のスピンは交換相互作用で平行になろうとしているためにこれもズレることになる。このズレは隣から隣へと伝わってゆき、このようにスピンすなわち磁化が位相をずらしながら歳差運動をするような現象をスピン波とよび、スピン波による磁気共鳴をスピン波共鳴(spin wave resonance: SWR)という。スピン波を記述するのに通常の波動と同じく波数ベクトル$\bm{k}$ を導入する。今$y$ 方向に深さをもつ薄膜で$x$ 方向に静磁場$H$ を印加し、同じく$x$ 方向に波数$k$ で伝搬するスピン波が励起されている場合を考える。このような静磁場とスピン波の波数ベクトルが平行なスピン波を後退体積波(backward volume wave: BVW)という。
+BVWが励起されるとき、ある位置での磁化のダイナミクスは\eqref{eq:122}のLLG方程式に従い次のように表される。
+\begin{equation}
+\label{eq:148}
+	\frac{\partial \bm{M}}{\partial t} =-\gamma \bm{M}\times \bm{H}_\text{eff} +\frac{\alpha}{M_s}\left[ \bm{M}\times \frac{\partial \bm{M}}{\partial t}  \right] 
+.\end{equation}
+ここで$\bm{H}_\text{eff} $ は\eqref{eq:130}\eqref{eq:131}のLLG方程式から磁化の間に働く交換磁場$\bm{h}_\text{ex} $ と双極子磁場$\bm{h}_\text{di} $ が付け加わって次のように書ける\cite{ku}。
+\begin{align*}
+\label{eq:149}
+	\bm{H}_\text{eff} &=\bm{H}+\bm{H}_\text{d} +\bm{h}_\text{rf} +\bm{h}_\text{ex} +\bm{h}_\text{di}\\
+					  &=\begin{pmatrix} H\\0\\0 \end{pmatrix} +\begin{pmatrix} 0\\-M_s /\mu_0\\0 \end{pmatrix} +\begin{pmatrix} 0 \\ h_y \\h_z \end{pmatrix} +\frac{2A}{M_s^2}\nabla ^2\bm{M}+\nabla \int_{}^{} \frac{\nabla '\cdot \bm{M}(\bm{r}')}{\abs{\bm{r}-\bm{r}}'}d\bm{r}'
+					  \stepcounter{equation}\tag{\theequation} 
+.\end{align*}
+ここで$A$ は交換定数であり、$N_x=N_z=0,\quad N_y=1$とした。
+$x$ 方向に波数$k$ で伝搬するスピン波としての解は
+\begin{equation}
+\label{eq:150}
+	\bm{M}=\begin{pmatrix} m_x\\m_y\\m_z \end{pmatrix} =\begin{pmatrix} M_s\\m_{y 0}(y)e^{-i(kx-\omega t)}\\ -im_{z 0 }(y)e^{-i(kx-\omega t)} \end{pmatrix} 
+.\end{equation}
+のようにおくことができるため、\eqref{eq:148}\eqref{eq:149}に代入すると次のようになる\cite{ku}。
+\begin{equation}
+\label{eq:151}
+	i\omega m_y=-\gamma \left( H+\frac{2A}{M_s^2}\left[ k^2-\frac{\partial ^2}{\partial y^2}  \right]  \right) m_z+\gamma(h_z+h^{z}_\text{di} )M_s-i\alpha\omega m_z
+.\end{equation}
+\begin{equation}
+\label{eq:152}
+	i\omega m_z=\gamma\left( H+\frac{2A}{M_s^2}\left[ k^2-\frac{\partial ^2}{\partial y^2}  \right]  \right) m_y-\gamma\left( h_y+h^{y}_\text{di} -\frac{M_s}{\mu_0} \right) M_s+i\alpha\omega m_y
+.\end{equation}
+これらの方程式を$m_y,m_z$ について解くことによって、BVWの周波数と静磁場の関係式を導くことができ、この関係式はBVWの周波数と波数の関係も記述することからBVWの分散関係と呼ばれる。薄板形強磁性体の膜圧$d$ 十分小さいとして、BVWの分散関係が以下のように求まる\cite{ku}。
+\begin{equation}
+\label{eq:153}
+	\omega_\text{res} =\gamma \sqrt{\left( H+\frac{2A}{M_s}k^2 \right) \left( H+\frac{2A}{M_s}k^2+\frac{M_s}{\mu_0}\frac{1-e^{-kd}}{kd} \right) } 
+.\end{equation}
+なおBVWの波数$k$ が十分小さいとき、交換磁場$2Ak^2 /M_s$ が静磁場$H$ よりも十分小さいため、交換相互作用の寄与を無視できる。このようなBVWを特に静磁後退体積波(magnetostatic backward volume wave: MSVBVW)といい、MSBVWの分散関係は次のようになる。
+\begin{equation}
+\label{eq:154}
+	\omega_\text{res} =\gamma \sqrt{H\left( H+\frac{M_s}{\mu_0}\frac{1-e^{-kd}}{kd} \right) } 
+\end{equation}
+$N_x=N_z=0,\quad N_y=1$ とした\eqref{eq:135}のKittlの式と比較すると実効的な反磁場が$(1-e^{-kd })/kd$ だけ小さくなっていることがわかる。
+また複素磁化率およびMSBVWの励起によるエネルギー吸収についても前節のFMRの場合と同様に計算することができて\cite{ku}
+\begin{equation}
+\label{eq:155}
+	P_\text{MSBVW} =\frac{\omega}{2\pi }\int_{0}^{2\pi /\omega} \left[ \Im(\bm{H}_\text{eff} )\cdot \Im\left( \frac{\partial \bm{M}}{\partial t}  \right)  \right]  dt=\frac{\omega}{2}\left[ \chi_{yy}'' h^2_{y0}+2\kappa'' h_{y 0}h_{z 0}+\chi_{zz}'' h^2_{z 0} \right] 
+.\end{equation}
+ここで複素磁化率は前節のFMRの場合の結果において反磁場$M_s /\mu_0$の部分を$(1-e^{-kd}) /kd$だけ小さくなった実効的な反磁場に置き換えたものである。
 \chapter{実験方法}
 \section{スピン流の検出手法}
-\section{材料}
-\subsection{\ce{LiNbO3}}
-\subsection{\ce{Ni81Fe19}}
-\subsection{\ce{Pt}}
-\subsection{\ce{Mn}}
-\subsection{\ce{Ti}}
-\subsection{\ce{Au}}
+%\section{材料}
+%\subsection{\ce{LiNbO3}}
+%\subsection{\ce{Ni81Fe19}}
+%\subsection{\ce{Pt}}
+%\subsection{\ce{Mn}}
+%\subsection{\ce{Ti}}
+%\subsection{\ce{Au}}
 \section{試料作製}
 \subsection{素子設計}
 \subsection{素子作製}
@@ -839,6 +1056,6 @@ SVCによって生成したスピン流が強磁性体に流れ込むと後述�
 
 \bibliographystyle{jplain}
 \bibliography{bib}
-\nocite{st,Peskin,spin_oxford}
+\nocite{st,Peskin,spin_oxford,alma9926360528004034,alma990023076750204034,alma990023937250204034,ku}
 
 \end{document}
