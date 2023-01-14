@@ -15,19 +15,19 @@
 \contentsline {subsection}{\numberline {2.2.4}スピン渦度結合によるスピン流生成}{15}{subsection.2.2.4}%
 \contentsline {section}{\numberline {2.3}磁気共鳴}{17}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}LLG方程式}{17}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}強磁性共鳴}{18}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}強磁性共鳴}{19}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}スピン波共鳴}{20}{subsection.2.3.3}%
-\contentsline {chapter}{\numberline {第3章}実験方法}{22}{chapter.3}%
-\contentsline {section}{\numberline {3.1}スピン流の検出手法}{22}{section.3.1}%
-\contentsline {section}{\numberline {3.2}試料作製}{22}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}素子設計}{22}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}素子作製}{22}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}測定方法}{22}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}ベクトルネットワークアナライザ測定}{22}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}ゲーティング処理}{22}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}測定系}{22}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {第4章}実験結果}{23}{chapter.4}%
-\contentsline {chapter}{\numberline {第5章}考察}{24}{chapter.5}%
-\contentsline {chapter}{\numberline {第6章}まとめ}{25}{chapter.6}%
-\contentsline {chapter}{\numberline {第7章}謝辞}{26}{chapter.7}%
-\contentsline {chapter}{参考文献}{27}{chapter*.6}%
+\contentsline {subsection}{\numberline {2.3.4}STTによるスピン波共鳴}{21}{subsection.2.3.4}%
+\contentsline {chapter}{\numberline {第3章}実験方法}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}試料作製}{23}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}素子設計}{23}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}素子作製}{23}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}測定方法}{23}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}ベクトルネットワークアナライザ測定}{23}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}ゲーティング処理}{23}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}測定系}{23}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {第4章}実験結果}{24}{chapter.4}%
+\contentsline {chapter}{\numberline {第5章}考察}{25}{chapter.5}%
+\contentsline {chapter}{\numberline {第6章}まとめ}{26}{chapter.6}%
+\contentsline {chapter}{\numberline {第7章}謝辞}{27}{chapter.7}%
+\contentsline {chapter}{参考文献}{28}{chapter*.6}%

@@ -746,6 +746,7 @@ H^{(1 /m)}_e=\frac{\bm{\pi}^2}{2m}-eA_0-(\bm{r}\times \bm{\pi })\cdot \bm{\Omega
 Stern-Gerlachの実験では磁場勾配にそってアップスピンとダウンスピンが分裂し、スピン流をつくる。本実験では表面弾性波の渦度が膜厚方向に減衰していくことを利用して渦度勾配、すなわちSVCによる有効磁場の勾配を作り出し、スピン流を生成した。
 ただしStern-Gerlachの実験と異なるのは、SVCによる渦度勾配は時間的にも空間的にも周期的に変化する交流であるので、生成するスピン流も交流スピン流となる点である。
 \subsection{スピン渦度結合によるスピン流生成}
+\label{sec224}
 スピン渦度結合(SVC)によるスピン流生成を記述するスピン拡散方程式を導く。
 
 格子の力学的回転運動の角周波数である$\bm{\Omega}$ は\eqref{eq:96}、\eqref{eq:98}により
@@ -900,7 +901,7 @@ SVCによって生成したスピン流が強磁性体に流れ込むと後述�
 \label{eq:125}
 	\frac{1}{\gamma}\frac{\partial }{\partial t} (\bm{M}V)=\int dS \bm{J}_S:=\Delta \bm{J}_s
 .\end{equation}
-ここで\eqref{eq:125}右辺の面積分$\Delta \bm{J}_s$ は磁性体に吸収されたスピン流であり、大きさは$\abs{\bm{j}_s}\hbar /2e$で局所的な向きとしてはスピン偏極方向$\bm{\sigma}$ と逆方向を向くベクトルである。スピントランスファートルクは磁化$\bm{M}$ に垂直な成分で磁化を傾ける向き、すなわちdamping-likeな向きのみであると仮定すると
+ここで\eqref{eq:125}右辺の面積分$\Delta \bm{J}_s$ は磁性体に吸収されたスピン流であり、大きさは$\abs{j_s}\hbar /2e$で局所的な向きとしてはスピン偏極方向$\bm{\sigma}$ と逆方向を向くベクトルである。スピントランスファートルクは磁化$\bm{M}$ に垂直な成分で磁化を傾ける向き、すなわちdamping-likeな向きのみであると仮定すると
 \begin{equation}
 \label{eq:126}
 	\Delta \bm{J}_{s\perp}=\bm{m}\times (\bm{m}\times \Delta \bm{J}_s)
@@ -918,10 +919,19 @@ SVCによって生成したスピン流が強磁性体に流れ込むと後述�
 \end{equation}
 \begin{equation}
 \label{eq:129}
-	C=-\frac{\gamma\hbar g(\theta) \abs{j_s}}{2dM^2e}
+	C=-\frac{\gamma\hbar g(\theta) \abs{j_s}}{2dM_s^2e}
 \end{equation}
-であり、$g(\theta)$ はスピン注入効率とよばれスピン分極ベクトル$\bm{\sigma}$と磁化$\bm{M}$とのなす角$\theta$ に依存する量である\cite{ku}。
-
+であり、ここに$d$ は磁性体の膜厚、$M_s$ は飽和磁化である。$g(\theta)$ はスピン注入効率とよばれスピン分極ベクトル$\bm{\sigma}$と磁化$\bm{M}$とのなす角$\theta$ に依存する量で以下のように書ける\cite{ku}。
+\begin{equation}
+\label{eq:s4}
+	g(\theta)=\left[ -4+\frac{(1+P)^3(3+\cos \theta)}{4P^{3 /2}} \right] ^{-1}
+.\end{equation}
+ここで$P$はアップスピンとダウンスピンの数密度 $n_{\uparrow}, n_{\downarrow}$ で
+\begin{equation}
+\label{eq:s5}
+P=\frac{n_{\uparrow}-n_{\downarrow}}{n_{\uparrow}+n_{\downarrow}}
+\end{equation}
+のように定義されるスピン分極率である。
 \subsection{強磁性共鳴}
 強磁性体が磁場$\bm{H}$の中に置かれると磁化はLLG方程式に従い歳差運動しながら緩和していく。ここで$\bm{H}$ に直角に同じ周波数$\omega_0$ の高周波磁場$\bm{h}$ を加えると、磁化は減衰することなく歳差運動を継続する。この歳差運動が空間的に一様で位相差がない場合、この現象を強磁性共鳴(ferromagnetic resonance: FMR)と呼ぶ。FMRを具体的に記述するために$y$ 方向を深さ方向にもつ薄板形強磁性体に、$x$ 方向に静磁場$H$ を、$yz$ 面内に円偏光交流磁場$\bm{h}_\text{rf} =(0,h_y,h_z)$ を印加する場合を考える。
 磁化のダイナミクスは\eqref{eq:122}のLLG方程式に従い
@@ -929,6 +939,7 @@ SVCによって生成したスピン流が強磁性体に流れ込むと後述�
 \label{eq:130}
 	\frac{\partial \bm{M}}{\partial t} =-\gamma\bm{M}\times \bm{H}_\text{eff}-\gamma \bm{M}\times \bm{h}_\text{rf} +\frac{\alpha}{M_s}\left[ \bm{M}\times \frac{\partial \bm{M}}{\partial t}  \right] 
 .\end{equation}
+
 ここで$\bm{H}_\text{eff} $ は有効磁場であり、実際に磁化$\bm{M}$ に働く磁場は外部磁場の他にいくつかの磁場を含むが、ここでは異方性磁場などは本実験で用いた$\ce{NiFe}$の場合には小さいとして反磁場$H_\text{d} $ のみを取り出して
 \begin{equation}
 \label{eq:131}
@@ -1032,8 +1043,27 @@ $N_x=N_z=0,\quad N_y=1$ とした\eqref{eq:135}のKittlの式と比較すると�
 	P_\text{MSBVW} =\frac{\omega}{2\pi }\int_{0}^{2\pi /\omega} \left[ \Im(\bm{H}_\text{eff} )\cdot \Im\left( \frac{\partial \bm{M}}{\partial t}  \right)  \right]  dt=\frac{\omega}{2}\left[ \chi_{yy}'' h^2_{y0}+2\kappa'' h_{y 0}h_{z 0}+\chi_{zz}'' h^2_{z 0} \right] 
 .\end{equation}
 ここで複素磁化率は前節のFMRの場合の結果において反磁場$M_s /\mu_0$の部分を$(1-e^{-kd}) /kd$だけ小さくなった実効的な反磁場に置き換えたものである。
+\subsection{STTによるスピン波共鳴}
+非磁性体(non-magnetic material: NM)と強磁性体(ferromagnetic material: FM)を使って、$y$ 方向を深さ方向にもつNM/FM/NMの3層膜を考える。 NM、FMはそれぞれスピン流生成層、検出層の役割を果たす。ここに$x$ 方向へ伝播するR-SAWが励起されると\ref{sec224}節で述べたように渦度勾配によってNM層に交流スピン流が生成され、FM層に注入される。そうすると\eqref{eq:128}\eqref{eq:129}で荒らされるスピントランスファートルク$\bm{\tau}_\text{SST} $が
+磁化にかかるため、\eqref{eq:154}で表される分散関係を満たす静磁場を印加することによってスピン波が励起される(spin transfer torque spinwave resonance: STT-SWR)。
+スピン流の空間分布がR-SAWの波数に一致するため、このスピン波の波数ベクトルはR-SAWの波数ベクトルに一致する。
+\eqref{eq:128}\eqref{eq:129}で表されるSTTを以下のように変形する。
+\begin{equation}
+\label{eq:156}
+	\bm{\tau}=-\gamma \bm{M}\times \bm{\bm{h}}_\text{STT} 
+.\end{equation}
+\begin{equation}
+\label{eq:157}
+\bm{h}_\text{STT} =\frac{\hbar g(\phi)\abs{j_s}}{2eMd}\bm{M}\times \bm{\sigma}=\frac{\hbar g(\phi)\abs{j_s}}{2eMd}\cos \phi e^{-i(kx-\omega t)}\bm{e}_y
+.\end{equation}
+ここで$\phi$ は$x$ 軸からの面内磁場印加角度であり、本実験の場合$\phi=0$である。$\bm{e}_y$ は$y$ 方向の単位ベクトルである。このようにSTTは深さ方向の有効磁場$\bm{h}_\text{STT} $ として磁化に作用する。従って\eqref{eq:155}より磁化が
+\begin{equation}
+\label{eq:157}
+	P_\text{SWR}= \frac{\omega}{2}\chi_{yy}''\abs{\bm{h}_\text{STT} }^2 \propto \abs{j_s}^2g(\phi)^2\cos ^2\phi
+\end{equation}
+のエネルギーを吸収する。このとき吸収されたエネルギーを透過マイクロ波の減衰として電気的に測定することでスピン流を検出した。なお\eqref{eq:157}より減衰量がスピン流の大きさの2乗に比例するため、スピン流が時間的、空間的に交流でも検出が可能である。
+
 \chapter{実験方法}
-\section{スピン流の検出手法}
 %\section{材料}
 %\subsection{\ce{LiNbO3}}
 %\subsection{\ce{Ni81Fe19}}
