@@ -1073,11 +1073,116 @@ $N_x=N_z=0,\quad N_y=1$ とした\eqref{eq:135}のKittlの式と比較すると�
 %\subsection{\ce{Au}}
 \section{試料作製}
 \subsection{素子設計}
+本実験で用いた素子の概略図を図AAAに示す。
+この素子は圧電基盤(\ce{LiNbO3})と基板上に成膜されたFM、NM層の膜、2つのすだれ状電極(Inter Digital Transducer: IDT)で構成されている。IDTは\ce{Ti}(3)/\ce{Au}(30)によって作製した(ここで括弧内の数字は\si{\nano \metre}単位の膜厚を表し、以下この表記を断りなく用いる)。
+一対のIDT間の距離はAAAであり、櫛幅および櫛間隔$d$は\SI{1}{\micro \metre}、\SI{2}{\micro \metre}、\SI{4}{\micro \metre}で櫛幅と櫛間隔が同じ長さになるように変化させ、櫛の本数は11と17のものを作製した。
+
+また一対のIDTの間にはFM層の膜として\ce{NiFe}を、NM層の膜としてスピンホール角の正負が異なる\ce{Mn}、\ce{Pt}を用いてそれぞれ\ce{Pt}(6)/\ce{NiFe}(20)、\ce{Mn}(6)/\ce{NiFe}(20)、\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)、\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)の1辺\SI{400}{\micro \metre}の正方形の膜を作製した。
+
+IDTは図AAAのように互い違いに櫛が並んでいる。IDTが成膜されている\ce{LiNbO3}は圧電基盤であり、ひずみを与えると電機分極が生じ(圧電効果)、逆に電場を加えるとひずみが生じる(逆圧電効果)。
+このことからIDTの一方を接地し、もう一方を交流電源に接続することで、逆圧電効果により、IDTの構造周期と同じ長さの波長のR-SAWを励起することができる。
+また励起されたR=SAWはFM、NM膜を通過した後、反対側のIDTの圧電効果によって検知できる。このように1対のIDTによってR-SAWを励起、検知する素子を遅延線形表面弾性波という。
 \subsection{素子作製}
+測定に用いた素子はリフトオフ法を用いて作製した。リフトオフ法とは基板上に均一に塗布されたレジストから成膜部分を取り除いた上で金属を蒸着し、後からレジストを剥がすことで基板に任意形状の薄膜を成膜する方法である。この素子作製の工程をAAAAAAに示す。
+\subsubsection{洗浄}
+基板に付着したごみを取り除くため、\ce{LiNbO3}圧電基板をジメチルアセトアミド($\mathrm{ZDMAC}$)、アセトン、2-プロパノール(IPA)の順に浸して10分ずつ超音波洗浄を行った。超音波洗浄後に光学顕微鏡で表面の観察を行い、ごみが付着している場合は綿棒で表面をこすって取り除いた。
+\subsubsection{レジスト塗布}
+洗浄後、窒素ガンで乾燥させた基板に描画用のレジストをスピンコーターを用いて均一に塗布した。電子線描画とレーザー描画では波長が異なるため使用するフォトレジストの種類が異なる。IDTの作製は電子線描画で行い、FM、NM層の膜はマスクレス露光装置PALETを用いて行った。
+まずは洗浄済みの基板を窒素ガンで乾燥させたあと、電子線描画用(EB)レジストを数滴たらし、スピンコーターを使って回転速度\SI{4000}{rpm}、\SI{90}{s}で均一に塗布した。EB用レジストはポジレジストZEP520-AとシンナーZEP-Aを2:1で混合した溶液である。その後シンナー除去や膜固定のために\SI{180}{\degreeCelsius}、\SI{180}{s}
+の条件でプリベイクを行った。さらに圧電基板は絶縁性であり、
+電子線の照射による基板のチャージアップを防ぐために、導電性コロイド(エスペーサー)をレジスト上に数滴垂らし、まず\SI{500}{rpm}、\SI{10}{s}、続いて\SI{1200}{rpm}、\SI{30}{s}の2段階回転で塗布した。
+
+またマスクレス露光装置用のレジストにはAZ P1350を用いて回転速度\SI{2000}{rpm}、\SI{90}{s}で塗布した。レジストの水分の蒸発と膜固定のために\SI{100}{\degreeCelsius}で\SI{90}{s}プリベイクを行った。
+\subsubsection{描画}
+レジストを塗布した基板に電子線を照射し、設計したパターンを描画する手法を電子線描画(EB)という。電子線で照射されたレジスト部分が後述の現像の手順で抜け落ちる。EB装置は電子サイズでの微細なパターンを描画することができるため、ナノサイズのパターン作製が必要なIDTはEB装置を用いた。描画条件を表\ref{tab:1}に示す。
+\begin{table}[H]
+	\centering
+	\caption{EBの描画条件}
+	\label{tab:1}
+	\begin{tabular}{ccc} \hline \hline
+		加速電圧&電流量&ドーズ時間\\ \hline
+		\SI{20}{kV}&\SI{320}{\pico \ampere}&\SI{2.5}{\micro \second} \\ \hline \hline
+	\end{tabular}
+\end{table}
+一方FM、NM層の膜はEBに比べて装置の扱いが容易なマスクレス露光装置を用いて描画した。描画の条件を表\ref{tab:2}に示す。
+\begin{table}[H]
+	\centering
+	\caption{マスクレス露光装置の露光条件}
+	\label{tab:2}
+	\begin{tabular}{cc} \hline \hline
+		LEDパワー&露光時間\\ \hline
+		\SI{26.5}{\%}&\SI{0.5}{\second} \\ \hline \hline
+	\end{tabular}
+\end{table}
+\subsubsection{現像}
+EB描画後の基板をまず超純粋に約\SI{10}{s}浸し、エスペーサーを取り除いた。次に現像液ZED-N50に\SI{210}{s}、最後にリンス(固定液)ZMD-Bに\SI{60}{s}浸して描画部分のレジストを取り除いた。設計通りのパターンが描画されていることを光学顕微鏡で確認した。
+
+マスクレス露光装置で描画した基盤は現像液AZ developerに\SI{25}{s}、リンスとして純粋に\SI{30}{s}浸して描画部分のレジストを取り除き、光学顕微鏡で確認した。
+\subsubsection{蒸着}
+成膜は真空蒸着で行った。蒸着とは金属ターゲットを蒸発させて基板上に成膜する方法である。ターゲットの蒸気圧を上げ、不純物を取り除くために成膜室は高真空に保たれている。
+
+IDTの成膜の際には\ce{Ti},\ce{Au}ターゲットを電子線で加熱、蒸発させて基板上に\ce{Ti}(3)/\ce{Au}(30)を成膜した。
+
+FM、NM層の成膜の際には基板上に\ce{Pt}(6)/\ce{NiFe}(20)、\ce{Mn}(6)/\ce{NiFe}(20)、\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)、\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)を蒸着した。
+\subsubsection{リフトオフ}
+成膜後の基板を有機溶媒に浸し、レジストを溶解することによって基板上には描画した形の薄膜のみが残ることになる。この手順をリフトオフと呼ぶ。レジストが剥がれるまでZDMACに浸して必要に応じて超音波洗浄を行い、その後アセトン、IPAに浸して洗浄した。
 \section{測定方法}
 \subsection{ベクトルネットワークアナライザ測定}
+本実験では被測定回路の高周波特性をベクトルネットワークアナライザ(Vector Network Analyzer: VNA)を用いて調べた。VNAにはPort1とPort2の2つの端子があり、2または1つの端子間の反射信号及び透過信号を測定することができる。VNAが測定できるパラメータはSパラメータとよばれ、本実験ではPort1からPort2への透過信号である$S_{21}$ を測定した。
+信号は位相差と振幅をもった複素数で表示されSパラメータの絶対値$\abs{S}$ をデシベルで表す表記は$\mathrm{LogMag}\,S$とよばれ以下のように表される。
+
+\begin{equation}
+\label{eq:z1}
+	\abs{S}\,\si{\decibel}=10 \log _{10}\left( \frac{\abs{P_\text{out} }\,/\si{\milli \watt}}{\abs{P_\text{in} }\,/\si{\milli \watt}} \right) \quad(\text{電力による表示})
+.\end{equation}
+\begin{equation}
+\label{eq:z2}
+	\abs{S}\,\si{\decibel}=20 \log _{10}\left( \frac{\abs{V_\text{out} }\,/\si{\volt}}{\abs{V_\text{in} }\,/\si{\volt}} \right) \quad(\text{電圧による表示})
+.\end{equation}
+また入力パワーを表す単位として\SI{1}{\milli \watt}を基準としたデシベル表示である\si{dBm}があり、
+\begin{equation}
+\label{eq:z3}
+	\abs{x}\,\si{dBm}=10\log _{10}\left( \frac{\abs{P}\,/\si{\milli \watt}}{1 \,/\si{\milli \watt}} \right) 
+.\end{equation}
+の関係が成り立つ。本実験での入力パワーはすべて$P_\text{in} =\SI{-5}{dBm}=\SI{1e-0.5}{\milli \watt}=\SI{0.32}{\milli \watt}$で行った。
+
+また、本実験では被測定試料に磁場を掃引し、周波数を変えて$S_{21}$ パラメータの変化を測定した。
+\eqref{eq:157}の吸収エネルギーを評価するためにまず次のようなトレース演算を行った。
+\begin{equation}
+\label{eq:z4}
+	\Delta P_{21}(f,H):=\abs{\bm{P}_{21}(f,H)-\bm{P}_{21}(f,H_\text{ref} )}
+.\end{equation}
+ここで$\bm{P}_{21}(f,H)$ は周波数$f$、掃引磁場$H$ における$S_{21}$ パラメータから計算される複素数表示した電力であり、$H_\text{ref} $ は参照磁場であり本実験で用いた\ce{NiFe}の磁化が飽和するのに十分な大きさである$\mu_0 H=\SI{30}{\milli \tesla}$とした。
+このようなトレース演算をすることにより磁場に依存しない信号を取り除くことができる。
+さらにこれを次のように規格化した。
+\begin{equation}
+\label{eq:z5}
+\Delta P^{\text{norm}}(f,H):=\frac{\Delta P_{21}(f,H)}{P_\text{SAW} ^{\text{peak}}(H_\text{ref} )}
+.\end{equation}
+ここで$P_\text{SAW} ^{\text{peak}}(H_\text{ref} )$ は参照磁場$H_\text{ref} $での$\abs{\bm{P}_{21}(f,H_\text{ref} )}$ のpeak強度である。
+
+このようにして得られた$\Delta P^{\text{norm}}(f,H)$ は分子分母がともにR-SAWの振幅$u_0^2$ に比例するため、$u_0$ に依存しなくなる。従って$\Delta P^{\text{norm}}(f,H)$を比較すれば、試料の個体差などによる$u_0$ のばらつきの影響を受けずに定量比較を行うことが可能となる。
 \subsection{ゲーティング処理}
+VNA測定で我々が評価したいのはIDTで励起されたR-SAWが最初にもう一方のIDTに到達した際の減衰量である。しかし実際にはR-SAWよりも十分速く伝わる電磁波やR-SAWの反射波などがあり、これらのノイズを取り除く必要がある。
+そのため本実験ではVNAで測定する周波数依存の信号を高速逆フーリエ変換(inverse fast Fourier transform: IFFT)によって時間依存の信号に変換し、窓関数(window function)をかけてから、高速フーリエ変換(fast Fourier transform: FFT)によってもとの周波数依存の信号に戻すことにより、特定の時間領域の信号、すなわち励起されたR-SAWを最初に検知した時間領域の信号のみを取り出した。このような処理をゲーティング処理と呼ぶ。
+この際用いた窓関数としては
+\begin{equation}
+\label{eq:z6}
+	w(x)=0.54-0.46 \cos 2\pi x\quad(0\le x\le 1)
+\end{equation}
+で表されるhamming窓を用いた。
+このゲーティング処理によって、不要応答である電磁波や多重反射波を取り除くことができる。
 \subsection{測定系}
+本実験における概略図を図AAAに示す。VNAとIDT対をプローブコンタクトによって接続し、IDT1によって励起されたR-SAWが磁性層を通過した後IDT2によって検出される。この際に透過信号である$S_{21}$ パラメータをR-SAWの伝播方向に静磁場を印加しながら測定し、その$S_{21}$ パラメータの変化からSTT-SWR\eqref{eq:157}を検出した。測定条件を表\ref{tab:3}に示す。
+\begin{table}[H]
+	\centering
+	\caption{VNA測定条件}
+	\label{tab:3}
+	\begin{tabular}{ccccc|ccc}\hline \hline
+		開始周波数&終了周波数&周波数点数&入力電力強度&バンド幅&開始磁場&終了磁場&磁場点数\\ \hline 
+		\SI{10}{\mega \hertz}&\SI{2}{\giga \hertz}&3201&\SI{-5}{dBm}&\SI{700}{\hertz}&\SI{30}{\milli \tesla}&\SI{-30}{\milli \tesla}&301\\\hline\hline
+	\end{tabular}
+\end{table}
 \chapter{実験結果}
 \chapter{考察}
 \chapter{まとめ}
