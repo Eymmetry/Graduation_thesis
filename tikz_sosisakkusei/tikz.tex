@@ -1,0 +1,164 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb}
+%¥usepackage{mathpazo}
+\usepackage{amsthm}
+\newtheorem{dfn}{定義}
+\newtheorem{thm}[dfn]{定理}
+\newtheorem{lem}[dfn]{補題}
+%\usepackage{newtxtext,newtxmath}
+%\usepackage[hiresbb]{graphicx}
+%¥図
+\usepackage{bm}
+%¥ボールド体
+\usepackage{slashed}
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{40\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.2in}
+\setlength{\topmargin}{-5pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{23.5cm}
+\addtolength{\footskip}{3mm}
+%\usepackage{mathrsfs}%ラグラジアン
+\usepackage{wrapfig}%¥図の周りに文章を回り込ませる
+\usepackage[dvipdfmx]{graphicx,color}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{intersections,calc,arrows.meta,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage[version=3]{mhchem}
+\usepackage{float}
+\newcommand{\setN}{\mathbb{N}}
+\newcommand{\setZ}{\mathbb{Z}}
+\newcommand{\setQ}{\mathbb{Q}}
+\newcommand{\setR}{\mathbb{R}}
+\newcommand{\setC}{\mathbb{C}}
+\usepackage{physics}
+\usepackage{tcolorbox}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{tikz}
+%\usepackage{gnuplot-lua-tikz}
+\usepackage{subfigure}
+\hypersetup{colorlinks=true}
+\makeatletter
+\@addtoreset{equation}{section}
+\def\theequation{\thesection.\arabic{equation}}
+\makeatother
+\begin{document}
+
+\begin{tikzpicture}
+[
+scale=1.0,
+>=latex,
+inner sep=0pt, outer sep=2pt,
+temple/.style={color=black,opacity=1}
+]
+%\draw[help lines,step=0.25] (0,0) grid (16,9);
+%\foreach \x in {4,8,12}
+%{
+%\draw[red] (\x,0)--(\x,9);
+%}
+%\foreach \x in {3,6}
+%{
+%\draw[blue] (0,\x)--(16,\x);
+%}
+\foreach \x / \y [count=\i] in {0/9,4/9,8/9,12/9,0/6,4/6,8/6,12/6,0/3,4/3,8/3}
+{
+	\coordinate(p\i)at(\x,\y);
+	\node at ($(p\i)+(.25,-.25)$) {\i};
+}
+\foreach \i in {1,2,...,11}
+{
+	\draw[fill=gray!50!blue!10,draw=black] ($(p\i)+(.25,-2.75)$) rectangle ++(3.5,.5) ;
+}
+\foreach \i in {2,3}
+{
+	\draw[fill=blue,draw=black] ($(p\i)+(.25,-2.25)$) rectangle ++(3.5,.5) ;
+}
+
+\foreach \i in {7,8}
+{
+	\draw[fill=pink] ($(p\i)+(.25,-2.25)$) rectangle ++(3.5,.75) ;
+	
+}
+
+\foreach \i in {9,10}
+{
+	\draw[fill=pink] ($(p\i)+(.25,-2.25)$) rectangle ++(1.25,.75) ;
+	\draw[fill=pink] ($(p\i)+(2.5,-2.25)$) rectangle ++(1.25,.75) ;
+	
+}
+
+\foreach \i in {10}
+{
+	\draw[fill=gray] ($(p\i)+(.25,-1.5)$) rectangle ++(1.25,.5) ;
+	\draw[fill=gray] ($(p\i)+(2.5,-1.5)$) rectangle ++(1.25,.5) ;
+}
+
+\foreach \i in {4,5}
+{
+	\draw[fill=blue] ($(p\i)+(.25,-2.25)$) rectangle ++(.25,.5) ;
+	\draw[fill=blue] ($(p\i)+(3.5,-2.25)$) rectangle ++(.25,.5) ;
+	\draw[fill=blue] ($(p\i)+(.75,-2.25)$) rectangle ++(.25,.5) ;
+	\draw[fill=blue] ($(p\i)+(3,-2.25)$) rectangle ++(.25,.5) ;
+	\draw[fill=blue] ($(p\i)+(1.25,-2.25)$) rectangle ++(1.5,.5) ;
+}
+
+\foreach \i in {5}
+{
+	\draw[fill=yellow] ($(p\i)+(.25,-1.75)$) rectangle ++(.25,.25) ;
+	\draw[fill=yellow] ($(p\i)+(3.5,-1.75)$) rectangle ++(.25,.25) ;
+	\draw[fill=yellow] ($(p\i)+(.75,-1.75)$) rectangle ++(.25,.25) ;
+	\draw[fill=yellow] ($(p\i)+(3,-1.75)$) rectangle ++(.25,.25) ;
+	\draw[fill=yellow] ($(p\i)+(1.25,-1.75)$) rectangle ++(1.5,.25) ;
+}
+
+\foreach \i in {5,6,...,11}
+{
+	\draw[fill=yellow] ($(p\i)+(.5,-2.25)$) rectangle ++(.25,.25) ;
+	\draw[fill=yellow] ($(p\i)+(1.,-2.25)$) rectangle ++(.25,.25) ;
+	\draw[fill=yellow] ($(p\i)+(2.75,-2.25)$) rectangle ++(.25,.25) ;
+	\draw[fill=yellow] ($(p\i)+(3.25,-2.25)$) rectangle ++(.25,.25) ;
+}
+
+\foreach \i in {10,11}
+{
+	\draw[fill=gray] ($(p\i)+(1.5,-2.25)$) rectangle ++(1,.5) ;
+}
+
+\foreach \i in {3}
+{
+	\draw[->] ($(p\i)+(.625,-1)$)--++(0,-.75);
+	\draw[->] ($(p\i)+(.625,-1)+(.5,0)$)--++(0,-.75);
+	\draw[->] ($(p\i)+(.625,-1)+(2.25,0)$)--++(0,-.75);
+	\draw[->] ($(p\i)+(.625,-1)+(2.75,0)$)--++(0,-.75);
+	\node at ($(p\i)+(2,-1.375)$){電子線};
+}
+\foreach \i in {8}
+{
+	\draw[->] ($(p\i)+(2,-1)$)--++(0,-.5);
+	\draw[->] ($(p\i)+(2.25,-1)$)--++(0,-.5);
+	\draw[->] ($(p\i)+(1.75,-1)$)--++(0,-.5);
+	\node at ($(p\i)+(2,-1.375)+(1.2,.25)$){レーザー光};
+}
+
+
+\node at ($(p1)+(.5,-.5)$) [right] {洗浄};
+\node at ($(p2)+(.5,-.5)$) [right] {レジスト塗布};
+\node at ($(p3)+(.5,-.5)$) [right] {電子線描画};
+\node at ($(p4)+(.5,-.5)$) [right] {現像};
+\node at ($(p5)+(.5,-.5)$) [right] {Ti/Au蒸着};
+\node at ($(p6)+(.5,-.5)$) [right] {リフトオフ};
+\node at ($(p7)+(.5,-.5)$) [right] {レジスト塗布};
+\node at ($(p8)+(.5,-.5)$) [right] {レーザー描画};
+\node at ($(p9)+(.5,-.5)$) [right] {現像};
+\node at ($(p10)+(.5,-.5)$)[right] {FM,NM蒸着};
+\node at ($(p11)+(.5,-.5)$)[right] {リフトオフ};
+
+\end{tikzpicture}
+
+
+\end{document}
