@@ -1,0 +1,77 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb}
+%¥usepackage{mathpazo}
+\usepackage{amsthm}
+\newtheorem{dfn}{定義}
+\newtheorem{thm}[dfn]{定理}
+\newtheorem{lem}[dfn]{補題}
+%\usepackage{newtxtext,newtxmath}
+%\usepackage[hiresbb]{graphicx}
+%¥図
+\usepackage{bm}
+%¥ボールド体
+\usepackage{slashed}
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{40\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.2in}
+\setlength{\topmargin}{-5pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{23.5cm}
+\addtolength{\footskip}{3mm}
+%\usepackage{mathrsfs}%ラグラジアン
+\usepackage{wrapfig}%¥図の周りに文章を回り込ませる
+\usepackage[dvipdfmx]{graphicx,color}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{intersections,calc,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage[version=3]{mhchem}
+\usepackage{float}
+\newcommand{\setN}{\mathbb{N}}
+\newcommand{\setZ}{\mathbb{Z}}
+\newcommand{\setQ}{\mathbb{Q}}
+\newcommand{\setR}{\mathbb{R}}
+\newcommand{\setC}{\mathbb{C}}
+\usepackage{physics}
+\usepackage{tcolorbox}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{tikz}
+%\usepackage{gnuplot-lua-tikz}
+\usepackage{subfigure}
+\hypersetup{colorlinks=true}
+\makeatletter
+\@addtoreset{equation}{section}
+\def\theequation{\thesection.\arabic{equation}}
+\makeatother
+\begin{document}
+\begin{tikzpicture}
+[
+x={(0.866cm,-0.5cm)}, y={(0.866cm,0.5cm)}, z={(0cm,1cm)},
+scale=1.0,
+>=latex,
+inner sep=0pt, outer sep=2pt,
+temple/.style={color=black,opacity=1},
+axis/.style={thick, ->}
+]
+%\draw[help lines] (0,0) grid (10,10);
+
+ % Frame
+    \coordinate (O) at (0, 0, 0);
+    \coordinate (a) at (-3, -4, 3);
+    \coordinate (b) at (10, -4, 3);
+    \coordinate (c) at (-3, -4, -3);
+    \coordinate (d) at (10, -4, -3);
+    \draw[axis] (O) -- +(14, 0,   0) node [right] {x};
+    \draw[axis] (O) -- +(0,  2.5, 0) node [right] {y};
+    \draw[axis] (O) -- +(0,  0,   2) node [above] {z};
+	\draw[] (a)--(b);
+	\draw[] (c)--(d);
+	
+
+    \draw[thick,dashed] (-2,0,0) -- (O);
+\end{tikzpicture}
+\end{document}
