@@ -50,28 +50,40 @@
 \begin{document}
 \begin{tikzpicture}
 [
-x={(0.866cm,-0.5cm)}, y={(0.866cm,0.5cm)}, z={(0cm,1cm)},
 scale=1.0,
 >=latex,
 inner sep=0pt, outer sep=2pt,
 temple/.style={color=black,opacity=1},
-axis/.style={thick, ->}
 ]
 %\draw[help lines] (0,0) grid (10,10);
+\tikzset{isometricYXZ/.style={x={(1cm,0cm)}, y={(-1.299cm,-0.75cm)}, z={(0cm,1cm)}}}
 
- % Frame
-    \coordinate (O) at (0, 0, 0);
-    \coordinate (a) at (-3, -4, 3);
-    \coordinate (b) at (10, -4, 3);
-    \coordinate (c) at (-3, -4, -3);
-    \coordinate (d) at (10, -4, -3);
-    \draw[axis] (O) -- +(14, 0,   0) node [right] {x};
-    \draw[axis] (O) -- +(0,  2.5, 0) node [right] {y};
-    \draw[axis] (O) -- +(0,  0,   2) node [above] {z};
-	\draw[] (a)--(b);
-	\draw[] (c)--(d);
-	
+  \def \radi{3}
+  \def \x{2}
+  \def \y{2}
+  \def \z{2}
 
-    \draw[thick,dashed] (-2,0,0) -- (O);
+  \begin{scope}[isometricYXZ]
+   % the grid
+   \begin{scope}[color=gray!50, thin]
+    \foreach \xi in {0,...,\radi}{ \draw (\xi,\radi,0) -- (\xi,0,0) -- (\xi,0,\radi); }%
+    \foreach \yi in {1,...,\radi}{ \draw (0,\yi,\radi) -- (0,\yi,0) -- (\radi,\yi,0); }%
+    \foreach \zi in {0,...,\radi}{ \draw (0,\radi,\zi) -- (0,0,\zi) -- (\radi,0,\zi); }%
+   \end{scope}
+
+   \draw[-latex, ultra thick] (0,0,0) -- (4,0,0) node[anchor=west] {Y};%
+   \draw[-latex, ultra thick] (0,0,0) -- (0,4,0) node[anchor=north] {X};%
+   \draw[-latex, ultra thick] (0,0,0) -- (0,0,4) node[anchor=east] {Z};%
+
+   \fill[color=magenta, opacity=0.2] (0,0,0) -- (\x,0,0) -- (\x,\y,0) -- (0,\y,0) -- cycle; %
+   \fill[color=yellow, opacity=0.2] (0,0,0) -- (0,0,\z) -- (0,\y,\z) -- (0,\y,0) -- cycle; %
+   \fill[color=cyan, opacity=0.2] (0,0,0) -- (\x,0,0) -- (\x,0,\z) -- (0,0,\z) -- cycle;
+
+   \draw[color=gray, thick]%
+   (0,\y,\z) -- (\x,\y,\z) -- (\x,\y,0) (\x,\y,\z) -- (\x,0,\z);%
+  \end{scope}
+
+  \shade[ball color=yellow] ($\y*(-1.299cm,-0.75cm)+(\x,\z)$) circle (0.1);%
+
 \end{tikzpicture}
 \end{document}
