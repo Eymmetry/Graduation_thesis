@@ -35,7 +35,16 @@
 \contentsline {chapter}{\numberline {第4章}実験結果}{34}{chapter.4}%
 \contentsline {section}{\numberline {4.1}IDT素子測定結果}{34}{section.4.1}%
 \contentsline {section}{\numberline {4.2}試料測定結果}{37}{section.4.2}%
-\contentsline {chapter}{\numberline {第5章}考察}{38}{chapter.5}%
-\contentsline {chapter}{\numberline {第6章}まとめ}{39}{chapter.6}%
-\contentsline {chapter}{\numberline {第7章}謝辞}{40}{chapter.7}%
-\contentsline {chapter}{参考文献}{41}{chapter*.38}%
+\contentsline {subsection}{\numberline {4.2.1}\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Pt}(40)の測定結果}{38}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}\ce {Pt}(6)/\ce {NiFe}(20)の測定結果}{40}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}\ce {Mn}(6)/\ce {NiFe}(20)の測定結果}{42}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Mn}(40)の測定結果}{44}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}\ce {NiFe}(20)の測定結果}{45}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}試料サンプル間の比較結果}{47}{section.4.3}%
+\contentsline {chapter}{\numberline {第5章}考察}{48}{chapter.5}%
+\contentsline {section}{\numberline {5.1}\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Pt}(40)と\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Mn}(40)の比較}{48}{section.5.1}%
+\contentsline {section}{\numberline {5.2}\ce {Pt}(6)/\ce {NiFe}(20)と\ce {Mn}(6)/\ce {NiFe}(20)の比較}{49}{section.5.2}%
+\contentsline {section}{\numberline {5.3}\ce {NiFe}(20)単層とその他の試料の比較}{49}{section.5.3}%
+\contentsline {chapter}{\numberline {第6章}結論}{50}{chapter.6}%
+\contentsline {chapter}{\numberline {第7章}謝辞}{51}{chapter.7}%
+\contentsline {chapter}{参考文献}{52}{chapter*.59}%

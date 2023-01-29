@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{PhysRevLett.101.036601}
+K.~Ando, S.~Takahashi, K.~Harii, K.~Sasage, J.~Ieda, S.~Maekawa, and E.~Saitoh.
+\newblock Electric manipulation of spin relaxation using the spin hall effect.
+\newblock {\em Phys. Rev. Lett.}, Vol. 101, p. 036601, Jul 2008.
+
 \bibitem{alma990023076750204034}
 Stephen Blundell.
 \newblock {\em Magnetism in condensed matter}.
@@ -56,11 +61,22 @@ Keiji Saito.
 \newblock fluid and elastic mechanics lecture note.
 \newblock 2022.
 
+\bibitem{shi}
+Ryo Shinozaki.
+\newblock Master thesis.
+\newblock 2023.
+
 \bibitem{TakahashiR2016Shg}
 R~Takahashi, M~Matsuo, M~Ono, K~Harii, H~Chudo, S~Okayasu, J~Ieda, S~Takahashi,
   S~Maekawa, and E~Saitoh.
 \newblock Spin hydrodynamic generation.
 \newblock {\em Nature physics}, Vol.~12, No.~1, pp. 52--56, 2016.
+
+\bibitem{PhysRevLett.113.196602}
+Wei Zhang, Matthias~B. Jungfleisch, Wanjun Jiang, John~E. Pearson, Axel
+  Hoffmann, Frank Freimuth, and Yuriy Mokrousov.
+\newblock Spin hall effects in metallic antiferromagnets.
+\newblock {\em Phys. Rev. Lett.}, Vol. 113, p. 196602, Nov 2014.
 
 \bibitem{alma990023937250204034}
 齊藤英治, 村上修一.

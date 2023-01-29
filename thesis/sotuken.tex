@@ -890,7 +890,7 @@ J_s=\left(\tau_\text{sf} \omega-i\zeta  \right) J_s'e^{i(kx-\omega t)}:=\left( J
 \label{eq:110}
 	J_s' \simeq -\frac{\hbar^2\sigma\omega^3u_0}{2e^2c_t^2}\left( 1+\frac{\kappa_t^2\lambda_s^2}{1-\xi^2} \right) ^{-1 /4} \frac{\sqrt{1-\xi^2} }{\xi}\frac{y}{\lambda_s}
 .\end{equation}
-ここに$\lambda_s=\sqrt{D \tau_\text{sf} } $ はスピン拡散長である。
+ここに$\lambda_s=\sqrt{D \tau_\text{sf} } $ はスピン拡散長であり、$\sigma$は電気伝導度である。
 \eqref{eq:109}から見て取れるように、生成されるスピン流は$J_s^{\tau_\text{sf} }$ と記した$\tau_\text{sf} $に比例する項と、
 $J_s^{\zeta}$ と記した$\zeta$ に比例する項がありそれぞれ\eqref{eq:108}の渦度の時間微分と渦度に比例する項である。
 もしも前者の機構が支配的であるとすれば、これは$\tau_\text{sf} $に比例するためにスピン軌道相互作用(SOI)が弱く、散乱が起こりにくい材料がスピン流生成に有利であることを表している。
@@ -1207,7 +1207,7 @@ NM、FMはそれぞれスピン流生成層、検出層の役割を果たす。�
 \subsection{素子設計}
 本実験で用いた素子の概略図を図\ref{fig:IDT}に示す。
 この素子は圧電基盤(\ce{LiNbO3})と基板上に成膜されたFM、NM層の膜、2つのすだれ状電極(Inter Digital Transducer: IDT)で構成されている。IDTは\ce{Ti}(3)/\ce{Au}(30)によって作製した(ここで括弧内の数字は\si{\nano \metre}単位の膜厚を表し、以下この表記を断りなく用いる)。
-一対のIDT間の距離は\SI{460}{\micro \metre}であり、櫛幅および櫛間隔$d$は\SI{1}{\micro \metre}、\SI{2}{\micro \metre}、\SI{4}{\micro \metre}で櫛幅と櫛間隔が同じ長さになるように変化させた。このとき構造周期$\lambda$ はそれぞれ\SI{4}{\micro \metre}、\SI{8}{\micro \metre}、\SI{16}{\micro \metre}である。櫛の本数は11と17のものを作製した。
+一対のIDT間の距離は\SI{460}{\micro \metre}であり、櫛幅および櫛間隔$d$は\SI{1}{\micro \metre}、\SI{2}{\micro \metre}、\SI{4}{\micro \metre}で櫛幅と櫛間隔が同じ長さになるように変化させた。このとき構造周期$\lambda$ はそれぞれ\SI{4}{\micro \metre}、\SI{8}{\micro \metre}、\SI{16}{\micro \metre}である。櫛の本数は11と17のものを作製した(実際の測定ではきれいにスピン波共鳴を観測することの出来る$\lambda=\SI{4}{\micro \metre}$、本数17のIDTを主に使用した)。
 
 また一対のIDTの間にはFM層の膜として\ce{NiFe}を、NM層の膜としてスピンホール角の正負が異なる\ce{Mn}、\ce{Pt}を用いてそれぞれ
 \ce{Pt}(6)/\ce{NiFe}(20)、\ce{Mn}(6)/\ce{NiFe}(20)、\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)、\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)の1辺\SI{400}{\micro \metre}および\ce{NiFe}単層の正方形の膜を作製した。
@@ -1534,8 +1534,9 @@ temple/.style={color=black,opacity=1}
 \end{figure}
 
 \chapter{実験結果}
-\section{IDT素子測定結果}
+\section{IDT素子測定結果}\label{sidt}
 まずNM、FM層を蒸着する前のIDTのみの状態で測定した結果を示す。
+櫛の本数はすべて17で測定したものである。
 
 構造周期$\lambda=\SI{4}{\micro \metre}$ のIDTにおいて、測定した周波数領域での信号に窓関数\eqref{eq:z6}を掛けた後IFFTを施して時間領域信号にしたのが図\ref{fig:figdata-idt17-1time-png}である。
 \begin{figure}[H]
@@ -1552,7 +1553,7 @@ temple/.style={color=black,opacity=1}
 	\label{fig:figdata-idt17-1-png}
 \end{figure}
 図\ref{fig:figdata-idt17-1-png}の青色で示した信号がoriginalの信号(に窓関数を掛けたもの)であり、オレンジで示したのがその信号をゲーティング処理をした後の信号である。
-基本モード以外にその三倍の周波数である三次モードや、少し潰れてはいるものの五次モードの励起されていることがわかる。
+基本モード以外にその三倍の周波数である三次モードや、少し潰れてはいるが五次モードも励起されていることがわかる。
 
 同様に測定した構造周期$\lambda=\SI{8}{\micro \metre}$ のIDTにおける測定結果は図\ref{fig:figdata-idt17-2time-png}、図\ref{fig:figdata-idt17-2-png}のようになった。
 
@@ -1586,7 +1587,7 @@ temple/.style={color=black,opacity=1}
 \end{figure}
 さらに構造周期が大きく波長が長くなった分、励起される波の周波数が小さくなっている。また高次モードは3次モードが潰れているが他の高次モードはきれいに見ることが出来た。
 
-しかしながら本実験では高次モードを利用したスピン波共鳴はうまく観測することが出来ず、基本モードで励起される基本波のみを扱って測定した。
+しかしながら本実験では高次モードを利用したスピン波共鳴はうまく観測することが出来ず、続く\ref{ssokutei}節の結果では基本モードで励起される基本波のみを扱って測定した。またIDTの構造周期が大きい場合にもスピン波共鳴がうまく観測することが出来なかったため、構造周期が$\lambda=\SI{4}{\micro \metre}$ のIDTのみを使って測定した。
 
 得られた基本モードの周波数を表\ref{tab:nomalmode}に示す。
 \begin{table}[H]
@@ -1601,15 +1602,264 @@ temple/.style={color=black,opacity=1}
 	\end{tabular}
 \end{table}
 
-\section{試料測定結果}
+\section{試料測定結果}\label{ssokutei}
+本実験で測定に用いた試料を表\ref{tab:sample}で示す。
 
+\begin{table}[H]
+	\centering
+	\caption{測定に使用した試料}
+	\label{tab:sample}
+	\begin{tabular}{c|c}\hline \hline
+		試料番号 & 材料構成(括弧内の数値は\si{\nano \metre}表記の膜圧) \\\hline
+	1&\ce{LiNbO3}/\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)\\ \hline
+	2&\ce{LiNbO3}/\ce{Pt}(6)/\ce{NiFe}(20)\\ \hline
+	3&\ce{LiNbO3}/\ce{Mn}(6)/\ce{NiFe}(20)\\ \hline
+	4&\ce{LiNbO3}/\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)\\ \hline
+	5&\ce{LiNbO3}/\ce{NiFe}(20)\\ \hline \hline
+	\end{tabular}
+\end{table}
+\ref{sidt}節の最後で述べたようにこの節での結果はすべて表\ref{tab:idt}のIDT条件で測定した結果である。
+\begin{table}[H]
+	\centering
+	\caption{使用したIDTの構造}
+	\label{tab:idt}
+	\begin{tabular}{c|c|c}\hline \hline
+	櫛本数 &構造周期$\lambda$ /\si{\micro \metre} & 使用モード\\ \hline
+	17 & 4 &基本モード\\ \hline \hline
+	\end{tabular}
+\end{table}
+\subsection{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)の測定結果}
+外部磁場を$\mu_0 H=\SI{30}{\milli \tesla}$印加したときの
+\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)でのIFFTを施した時間領域信号とゲーティング処理後の周波数領域信号を図\ref{fig:k1}に示す。
+\begin{figure}[H]
+	\centering
+	\subfigure[IFFTした時間領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{pppfig/ptpypttime.png}}%
+    \subfigure[ゲーティング処理した周波数領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{pppfig/ptpypt.png}}%
+    \caption{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)での$S_{21}$の測定結果($\mu_0 H=\SI{30}{\milli \tesla}$)}
+    \label{fig:k1}
+\end{figure}
+共鳴周波数のところで$S_{21}\simeq \SI{-40}{dB}$付近でやや小さい値をとっている。
+
+ここで外部磁場を$\mu_0 H=\SI{30}{\milli \tesla}$ から\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)での$\mu_0 H=\SI{-30}{\milli \tesla}$まで変化させて同様の周波数範囲で測定し、\eqref{eq:z5}で表される$\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:pppfig-0120ppp17-1power-png}に示す。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.80\textwidth]{pppfig/ptpyptp.png}
+	\caption{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)での$\Delta P^{\text{norm}}$の測定結果}
+	\label{fig:pppfig-0120ppp17-1power-png}
+\end{figure}
+ここで図\ref{fig:pppfig-0120ppp17-1power-png}の赤点線で示した部分は\eqref{eq:154}で示したMSBVWの分散関係で\ce{NiFe}の飽和磁化$M_s=\SI{1.07}{\tesla}$、強磁性体の膜圧$d=\SI{20}{\nano \metre}$として計算したものである。
+また図\ref{fig:pppfig-0120ppp17-1power-png}において共鳴周波数\SI{0.92}{\giga \hertz}での断面をとった図が図\ref{fig:pppfig-0120ppp17-1danmen-png}である。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{pppfig/0120ppp17-1danmen.png}
+	\caption{\normalsize{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)における共鳴周波数での$\Delta P^{\text{norm}}$の外部磁場依存性}}
+	\label{fig:pppfig-0120ppp17-1danmen-png}
+\end{figure}
+図\ref{fig:pppfig-0120ppp17-1power-png}、図\ref{fig:pppfig-0120ppp17-1danmen-png}でわかるように外部磁場$\mu_0 H=\pm\SI{2}{\milli \tesla}$ 付近でスピン波共鳴が見えていることがわかる。しかしその強度は磁場の正負で異なっており、この傾向は同じ試料を同様に複数回測定しても見られた。
+
+\begin{figure}[H]
+	\centering
+	\subfigure[\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)-1]{%
+        \includegraphics[clip, width=0.33\columnwidth]{pppfig/0119_6ppp17-1danmen.png}}%
+    \subfigure[\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)-2]{%
+        \includegraphics[clip, width=0.33\columnwidth]{pppfig/0120_2ppp17-1danmen.png}}%
+    \subfigure[\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)-3]{%
+        \includegraphics[clip, width=0.33\columnwidth]{pppfig/1208ppp17-1danmen.png}}%
+    \caption{図\ref{fig:pppfig-0120ppp17-1danmen-png}と同様のサンプルを複数回測定した結果}
+    \label{fig:hukusu}
+\end{figure}
+
+
+\subsection{\ce{Pt}(6)/\ce{NiFe}(20)の測定結果}
+
+外部磁場を$\mu_0 H=\SI{30}{\milli \tesla}$印加したときの
+\ce{Pt}(6)/\ce{NiFe}(20)でのIFFTを施した時間領域信号とゲーティング処理後の周波数領域信号を図\ref{fig:k2}に示す。
+\begin{figure}[H]
+	\centering
+	\subfigure[IFFTした時間領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{figdata/ptpytime.png}}%
+    \subfigure[ゲーティング処理した周波数領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{figdata/ptpy.png}}%
+    \caption{\ce{Pt}(6)/\ce{NiFe}(20)での$S_{21}$の測定結果($\mu_0 H=\SI{30}{\milli \tesla}$)}
+    \label{fig:k2}
+\end{figure}
+共鳴周波数で$S_{21}\simeq \SI{-20}{dB}$付近で\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)のときよりは大きな値が得られている。
+$\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:ptpyp}に示す。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.80\textwidth]{figdata/ptpyp.png}
+	\caption{\ce{Pt}(6)/\ce{NiFe}(20)での$\Delta P^{\text{norm}}$の測定結果}
+	\label{fig:ptpyp}
+\end{figure}
+図\ref{fig:ptpyp}において共鳴周波数での断面をとった図が図\ref{fig:ptpyd}である。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figdata/ptpy17-1danmen.png}
+	\caption{\normalsize{\ce{Pt}(6)/\ce{NiFe}(20)における共鳴周波数での$\Delta P^{\text{norm}}$の外部磁場依存性}}
+	\label{fig:ptpyd}
+\end{figure}
+図\ref{fig:ptpyp}、図\ref{fig:ptpyd}をみると磁場の正負でほとんど同じような強度のピークが得られている。
+\subsection{\ce{Mn}(6)/\ce{NiFe}(20)の測定結果}
+
+外部磁場を$\mu_0 H=\SI{30}{\milli \tesla}$印加したときの
+\ce{Mn}(6)/\ce{NiFe}(20)でのIFFTを施した時間領域信号とゲーティング処理後の周波数領域信号を図\ref{fig:k3}に示す。
+\begin{figure}[H]
+	\centering
+	\subfigure[IFFTした時間領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{figdata/mnpytime.png}}%
+    \subfigure[ゲーティング処理した周波数領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{figdata/mnpy.png}}%
+    \caption{\ce{Mn}(6)/\ce{NiFe}(20)での$S_{21}$の測定結果($\mu_0 H=\SI{30}{\milli \tesla}$)}
+    \label{fig:k3}
+\end{figure}
+ここでも\ce{Pt}(6)/\ce{NiFe}(20)のときと同じように共鳴周波数で$S_{21}\simeq \SI{-20}{dB}$付近の大きな値が得られている。
+
+$\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:mnpyp}に示す。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.80\textwidth]{figdata/mnpyp.png}
+	\caption{\ce{Mn}(6)/\ce{NiFe}(20)での$\Delta P^{\text{norm}}$の測定結果}
+	\label{fig:mnpyp}
+\end{figure}
+図\ref{fig:mnpyp}において共鳴周波数での断面をとった図が図\ref{fig:mnpyd}である。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figdata/mnpy17-1danmen.png}
+	\caption{\normalsize{\ce{Mn}(6)/\ce{NiFe}(20)における共鳴周波数での$\Delta P^{\text{norm}}$の外部磁場依存性}}
+	\label{fig:mnpyd}
+\end{figure}
+図\ref{fig:mnpyp}、図\ref{fig:mnpyd}をみると\ce{Pt}(6)/\ce{NiFe}(20)のときと同様に磁場の正負でほとんど同じような強度のピークが得られている。
+
+\subsection{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)の測定結果}
+
+外部磁場を$\mu_0 H=\SI{30}{\milli \tesla}$印加したときの
+\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)でのIFFTを施した時間領域信号とゲーティング処理後の周波数領域信号を図\ref{fig:k4}に示す。
+\begin{figure}[H]
+	\centering
+	\subfigure[IFFTした時間領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{figdata/ptpymntime.png}}%
+    \subfigure[ゲーティング処理した周波数領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{figdata/ptpymn.png}}%
+		\caption{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)での$S_{21}$の測定結果($\mu_0 H=\SI{30}{\milli \tesla}$)}
+    \label{fig:k4}
+\end{figure}
+ここでも共鳴周波数で$S_{21}\simeq \SI{-20}{dB}$付近の大きな値が得られている。
+
+$\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:ptpymnp}に示す。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.80\textwidth]{figdata/ptpymnp.png}
+	\caption{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)での$\Delta P^{\text{norm}}$の測定結果}
+	\label{fig:ptpymnp}
+\end{figure}
+図\ref{fig:ptpymnp}において共鳴周波数での断面をとった図が図\ref{fig:ptpymnd}である。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figdata/ptpymn17-1danmen.png}
+	\caption{\normalsize{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)における共鳴周波数での$\Delta P^{\text{norm}}$の外部磁場依存性}}
+	\label{fig:ptpymnd}
+\end{figure}
+図\ref{fig:ptpymnp}、図\ref{fig:ptpymnd}をみると磁場の正負でほとんど同じような強度のピークが得られており、前の\ce{Pt}(6)/\ce{NiFe}(20)、\ce{Mn}(6)/\ce{NiFe}(20)のときよりも大きな$\Delta P^{\text{norm}}$ の値が得られていることがわかる。
+
+\subsection{\ce{NiFe}(20)の測定結果}
+
+外部磁場を$\mu_0 H=\SI{30}{\milli \tesla}$印加したときの
+\ce{NiFe}(20)単層でのIFFTを施した時間領域信号とゲーティング処理後の周波数領域信号を図\ref{fig:k5}に示す。
+\begin{figure}[H]
+	\centering
+	\subfigure[IFFTした時間領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{figdata/pytime.png}}%
+    \subfigure[ゲーティング処理した周波数領域信号]{%
+        \includegraphics[clip, width=0.5\columnwidth]{figdata/py.png}}%
+		\caption{\ce{NiFe}(20)での$S_{21}$の測定結果($\mu_0 H=\SI{30}{\milli \tesla}$)}
+    \label{fig:k5}
+\end{figure}
+ここでも共鳴周波数で$S_{21}\simeq \SI{-20}{dB}$付近の大きな値が得られている。
+
+$\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:pyp}に示す。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.80\textwidth]{figdata/pyp.png}
+	\caption{\ce{NiFe}(20)での$\Delta P^{\text{norm}}$の測定結果}
+	\label{fig:pyp}
+\end{figure}
+図\ref{fig:pyp}において共鳴周波数での断面をとった図が図\ref{fig:pyd}である。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figdata/py17-1danmen.png}
+	\caption{\normalsize{\ce{NiFe}(20)における共鳴周波数での$\Delta P^{\text{norm}}$の外部磁場依存性}}
+	\label{fig:pyd}
+\end{figure}
+図\ref{fig:pyp}、図\ref{fig:pyd}をみると他の試料に比べてノイズが大きいけれども外部磁場$\mu_0 H=\pm\SI{2}{\milli \tesla}$程度でスピン波共鳴が観測できた。ただし、その$P^{\text{norm}}$ の値は\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)の試料を除いた他の試料よりも大きな値となっている。
+
+\section{試料サンプル間の比較結果}
+最後に測定した試料における$\Delta P^{\text{norm}}$ のピーク値を図\ref{fig:pppfig-0120ppp17-1danmen-png}、図\ref{fig:ptpyd}、図\ref{fig:mnpyd}、図\ref{fig:ptpymnd}、図\ref{fig:pyd}、の断面プロットからその左右のピーク及び平均ピークを算出して試料ごとにプロットした図が図\ref{fig:figdata-p-sample-png}である。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figdata/psam.png}
+	\caption{試料ごとの$\Delta P^{\text{norm}}$ のピーク強度}
+	\label{fig:figdata-p-sample-png}
+\end{figure}
+ここで試料番号は表\ref{tab:sample2}のとおりである。
+\begin{table}[H]
+	\centering
+	\caption{測定に使用した試料}
+	\label{tab:sample2}
+	\begin{tabular}{c|c}\hline \hline
+		試料番号 & 材料構成(括弧内の数値は\si{\nano \metre}表記の膜圧) \\\hline
+	1&\ce{LiNbO3}/\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)\\ \hline
+	2&\ce{LiNbO3}/\ce{Pt}(6)/\ce{NiFe}(20)\\ \hline
+	3&\ce{LiNbO3}/\ce{Mn}(6)/\ce{NiFe}(20)\\ \hline
+	4&\ce{LiNbO3}/\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)\\ \hline
+	5&\ce{LiNbO3}/\ce{NiFe}(20)\\ \hline \hline
+	\end{tabular}
+\end{table}
+\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)の試料で右側のピークと左側のピークの強度に差がある。また\ce{NiFe}(20)単層でのピーク強度が大きくなっていることがわかる。
 \chapter{考察}
-\chapter{まとめ}
+\section{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)と\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40)の比較}
+本実験の目的であるR-SAWによるスピン流生成機構におけるスピン軌道相互作用の寄与については
+図\ref{fig:figdata-p-sample-png}においてサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))とサンプル4(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40))の結果をみると明らかになると思われるが、サンプル1の試料において左右のピーク、すなわち磁場の正負で異なる強度のピークが得られてしまったためにはっきりとスピン軌道相互作用の寄与について結論を述べることは難しい結果となった。もしスピン軌道相互作用の効果がR-SAWによるスピン流生成機構に寄与しているならば、スピンホール角の正負が異なる材料を積んだサンプル4(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40))  の試料のほうがスピンホール角が正である\ce{Pt}を上下に積んだサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))の試料よりも大きなピーク強度が見えるはずであるが、平均値あるいは右側のピーク強度の値をみるかぎり、そのようにはなっていない。逆に左側のピーク強度で比較するとスピン軌道相互作用が効いているかのような振る舞いにみえる。
+
+サンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))で見られたこのような磁場の正負でのピーク強度の違いはShinozakiが測定した結果でも見られているがその結果は磁場の印加角度をスピン波の波数ベクトルの方向からずらした際に生じたものであり、本実験では磁場印加角度はスピン波と同じ方向にとっているのでShinozakiの測定した結果とは異なっているようにみえる\cite{shi}。
+この非相反性が生じてしまった原因としてはサンプルのNM、FM層の膜がきれいに作製出来ていなかったということが考えられる。
+本実験で用いたIDTの構造周期は$\lambda=\SI{4}{\micro \metre}$ と大きめであり、励起されるスピン波の波数が小さいためにFM中の磁化の歳差運動がほぼ同じ位相で周っており、その際には磁性層の体積が共鳴に関与する部分が大きくなるが、今回作製した5つの試料のうち、このサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))だけが磁性層の正方形が剥がれかかっており、アメーバ状になってしまっていた。
+そのために本来であれば左右で同じ強度のピークが得られるはずが何らかの要因で非相反な結果が得られてしまったと思われる。
+また図\ref{fig:k1}からサンプル１(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))の試料のみ他のサンプルと比較して共鳴周波数での$S_{21}$ の値が小さい値となっていることもわかり、これはNM、FM層合わせて\SI{100}{\nano \metre}積んでいて膜圧が厚いためにSAWが潰れてしまったと考えることもできそうであるが、同じ膜圧で測定したサンプル4(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40))では$S_{21}$ の大きさはそれほど小さくなっていないので、やはりサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))の状態があまり良くなかったと思われる。
+
+ただ、Shinozakiが測定した\ce{LiNbO3}/\ce{NiFe}(20)/\ce{Pt}(40)のサンプルでの$\Delta P^{\text{norm}}\times 10^{4}$ は$7.58$ と大きな値をとっておりそれと比べると本実験で得られたサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))での$\Delta P^{\text{norm}}\times 10^{4}$ は$0.186$ と小さな値をとっている。この結果だけみると上下を\ce{Pt}で挟んだサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))ではスピン流生成量が減少してスピン軌道相互作用が寄与していると結論づけることもできそうであるが、Shinozakiが測定したサンプルではIDTの構造周期が\SI{3}{\micro \metre}で\SI{1.3}{\giga \hertz}の基本波を励起しており、本実験のサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))で使用したIDTでの基本波励起周波数\SI{0.92}{\giga \hertz}に比べて大きいものとなっている。
+スピン流生成量は\eqref{eq:109}、\eqref{eq:110}からわかるとおり$\omega$の３乗ないしは4乗に比例するのでその分大きく見積もられているという可能性もある。
+\section{\ce{Pt}(6)/\ce{NiFe}(20)と\ce{Mn}(6)/\ce{NiFe}(20)の比較}
+図\ref{fig:figdata-p-sample-png}のサンプル2(\ce{Pt}(6)/\ce{NiFe}(20))とサンプル3(\ce{Mn}(6)/\ce{NiFe}(20))の結果を比較してみるとサンプル3(\ce{Mn}(6)/\ce{NiFe}(20))の試料のほうが$\Delta P^{\text{norm}}$ の値が大きくなっている。
+ここで\ce{Mn}と\ce{Pt}の電気伝導度を比較すると\ref{tab:mnpt}に示したとおり\ce{Mn}の方が電気伝導度が小さい。
+しかし\eqref{eq:110}で示したように理論的にはスピン流は電気伝導度が大きいほど大きくなる。従って\ce{Mn}をつかったサンプル3(\ce{Mn}(6)/\ce{NiFe}(20))のほうがサンプル2(\ce{Pt}(6)/\ce{NiFe}(20))よりも$\Delta P^{\text{norm}}$ が小さくなると予想されるがそうなっていない。
+この原因として考えられるのは蒸着器で\ce{Pt}を蒸着する際にカーボンハースに穴が空いていたために実際に積まれていた材料にカーボンが混ざっているとしたらアモルファス状のカーボンは電気伝導度\SI{1e3}{\ohm^{-1}\metre ^{-1}}とMnよりもさらに小さいため、この結果の逆転を説明できる。
+
+もしくは
+
+\begin{table}[H]
+	\centering
+	\caption{\ce{Pt}と\ce{Mn}の材料特性}
+	\label{tab:mnpt}
+	\begin{tabular}{c|c|c}\hline \hline
+	 材料&電気伝導度 /$\si{\ohm^{-1}\metre ^{-1}}$ &スピン拡散長 /$\si{\nano \metre}$\\ \hline
+	 Pt&$6.4\times 10^{6}$ \cite{PhysRevLett.101.036601}&7\cite{PhysRevLett.101.036601}\\ \hline
+	 Mn&$6.9\times 10^{5}$&$0.5\sim 1.8$?\cite{PhysRevLett.113.196602} \\ \hline \hline
+	\end{tabular}
+\end{table}
+
+\section{\ce{NiFe}(20)単層とその他の試料の比較}
+\chapter{結論}
 \chapter{謝辞}
 
 
 \bibliographystyle{jplain}
 \bibliography{bib}
-\nocite{st,Peskin,spin_oxford,alma9926360528004034,alma990023076750204034,alma990023937250204034,ku,neko}
+\nocite{st,Peskin,spin_oxford,alma9926360528004034,alma990023076750204034,alma990023937250204034,ku,neko,shi}
 
 \end{document}
