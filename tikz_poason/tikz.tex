@@ -56,7 +56,7 @@ inner sep=0pt, outer sep=2pt,
 temple/.style={color=black,opacity=1},
 ]
 %\draw[help lines] (0,0) grid (10,10);
-\tikzset{isometricYXZ/.style={x={(1cm,0cm)}, y={(-1.299cm,-0.75cm)}, z={(0cm,1cm)}}}
+\tikzset{isometricYXZ/.style={y={(1cm,0cm)}, x={(-1.299cm,-0.75cm)}, z={(0cm,1cm)}}}
 
   \def \radi{3}
   \def \x{2}
@@ -65,25 +65,31 @@ temple/.style={color=black,opacity=1},
 
   \begin{scope}[isometricYXZ]
    % the grid
-   \begin{scope}[color=gray!50, thin]
-    \foreach \xi in {0,...,\radi}{ \draw (\xi,\radi,0) -- (\xi,0,0) -- (\xi,0,\radi); }%
-    \foreach \yi in {1,...,\radi}{ \draw (0,\yi,\radi) -- (0,\yi,0) -- (\radi,\yi,0); }%
-    \foreach \zi in {0,...,\radi}{ \draw (0,\radi,\zi) -- (0,0,\zi) -- (\radi,0,\zi); }%
-   \end{scope}
-
-   \draw[-latex, ultra thick] (0,0,0) -- (4,0,0) node[anchor=west] {Y};%
-   \draw[-latex, ultra thick] (0,0,0) -- (0,4,0) node[anchor=north] {X};%
+%   \begin{scope}[color=gray!50, thin]
+%    \foreach \xi in {0,...,\radi}{ \draw (\xi,\radi,0) -- (\xi,0,0) -- (\xi,0,\radi); }%
+%    \foreach \yi in {1,...,\radi}{ \draw (0,\yi,\radi) -- (0,\yi,0) -- (\radi,\yi,0); }%
+%    \foreach \zi in {0,...,\radi}{ \draw (0,\radi,\zi) -- (0,0,\zi) -- (\radi,0,\zi); }%
+%   \end{scope}
+%
+   \draw[-latex, ultra thick] (0,0,0) -- (3,0,0) node[anchor=north] {X};%
+   \draw[-latex, ultra thick] (0,0,0) -- (0,4,0) node[anchor=north] {Y};%
    \draw[-latex, ultra thick] (0,0,0) -- (0,0,4) node[anchor=east] {Z};%
 
-   \fill[color=magenta, opacity=0.2] (0,0,0) -- (\x,0,0) -- (\x,\y,0) -- (0,\y,0) -- cycle; %
-   \fill[color=yellow, opacity=0.2] (0,0,0) -- (0,0,\z) -- (0,\y,\z) -- (0,\y,0) -- cycle; %
-   \fill[color=cyan, opacity=0.2] (0,0,0) -- (\x,0,0) -- (\x,0,\z) -- (0,0,\z) -- cycle;
+  % \fill[color=magenta, opacity=0.2] (0,0,0) -- (\x,0,0) -- (\x,\y,0) -- (0,\y,0) -- cycle; %
+  % \fill[color=yellow, opacity=0.2] (0,0,0) -- (0,0,\z) -- (0,\y,\z) -- (0,\y,0) -- cycle; %
+  % \fill[color=cyan, opacity=0.2] (0,0,0) -- (\x,0,0) -- (\x,0,\z) -- (0,0,\z) -- cycle;
 
-   \draw[color=gray, thick]%
-   (0,\y,\z) -- (\x,\y,\z) -- (\x,\y,0) (\x,\y,\z) -- (\x,0,\z);%
+   \draw[color=black, thick]%
+   (0,\y,\z) -- (\x,\y,\z) -- (\x,\y,0) (\x,\y,\z) -- (\x,0,\z) 
+   (\x,0,\z)--(0,0,\z)--(0,\y,\z) (\x,0,\z)--(\x,0,0)--(\x,\y,0)--(0,\y,0)--(0,\y,\z) ;%
+
+\draw[red,thick,->] (\x,\y/2,\z/2)--++(\radi/2,0,0) node[above]{$f$};
+\draw[red,thick,->] (0,\y/2,\z/2)--++(-\radi/2,0,0) node[above]{$f$};
+
   \end{scope}
 
-  \shade[ball color=yellow] ($\y*(-1.299cm,-0.75cm)+(\x,\z)$) circle (0.1);%
+  \shade[ball color=red] ($\x*(-1.299cm,-0.75cm)+(\y/2,\z/2)$) circle (0.1);%
+  \shade[ball color=red] ($0*(-1.299cm,-0.75cm)+(\y/2,\z/2)$) circle (0.1);%
 
 \end{tikzpicture}
 \end{document}
