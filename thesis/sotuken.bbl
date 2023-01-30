@@ -5,11 +5,31 @@ K.~Ando, S.~Takahashi, K.~Harii, K.~Sasage, J.~Ieda, S.~Maekawa, and E.~Saitoh.
 \newblock Electric manipulation of spin relaxation using the spin hall effect.
 \newblock {\em Phys. Rev. Lett.}, Vol. 101, p. 036601, Jul 2008.
 
+\bibitem{AndoK2011Isei}
+K~Ando, S~Takahashi, J~Ieda, Y~Kajiwara, H~Nakayama, T~Yoshino, K~Harii,
+  Y~Fujikawa, M~Matsuo, S~Maekawa, and E~Saitoh.
+\newblock Inverse spin-hall effect induced by spin pumping in metallic system.
+\newblock {\em Journal of applied physics}, Vol. 109, No.~10, pp.
+  103913--103913--11, 2011.
+
 \bibitem{alma990023076750204034}
 Stephen Blundell.
 \newblock {\em Magnetism in condensed matter}.
 \newblock Oxford master series in condensed matter physics. Oxford University
   Press, Oxford ;, 2001.
+
+\bibitem{HAN2022164298}
+Fengxuan Han, Wei Du, Mengli Liu, Hua Su, Huaiwu Zhang, Bo~Liu, Hao Meng, and
+  Xiaoli Tang.
+\newblock Effects of ta and pt/ta seed layer on the thermal stability of
+  cofeb/mgo perpendicular magnetic anisotropy film.
+\newblock {\em Journal of Alloys and Compounds}, Vol. 906, p. 164298, 2022.
+
+\bibitem{JedemaF.J2001Esia}
+F.~J Jedema, A.~T Filip, and B.~J van Wees.
+\newblock Electrical spin injection and accumulation at room temperature in an
+  all-metal mesoscopic spin valve.
+\newblock {\em Nature (London)}, Vol. 410, No. 6826, pp. 345--348, 2001.
 
 \bibitem{PhysRevLett.119.077202}
 D.~Kobayashi, T.~Yoshikawa, M.~Matsuo, R.~Iguchi, S.~Maekawa, E.~Saitoh, and
@@ -44,6 +64,12 @@ Mamoru Matsuo, Jun'ichi Ieda, Kazuya Harii, Eiji Saitoh, and Sadamichi Maekawa.
 \newblock Mechanical generation of spin current by spin-rotation coupling.
 \newblock {\em Phys. Rev. B}, Vol.~87, p. 180402, May 2013.
 
+\bibitem{NomuraAkiyo2015Tdoi}
+Akiyo Nomura, Takaharu Tashiro, Hiroyasu Nakayama, and Kazuya Ando.
+\newblock Temperature dependence of inverse rashba-edelstein effect at metallic
+  interface.
+\newblock {\em Applied physics letters}, Vol. 106, No.~21, pp. 212403--, 2015.
+
 \bibitem{Peskin}
 Michael~E. Peskin.
 \newblock {\em An Introduction To Quantum Field Theory}.
@@ -60,6 +86,12 @@ Maekawa Sadamichi, Sergio O.Valenzuela, Saitoh Eiji, and Kimura Takashi.
 Keiji Saito.
 \newblock fluid and elastic mechanics lecture note.
 \newblock 2022.
+
+\bibitem{SaitohE2008Oots}
+E~Saitoh, K~Uchida, S~Takahashi, K~Harii, J~Ieda, W~Koshibae, K~Ando, and
+  S~Maekawa.
+\newblock Observation of the spin seebeck effect.
+\newblock {\em Nature (London)}, Vol. 455, No. 7214, pp. 778--781, 2008.
 
 \bibitem{shi}
 Ryo Shinozaki.
@@ -89,6 +121,11 @@ Wei Zhang, Matthias~B. Jungfleisch, Wanjun Jiang, John~E. Pearson, Axel
   ゲージ場の量子論を学ぶ準備として.
 \newblock 現代数学社, 京都, 2019.
 
+\bibitem{hikansei}
+松尾衛, 齊藤英治, 前川禎通.
+\newblock 非慣性系のスピントロニクス.
+\newblock {\em Nihon Butsuri Gakkaishi}, Vol.~72, No.~9, pp. 641--648, 2017.
+
 \bibitem{alma9926360528004034}
 太田恵造.
 \newblock 磁気工学の基礎. I, 磁気の物理.
@@ -98,5 +135,10 @@ Wei Zhang, Matthias~B. Jungfleisch, Wanjun Jiang, John~E. Pearson, Axel
 太田恵造.
 \newblock 磁気工学の基礎. II, 磁気の応用.
 \newblock 共立全書 ; 201. 共立出版, 東京, 1973.
+
+\bibitem{alma990008478350204034}
+金森順次郎.
+\newblock 磁性.
+\newblock 新物理学シリーズ ; 7. 培風館, 東京, 1969.
 
 \end{thebibliography}

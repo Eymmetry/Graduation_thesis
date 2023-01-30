@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {第1章}序論}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}研究背景}{3}{section.1.1}%
-\contentsline {section}{\numberline {1.2}先行研究}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.2}磁気回転効果を用いたスピン流生成に関する先行研究}{4}{section.1.2}%
 \contentsline {section}{\numberline {1.3}研究目的}{4}{section.1.3}%
 \contentsline {chapter}{\numberline {第2章}原理}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Rayleigh波}{5}{section.2.1}%
@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {2.2}スピン渦度結合によるスピン流生成}{13}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}スピン流}{13}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}スピン蓄積}{14}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}スピン渦度結合}{16}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}スピン渦度結合}{15}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}スピン渦度結合によるスピン流生成}{17}{subsection.2.2.4}%
 \contentsline {section}{\numberline {2.3}磁気共鳴}{20}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}LLG方程式}{20}{subsection.2.3.1}%
@@ -22,12 +22,12 @@
 \contentsline {section}{\numberline {3.1}試料作製}{28}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}素子設計}{28}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}素子作製}{29}{subsection.3.1.2}%
-\contentsline {subsubsection}{洗浄}{29}{section*.20}%
-\contentsline {subsubsection}{レジスト塗布}{29}{section*.21}%
-\contentsline {subsubsection}{描画}{29}{section*.22}%
-\contentsline {subsubsection}{現像}{30}{section*.25}%
-\contentsline {subsubsection}{蒸着}{30}{section*.26}%
-\contentsline {subsubsection}{リフトオフ}{30}{section*.27}%
+\contentsline {subsubsection}{洗浄}{29}{section*.6}%
+\contentsline {subsubsection}{レジスト塗布}{29}{section*.7}%
+\contentsline {subsubsection}{描画}{29}{section*.8}%
+\contentsline {subsubsection}{現像}{30}{section*.9}%
+\contentsline {subsubsection}{蒸着}{30}{section*.10}%
+\contentsline {subsubsection}{リフトオフ}{30}{section*.11}%
 \contentsline {section}{\numberline {3.2}測定方法}{31}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}ベクトルネットワークアナライザ測定}{31}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}ゲーティング処理}{32}{subsection.3.2.2}%
@@ -38,13 +38,15 @@
 \contentsline {subsection}{\numberline {4.2.1}\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Pt}(40)の測定結果}{38}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}\ce {Pt}(6)/\ce {NiFe}(20)の測定結果}{40}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}\ce {Mn}(6)/\ce {NiFe}(20)の測定結果}{42}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Mn}(40)の測定結果}{44}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.4}\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Mn}(40)の測定結果}{43}{subsection.4.2.4}%
 \contentsline {subsection}{\numberline {4.2.5}\ce {NiFe}(20)の測定結果}{45}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}試料サンプル間の比較結果}{47}{section.4.3}%
+\contentsline {section}{\numberline {4.3}層構成の違いによるSTT-SWR励起強度の比較}{46}{section.4.3}%
 \contentsline {chapter}{\numberline {第5章}考察}{48}{chapter.5}%
 \contentsline {section}{\numberline {5.1}\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Pt}(40)と\ce {Pt}(40)/\ce {NiFe}(20)/\ce {Mn}(40)の比較}{48}{section.5.1}%
 \contentsline {section}{\numberline {5.2}\ce {Pt}(6)/\ce {NiFe}(20)と\ce {Mn}(6)/\ce {NiFe}(20)の比較}{49}{section.5.2}%
-\contentsline {section}{\numberline {5.3}\ce {NiFe}(20)単層とその他の試料の比較}{49}{section.5.3}%
-\contentsline {chapter}{\numberline {第6章}結論}{50}{chapter.6}%
-\contentsline {chapter}{\numberline {第7章}謝辞}{51}{chapter.7}%
-\contentsline {chapter}{参考文献}{52}{chapter*.59}%
+\contentsline {section}{\numberline {5.3}\ce {NiFe}(20)単層とその他の試料の比較}{50}{section.5.3}%
+\contentsline {chapter}{\numberline {第6章}結論と今後の展望}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}結論}{51}{section.6.1}%
+\contentsline {section}{\numberline {6.2}今後の展望}{51}{section.6.2}%
+\contentsline {chapter}{参考文献}{52}{chapter*.12}%
+\contentsline {chapter}{謝辞}{54}{chapter*.13}%

@@ -7,8 +7,8 @@
 \usepackage{url}
 \usepackage{braket}
 \usepackage{mathtools}
-\usepackage{caption}
-\captionsetup[figure]{font=large,labelfont=large}
+%\usepackage{caption}
+%\captionsetup[figure]{font=large,labelfont=large}
 %%
 \usepackage{amsthm}
 \usepackage{slashed}
@@ -36,7 +36,7 @@
 \usepackage{pxjahyper}
 \usepackage{tikz}
 \usepackage{subfigure}
-\hypersetup{colorlinks=true}
+%\hypersetup{colorlinks=true}
 %%
 \numberwithin{equation}{chapter}
 \numberwithin{table}{chapter}
@@ -108,11 +108,18 @@
 
 これらの手法はすべて強磁性体、SOIの強い重金属や希少金属を必要とし、これらを用いずにスピン流を生成することはスピントロニクスにおいて重要な課題である。
 
-\section{先行研究}
-近年、ミクロなスピン角運動量とマクロな力学的回転運動との結合であるスピン回転結合(spin-rotation coupling: SRC)によって、スピン軌道相互作用の弱い非磁性金属を用いた新たなスピン流生成理論がMatuoらによって提唱された。Matuoらは表面弾性波(surface acoustic wave: SAW)や流体運動の作る渦度と電子スピンとの相互作用であるスピン渦度結合(spin-vorticity coupling: SVC)を利用して、渦度中でのスピン流生成メカニズムを説明した。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sefig/sefig.001.jpeg}
+	\caption{スピン流生成の概略図: (a)強磁性体からの非局所スピン注入\cite{JedemaF.J2001Esia}(b)スピンゼーベック効果\cite{SaitohE2008Oots}(c)スピンポンピング\cite{AndoK2011Isei}(d)スピンホール効果\cite{AndoK2011Isei}(e)ラシュバエーデルシュタイン効果\cite{NomuraAkiyo2015Tdoi}}
+	\label{fig:sefig-sefig-001-jpeg}
+\end{figure}
 
-このスピン流生成方法は、Kobayasiらが\ce{Cu}/\ce{NiFe}二層膜にRayleigh型表面弾性波(R-SAW)を注入し、実証実験がなされた。
-さらにKurimuneらは\ce{Cu}と\ce{Pt},\ce{Ti}におけるSAWによるSVC由来のスピン流を比較し、SVCを用いたスピン流生成においてSOIの影響は大きくはないと結論づけた。
+\section{磁気回転効果を用いたスピン流生成に関する先行研究}
+近年、ミクロなスピン角運動量とマクロな力学的回転運動との結合であるスピン回転結合(spin-rotation coupling: SRC)によって、スピン軌道相互作用の弱い非磁性金属を用いた新たなスピン流生成理論がMatuoらによって提唱された\cite{PhysRevB.87.180402}。Matuoらは表面弾性波(surface acoustic wave: SAW)や流体運動の作る渦度と電子スピンとの相互作用であるスピン渦度結合(spin-vorticity coupling: SVC)を利用して、渦度中でのスピン流生成メカニズムを説明した。
+
+このスピン流生成方法は、Kobayasiらが\ce{Cu}/\ce{NiFe}二層膜にRayleigh型表面弾性波(R-SAW)を注入し、実証実験がなされた\cite{PhysRevLett.119.077202}。
+さらにKurimuneらは\ce{Cu}と\ce{Pt},\ce{Ti}におけるSAWによるSVC由来のスピン流を比較し、SVCを用いたスピン流生成においてSOIの影響は大きくはないと結論づけた\cite{PhysRevB.102.174413}。
 \section{研究目的}
 先行研究によってSAWによるSVCを介したスピン流生成が実験や理論から報告されているが、このスピン流生成法におけるSOIの寄与については以前として明らかになっていないところも多い。そこで本研究ではスピンホール角が正の材料と負の材料を用いて生成されるスピン流の量を評価することにより、SOIの寄与について調べた。
 \chapter{原理}
@@ -650,7 +657,7 @@ $\xi$ の$\nu$ に関する関数形は図\ref{fig:fig-nu_xi-png}のようにな
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{fig/fig.005.jpeg}
-	\caption{伝導電子の運ぶ電流とスピン流}
+	\caption{伝導電子の運ぶ電流(上図)とスピン流(下図)}
 	\label{fig:fig-fig-005-jpeg}
 \end{figure}
 \subsection{スピン蓄積}
@@ -1117,7 +1124,7 @@ FMRにおけるエネルギー吸収については\eqref{eq:130}\eqref{eq:131}�
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{fig/fig.011.jpeg}
+	\includegraphics[width=0.8\textwidth]{adfig/adfig.001.jpeg}
 	\caption{磁化の歳差運動軸とスピン波の波数ベクトルが平行なBVWの励起}
 	\label{fig:fig-fig-011-jpeg}
 \end{figure}
@@ -1149,7 +1156,7 @@ $x$ 方向に波数$k$ で伝搬するスピン波としての解は
 \label{eq:152}
 	i\omega m_z=\gamma\left( H+\frac{2A}{M_s^2}\left[ k^2-\frac{\partial ^2}{\partial y^2}  \right]  \right) m_y-\gamma\left( h_y+h^{y}_\text{di} -\frac{M_s}{\mu_0} \right) M_s+i\alpha\omega m_y
 .\end{equation}
-これらの方程式を$m_y,m_z$ について解くことによって、BVWの周波数と静磁場の関係式を導くことができ、この関係式はBVWの周波数と波数の関係も記述することからBVWの分散関係と呼ばれる。薄板形強磁性体の膜圧$d$ を十分小さいとして、BVWの分散関係が以下のように求まる\cite{ku}。
+これらの方程式を$m_y,m_z$ について解くことによって、BVWの周波数と静磁場の関係式を導くことができ、この関係式はBVWの周波数と波数の関係も記述することからBVWの分散関係と呼ばれる。薄板形強磁性体の膜厚$d$ を十分小さいとして、BVWの分散関係が以下のように求まる\cite{ku}。
 \begin{equation}
 \label{eq:153}
 	\omega_\text{res} =\gamma \sqrt{\left( H+\frac{2A}{M_s}k^2 \right) \left( H+\frac{2A}{M_s}k^2+\frac{M_s}{\mu_0}\frac{1-e^{-kd}}{kd} \right) } 
@@ -1448,7 +1455,7 @@ temple/.style={color=black,opacity=1}
 \label{eq:z4}
 	\Delta P_{21}(f,H):=\abs{\bm{P}_{21}(f,H)-\bm{P}_{21}(f,H_\text{ref} )}
 .\end{equation}
-ここで$\bm{P}_{21}(f,H)$ は周波数$f$、掃引磁場$H$ における$S_{21}$ パラメータから計算される複素数表示した電力であり、$H_\text{ref} $ は参照磁場であり本実験で用いた\ce{NiFe}の磁化が飽和するのに十分な大きさである$\mu_0 H=\SI{30}{\milli \tesla}$とした。
+ここで$\bm{P}_{21}(f,H)$ は周波数$f$、掃引磁場$H$ における$S_{21}$ パラメータから計算される複素数表示した電力であり、$H_\text{ref} $ は参照磁場であり本実験で用いた\ce{NiFe}の磁化が飽和するのに十分な大きさである$\mu_0 H=\SI{30}{\milli \tesla}$とした(図\ref{fig:sefig-sefig-002-jpeg})。
 このようなトレース演算をすることにより磁場に依存しない信号を取り除くことができる。
 さらにこれを次のように規格化した。
 \begin{equation}
@@ -1458,6 +1465,13 @@ temple/.style={color=black,opacity=1}
 ここで$P_\text{SAW} ^{\text{peak}}(H_\text{ref} )$ は参照磁場$H_\text{ref} $での$\abs{\bm{P}_{21}(f,H_\text{ref} )}$ のpeak強度である。
 
 このようにして得られた$\Delta P^{\text{norm}}(f,H)$ は分子分母がともにR-SAWの振幅$u_0^2$ に比例するため、$u_0$ に依存しなくなる。従って$\Delta P^{\text{norm}}(f,H)$を比較すれば、試料の個体差などによる$u_0$ のばらつきの影響を受けずに定量比較を行うことが可能となる。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{sefig/sefig.002.jpeg}
+	\caption{トレース演算のベクトル表現}
+	\label{fig:sefig-sefig-002-jpeg}
+\end{figure}
 \subsection{ゲーティング処理}
 VNA測定で我々が評価したいのはIDTで励起されたR-SAWが最初にもう一方のIDTに到達した際の減衰量である。しかし実際にはR-SAWよりも十分速く伝わる電磁波(electromagnetic wave: EMW)やR-SAWの多重的な反射により到達した波(triple transit echo: TTE)などがあり、これらのノイズを取り除く必要がある。
 そのため本実験ではVNAで測定する周波数依存の信号を窓関数(window function)をかけてから高速逆フーリエ変換(inverse fast Fourier transform: IFFT)によって時間依存の信号に変換し、、高速フーリエ変換(fast Fourier transform: FFT)によってもとの周波数依存の信号に戻すことにより、特定の時間領域の信号、すなわち励起されたR-SAWを最初に検知した時間領域の信号のみを取り出した。このような処理をゲーティング処理と呼ぶ。
@@ -1545,7 +1559,7 @@ temple/.style={color=black,opacity=1}
 	\caption{$\lambda=\SI{4}{\micro \metre}$におけるIFFTした時間領域信号}
 	\label{fig:figdata-idt17-1time-png}
 \end{figure}
-ここでEMWとTTEによる信号を取り除くために、図\ref{fig:figdata-idt17-1time-png}でオレンジ色に示したR-SAWが初めて到達した部分の信号のみを取り出し、再びFFTによって周波数領域の信号に戻すゲーティング処理を行った結果が図\ref{fig:figdata-idt17-1-png}である。
+ここでEMWとTTEによる信号を取り除くために、図\ref{fig:figdata-idt17-1time-png}でオレンジ色に示したR-SAWが初めて到達した部分の信号のみを取り出し、再びFFTによって周波数領域の信号に戻すゲーティング処理を行った結果が図\ref{fig:figdata-idt17-1-png}である。実際には時間領域での信号の取り出しは図\ref{fig:figdata-idt17-1-png}のゲーティング処理の結果をみて基本波の強度が減衰することなく取り出せた領域を探しておこなった。逆にこの結果とIDT間の距離からSAWの伝達速度を見積もることができ、実際約$\SI{4000}{\metre. s ^{-1}}$と妥当な結果が得られている。
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figdata/idt17-1.png}
@@ -1610,7 +1624,7 @@ temple/.style={color=black,opacity=1}
 	\caption{測定に使用した試料}
 	\label{tab:sample}
 	\begin{tabular}{c|c}\hline \hline
-		試料番号 & 材料構成(括弧内の数値は\si{\nano \metre}表記の膜圧) \\\hline
+		試料番号 & 材料構成(括弧内の数値は\si{\nano \metre}表記の膜厚) \\\hline
 	1&\ce{LiNbO3}/\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)\\ \hline
 	2&\ce{LiNbO3}/\ce{Pt}(6)/\ce{NiFe}(20)\\ \hline
 	3&\ce{LiNbO3}/\ce{Mn}(6)/\ce{NiFe}(20)\\ \hline
@@ -1649,7 +1663,7 @@ temple/.style={color=black,opacity=1}
 	\caption{\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)での$\Delta P^{\text{norm}}$の測定結果}
 	\label{fig:pppfig-0120ppp17-1power-png}
 \end{figure}
-ここで図\ref{fig:pppfig-0120ppp17-1power-png}の赤点線で示した部分は\eqref{eq:154}で示したMSBVWの分散関係で\ce{NiFe}の飽和磁化$M_s=\SI{1.07}{\tesla}$、強磁性体の膜圧$d=\SI{20}{\nano \metre}$として計算したものである。
+ここで図\ref{fig:pppfig-0120ppp17-1power-png}の赤点線で示した部分は\eqref{eq:154}で示したMSBVWの分散関係で\ce{NiFe}の飽和磁化$M_s=\SI{1.07}{\tesla}$、強磁性体の膜厚$d=\SI{20}{\nano \metre}$として計算したものである。
 また図\ref{fig:pppfig-0120ppp17-1power-png}において共鳴周波数\SI{0.92}{\giga \hertz}での断面をとった図が図\ref{fig:pppfig-0120ppp17-1danmen-png}である。
 \begin{figure}[H]
 	\centering
@@ -1798,7 +1812,7 @@ $\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:pyp}に示す�
 \end{figure}
 図\ref{fig:pyp}、図\ref{fig:pyd}をみると他の試料に比べてノイズが大きいけれども外部磁場$\mu_0 H=\pm\SI{2}{\milli \tesla}$程度でスピン波共鳴が観測できた。ただし、その$P^{\text{norm}}$ の値は\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)の試料を除いた他の試料よりも大きな値となっている。
 
-\section{試料サンプル間の比較結果}
+\section{層構成の違いによるSTT-SWR励起強度の比較}
 最後に測定した試料における$\Delta P^{\text{norm}}$ のピーク値を図\ref{fig:pppfig-0120ppp17-1danmen-png}、図\ref{fig:ptpyd}、図\ref{fig:mnpyd}、図\ref{fig:ptpymnd}、図\ref{fig:pyd}、の断面プロットからその左右のピーク及び平均ピークを算出して試料ごとにプロットした図が図\ref{fig:figdata-p-sample-png}である。
 \begin{figure}[H]
 	\centering
@@ -1812,7 +1826,7 @@ $\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:pyp}に示す�
 	\caption{測定に使用した試料}
 	\label{tab:sample2}
 	\begin{tabular}{c|c}\hline \hline
-		試料番号 & 材料構成(括弧内の数値は\si{\nano \metre}表記の膜圧) \\\hline
+		試料番号 & 材料構成(括弧内の数値は\si{\nano \metre}表記の膜厚) \\\hline
 	1&\ce{LiNbO3}/\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)\\ \hline
 	2&\ce{LiNbO3}/\ce{Pt}(6)/\ce{NiFe}(20)\\ \hline
 	3&\ce{LiNbO3}/\ce{Mn}(6)/\ce{NiFe}(20)\\ \hline
@@ -1827,20 +1841,27 @@ $\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:pyp}に示す�
 図\ref{fig:figdata-p-sample-png}においてサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))とサンプル4(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40))の結果をみると明らかになると思われるが、サンプル1の試料において左右のピーク、すなわち磁場の正負で異なる強度のピークが得られてしまったためにはっきりとスピン軌道相互作用の寄与について結論を述べることは難しい結果となった。もしスピン軌道相互作用の効果がR-SAWによるスピン流生成機構に寄与しているならば、スピンホール角の正負が異なる材料を積んだサンプル4(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40))  の試料のほうがスピンホール角が正である\ce{Pt}を上下に積んだサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))の試料よりも大きなピーク強度が見えるはずであるが、平均値あるいは右側のピーク強度の値をみるかぎり、そのようにはなっていない。逆に左側のピーク強度で比較するとスピン軌道相互作用が効いているかのような振る舞いにみえる。
 
 サンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))で見られたこのような磁場の正負でのピーク強度の違いはShinozakiが測定した結果でも見られているがその結果は磁場の印加角度をスピン波の波数ベクトルの方向からずらした際に生じたものであり、本実験では磁場印加角度はスピン波と同じ方向にとっているのでShinozakiの測定した結果とは異なっているようにみえる\cite{shi}。
-この非相反性が生じてしまった原因としてはサンプルのNM、FM層の膜がきれいに作製出来ていなかったということが考えられる。
-本実験で用いたIDTの構造周期は$\lambda=\SI{4}{\micro \metre}$ と大きめであり、励起されるスピン波の波数が小さいためにFM中の磁化の歳差運動がほぼ同じ位相で周っており、その際には磁性層の体積が共鳴に関与する部分が大きくなるが、今回作製した5つの試料のうち、このサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))だけが磁性層の正方形が剥がれかかっており、アメーバ状になってしまっていた。
-そのために本来であれば左右で同じ強度のピークが得られるはずが何らかの要因で非相反な結果が得られてしまったと思われる。
-また図\ref{fig:k1}からサンプル１(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))の試料のみ他のサンプルと比較して共鳴周波数での$S_{21}$ の値が小さい値となっていることもわかり、これはNM、FM層合わせて\SI{100}{\nano \metre}積んでいて膜圧が厚いためにSAWが潰れてしまったと考えることもできそうであるが、同じ膜圧で測定したサンプル4(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40))では$S_{21}$ の大きさはそれほど小さくなっていないので、やはりサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))の状態があまり良くなかったと思われる。
+この非相反性が生じてしまった原因としてはサンプルのNM、FM層の膜がきれいに作製出来ていなかったということが考えられる。なぜならば
+%本実験で用いたIDTの構造周期は$\lambda=\SI{4}{\micro \metre}$ と大きめであり、励起されるスピン波の波数が小さいためにFM中の磁化の歳差運動がほぼ同じ位相で周っており、その際には磁性層の体積が共鳴に関与する部分が大きくなるが、
+今回作製した5つの試料のうち、このサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))だけが磁性層の正方形が剥がれかかっており、アメーバ状になってしまっており、きれいな正方形で残っている他の試料では左右のピークがほとんど同じ強度で見えているからである。
+そのためにこれは材料に依存した本来の結果ではなく通常であれば左右で同じ強度のピークが得られるはずが何らかの要因で非相反な結果が得られてしまったと思われる。
+また図\ref{fig:k1}からサンプル１(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))の試料のみ他のサンプルと比較して共鳴周波数での$S_{21}$ の値が小さい値となっていることもわかり、これはNM、FM層合わせて\SI{100}{\nano \metre}積んでいて膜厚が厚いためにSAWが潰れてしまったと考えることもできそうであるが、同じ膜厚で測定したサンプル4(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Mn}(40))では$S_{21}$ の大きさはそれほど小さくなっていないので、やはりサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))の状態があまり良くなかったと思われる。
 
 ただ、Shinozakiが測定した\ce{LiNbO3}/\ce{NiFe}(20)/\ce{Pt}(40)のサンプルでの$\Delta P^{\text{norm}}\times 10^{4}$ は$7.58$ と大きな値をとっておりそれと比べると本実験で得られたサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))での$\Delta P^{\text{norm}}\times 10^{4}$ は$0.186$ と小さな値をとっている。この結果だけみると上下を\ce{Pt}で挟んだサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))ではスピン流生成量が減少してスピン軌道相互作用が寄与していると結論づけることもできそうであるが、Shinozakiが測定したサンプルではIDTの構造周期が\SI{3}{\micro \metre}で\SI{1.3}{\giga \hertz}の基本波を励起しており、本実験のサンプル1(\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40))で使用したIDTでの基本波励起周波数\SI{0.92}{\giga \hertz}に比べて大きいものとなっている。
 スピン流生成量は\eqref{eq:109}、\eqref{eq:110}からわかるとおり$\omega$の３乗ないしは4乗に比例するのでその分大きく見積もられているという可能性もある。
 \section{\ce{Pt}(6)/\ce{NiFe}(20)と\ce{Mn}(6)/\ce{NiFe}(20)の比較}
 図\ref{fig:figdata-p-sample-png}のサンプル2(\ce{Pt}(6)/\ce{NiFe}(20))とサンプル3(\ce{Mn}(6)/\ce{NiFe}(20))の結果を比較してみるとサンプル3(\ce{Mn}(6)/\ce{NiFe}(20))の試料のほうが$\Delta P^{\text{norm}}$ の値が大きくなっている。
-ここで\ce{Mn}と\ce{Pt}の電気伝導度を比較すると\ref{tab:mnpt}に示したとおり\ce{Mn}の方が電気伝導度が小さい。
+ここで\ce{Mn}と\ce{Pt}の電気伝導度を比較すると表\ref{tab:mnpt}に示したとおり\ce{Mn}の方が電気伝導度が小さい。
 しかし\eqref{eq:110}で示したように理論的にはスピン流は電気伝導度が大きいほど大きくなる。従って\ce{Mn}をつかったサンプル3(\ce{Mn}(6)/\ce{NiFe}(20))のほうがサンプル2(\ce{Pt}(6)/\ce{NiFe}(20))よりも$\Delta P^{\text{norm}}$ が小さくなると予想されるがそうなっていない。
-この原因として考えられるのは蒸着器で\ce{Pt}を蒸着する際にカーボンハースに穴が空いていたために実際に積まれていた材料にカーボンが混ざっているとしたらアモルファス状のカーボンは電気伝導度\SI{1e3}{\ohm^{-1}\metre ^{-1}}とMnよりもさらに小さいため、この結果の逆転を説明できる。
+この原因のひとつとして考えられるのは\ce{Pt}の中にカーボンが混ざってしまっていたということが考えられる。というのも蒸着器で\ce{Pt}を蒸着する際に、カーボンハースと呼ばれる容器にPtを入れてその容器の底に電子銃をあてて蒸着するのであるが、電子銃を当てる際の電流値が大きかったためにハースに穴が空いてしまっていた。そのため、実際に積まれていた材料にカーボンが混ざっているとしたらアモルファス状のカーボンは電気伝導度\SI{1e3}{\ohm^{-1}\metre ^{-1}}とMnよりもさらに小さいため、この結果の逆転を説明できる。
 
-もしくは
+もしくは図\ref{fig:adfig-adfig-002-jpeg}に示すようにNM層の膜厚がちょうど\ce{Mn}の方がスピン流生成が大きくなる条件になっていたということも考えられる。NM層の膜厚が薄い領域ではスピン流が生成される部分の体積が増えるためにスピン流が増大していくが、それ以上膜厚を大きくしてスピン拡散長よりも大きい膜厚にしてしまうとスピンの散乱によってスピン流がFM層に到達しなくなってきてスピン流量が減少していく、\ce{Pt}のスピン拡散長については表\ref{tab:mnpt}に示したとおりで膜厚$d=\SI{6}{\nano \metre}$ よりも大きい。一方で\ce{Mn}単体のスピン拡散長は文献値を調べたが見つけることはできなかった。しかしMnを含んだいくつかの合金でのスピン拡散長は表\ref{tab:mnpt}のような値をとっており、例えばちょうど図\ref{fig:adfig-adfig-002-jpeg}となるような状況を考えると、この膜厚$d$では\ce{Mn}のスピン流の方が大きくなり、したがって$\Delta P^{\text{norm}}$ もサンプル2(\ce{Pt}(6)/\ce{NiFe}(20))よりサンプル3(\ce{Mn}(6)/\ce{NiFe}(20))の方が大きくなっている状況が生じ得ると考えられる。
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{adfig/adfig.002.jpeg}
+	\caption{NM層の膜厚と材料のスピン拡散長}
+	\label{fig:adfig-adfig-002-jpeg}
+\end{figure}
 
 \begin{table}[H]
 	\centering
@@ -1854,12 +1875,51 @@ $\Delta P^{\text{norm}}(f,H)$ を測定した結果を図\ref{fig:pyp}に示す�
 \end{table}
 
 \section{\ce{NiFe}(20)単層とその他の試料の比較}
-\chapter{結論}
-\chapter{謝辞}
+最後に\ce{NiFe}(20)単層において$\Delta P^{\text{norm}}$ が大きくなっていることについて考察する。
+先行研究\cite{ku}によると\ce{NiFe}(20)単層での$\Delta P^{\text{norm}}$ はスピン流生成層であるNM層を加えた場合に比べて小さくなっていた。しかし本実験で得られた結果はそれとは逆の結果を示している。
+先行研究と本実験で異なる部分は先行研究では基板の上にFM層を積んでその上にNM層を積んでいるのに対して本実験では逆に基板の上にNM層を積んでその上に基板を積んでいることである。
+このようにFM層の下に別の非磁性体を敷くと下地効果\cite{HAN2022164298}によってFM層の飽和磁化やダンピング定数といった磁気特性が変化
+しそれが何らかの形で影響を及ぼしていると考えることができる。
+
+さらに先行研究と本実験で異なることとして、
+本実験で用いたIDTは構造周期が$\lambda=\SI{4}{\nano \metre}$と大きく、励起されるSAWの周波数が大きくなっているというのがある。
+先行研究でも\ce{NiFe}(20)単層で測定した結果があるが、このときの$\Delta P^{\text{norm}}\times 10^{4}$の値は30近くあり\cite{ku}、
+本実験で得られた0.16付近の値よりも非常に大きい。他の試料について測定した$\Delta P^{\text{norm}}$ も本実験での値はどれも小さめであり、これはやはりSVCによるスピン流生成機構において\eqref{eq:109}と\eqref{eq:110}からわかるとおりスピン流は周波数の３乗ないしは４乗に比例するため、より大きい基本周波数モードでみたほうがそれだけ$\Delta P^{\text{norm}}$ も大きな値で検出されると考えることができる。
+また高い周波数の波を励起させると\eqref{eq:154}で表される分散関係からより高い磁場でスピン波共鳴が起こるようになることがわかり、そうするとFM層の磁化も飽和しやすくなり、共鳴が見えやすくなると考えることができる。本実験で構造周期が$\lambda=\SI{8,16}{\micro \metre}$の基本波でスピン波が見れなかったのはあまりにも共鳴周波数が小さくその分共鳴する磁場の大きさも小さいので磁化が飽和しきっていなかったと考えることができる。
+\chapter{結論と今後の展望}
+\section{結論}
+本実験ではR-SAWによるスピン流生成機構におけるスピン軌道相互作用の寄与をスピンホール角の正負が異なる材料を磁性層の上下に成膜した場合とスピンホール角がともに正である材料を磁性層の上下に成膜した場合で比較した結果をもとに調べようと試みたものの、後者のサンプルで磁場の正負による共鳴ピーク強度の差が大きく、スピン軌道相互作用の寄与に関する明確な結論を出すことはできなかった。
+
+しかしこれまで観測することができていなかった基板の上にNM層、その上にFM層を成膜した試料でもスピン波共鳴を観測することができた。
+\section{今後の展望}
+今後の展望としてはまず試料サンプルの状態があまり良くなかった\ce{Pt}(40)/\ce{NiFe}(20)/\ce{Pt}(40)の試料を再び作り直して本当に磁場の正負でピーク強度が異なるのかを検証する必要がある。
+また\ce{Mn}のスピンホール角が負であることは文献値から得たものであるが、これはST-FMRによって測定することができるので測定することと、\ce{Mn}単体でのスピン拡散長の文献値が見つけられたなかったのでこれも測る必要がある。
+またより高い周波数を用いたほうがスピン波共鳴を観測しやすいと思われるので、IDTの高次モードを利用したスピン流生成についても実験していくことが今後の課題である。
 
 
 \bibliographystyle{jplain}
 \bibliography{bib}
-\nocite{st,Peskin,spin_oxford,alma9926360528004034,alma990023076750204034,alma990023937250204034,ku,neko,shi}
+
+\nocite{st,Peskin,spin_oxford,alma9926360528004034,alma990023076750204034,alma990023937250204034,ku,neko,shi,alma990008478350204034,hikansei}
+
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}{謝辞}
+本研究を行うにあたって、大変多くの方々に協力していただきました。心より感謝します。
+
+慶應義塾大学理工学部物理学科　能崎幸雄教授には本研究のテーマを提示していただき、私の実験の計画が何かと後ろだおしになってしまうことが多かったにもかかわらず、寛容に接していただき、かつディスカッションの際にはスピントロニクスの物理に関する多くの助言を頂きました。良い研究環境を与えて頂き深く感謝申し上げます。
+
+慶應義塾大学理工学部物理学科　山野井一人助教には三年生の磁性に関する物理学セミナーの授業のころからマンツーマンで磁性に関して多くのことを教えて頂き、研究室に配属後も居室に常にいらっしゃって実験データを見てもらって助言を頂いたり、研究についての多くのことを学ばせて頂きました。心より感謝申し上げます。
+
+慶應義塾大学理工学部物理学科　船戸匠特任助教には論文購読発表の際から気にかけていただき、大学院進学に関する進路相談などにも乗ってくださり、なにより研究とは直接関係のない個人的な物理の勉強の議論に付き合っていただき、大学院でも頑張ろうと、とてもよい刺激を頂きました。心より感謝申し上げます。
+
+慶應義塾大学理工学部物理学科 洞口泰輔特任助教には主に装置の使い方について多くのことを教えていただき、安心して研究を進めることが出来ました。深く感謝申し上げます。
+
+修士課程2年の篠崎涼さんには表面弾性波をつかった実験に関して装置の扱い方や実験データの解析の方法など多くのことを教えていただき、実験していて生じた細かい疑問点にも丁寧に答えていただきました。深く感謝いたします。
+
+修士課程1年の中山颯人さんには年始の忙しい時期に装置の使い方などを教えていただいたり、ときおり私が実験していて困ったときに声を掛けると気さくに対応してくださって非常に助かりました。深く感謝いたします。
+
+そして同期である阿部広也くんと佐々木良輔くんとは研究室内で雑談したり一緒に昼食を食べたりと共に楽しく多くの時間を過ごすことが出来ました。実験がうまく行かなくて失敗が続いてたり、おもうような測定結果がでなくて苦痛だったときも同期がいたから楽しく生活することが出来ました。心より感謝します。
+
+最後に本学に通わせていただき、大学生活を様々な面で陰ながら支えていただいた両親に深く感謝申し上げます。
 
 \end{document}

@@ -6,46 +6,46 @@ Database file #1: bib.bib
 Warning--empty journal in ku
 Warning--empty journal in st
 Warning--empty journal in shi
-You've used 18 entries,
+You've used 25 entries,
             2620 wiz_defined-function locations,
-            707 strings with 7177 characters,
-and the built_in function-call counts, 7349 in all, are:
-= -- 620
-> -- 331
-< -- 15
-+ -- 137
-- -- 118
-* -- 391
-:= -- 1063
-add.period$ -- 61
-call.type$ -- 18
-change.case$ -- 107
+            764 strings with 8647 characters,
+and the built_in function-call counts, 11584 in all, are:
+= -- 989
+> -- 535
+< -- 32
++ -- 220
+- -- 194
+* -- 677
+:= -- 1631
+add.period$ -- 83
+call.type$ -- 25
+change.case$ -- 165
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 409
-empty$ -- 547
-format.name$ -- 177
-if$ -- 1671
+cite$ -- 28
+duplicate$ -- 611
+empty$ -- 830
+format.name$ -- 291
+if$ -- 2647
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 26
-newline$ -- 93
-num.names$ -- 36
-pop$ -- 181
+int.to.str$ -- 25
+missing$ -- 34
+newline$ -- 128
+num.names$ -- 50
+pop$ -- 254
 preamble$ -- 1
-purify$ -- 95
+purify$ -- 147
 quote$ -- 0
-skip$ -- 383
+skip$ -- 587
 stack$ -- 0
-substring$ -- 183
-swap$ -- 104
-text.length$ -- 15
+substring$ -- 409
+swap$ -- 191
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
+type$ -- 82
 warning$ -- 3
-while$ -- 44
-width$ -- 20
-write$ -- 203
-is.kanji.str$ -- 202
+while$ -- 69
+width$ -- 27
+write$ -- 281
+is.kanji.str$ -- 306
 (There were 3 warnings)
