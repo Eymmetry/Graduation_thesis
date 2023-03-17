@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex sotuken"] 1678785207 "sotuken.aux" "sotuken.bbl" "sotuken" 1678785677
+["bibtex sotuken"] 1679011073 "sotuken.aux" "sotuken.bbl" "sotuken" 1679011841
   "bib.bib" 1675074326 22924 5f6d88819c6d381c0a671c915bdcc842 ""
   "jplain.bst" 0 -1 0 ""
-  "sotuken.aux" 1678785674 40546 b7ff698590832483b05bd2cd55b8e189 "latex"
+  "sotuken.aux" 1679011837 40696 8227961af1b5c186c7e7afbebc524deb "latex"
   (generated)
   "sotuken.bbl"
   "sotuken.blg"
-["dvipdf"] 1678785674 "sotuken.dvi" "sotuken.pdf" "sotuken" 1678785677
-  "sotuken.dvi" 1678785674 311044 2807ea26f8e74b9fe62899d40ad8997e "latex"
+["dvipdf"] 1679011838 "sotuken.dvi" "sotuken.pdf" "sotuken" 1679011841
+  "sotuken.dvi" 1679011837 311332 ed34b5e4c35ad27a2e82fd7a414f72a7 "latex"
   (generated)
   "sotuken.pdf"
-["latex"] 1678785665 "sotuken.tex" "sotuken.dvi" "sotuken" 1678785677
+["latex"] 1679011829 "sotuken.tex" "sotuken.dvi" "sotuken" 1679011841
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1136768653 1536 b3387106d9afecbfe14bde2de6eadf47 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -323,11 +323,11 @@
   "pppfig/ptpypttime.png" 1675018066 37709 b4528e16bb6fd98ae8e041059c30911b ""
   "sefig/sefig.001.jpeg" 1675026546 682446 e4990c814250424e29bb39777e8dac55 ""
   "sefig/sefig.002.jpeg" 1675026546 195291 caebbf5a7265e771465ac2e3e3725050 ""
-  "sotuken.aux" 1678785674 40546 b7ff698590832483b05bd2cd55b8e189 "latex"
-  "sotuken.bbl" 1678785207 5341 b74b51d185f44c28c85cab670c582dae "bibtex sotuken"
-  "sotuken.out" 1678785674 3748 9602e5deaf643c8ba6f065015e362af6 "latex"
-  "sotuken.tex" 1678785664 125332 232833b13f2a104a49307b0968499806 ""
-  "sotuken.toc" 1678785674 4529 ad4f45cb651cd9edf9bc67e9612a9f56 "latex"
+  "sotuken.aux" 1679011837 40696 8227961af1b5c186c7e7afbebc524deb "latex"
+  "sotuken.bbl" 1679011073 5341 b74b51d185f44c28c85cab670c582dae "bibtex sotuken"
+  "sotuken.out" 1679011837 3773 41d4bb3b88e33128b2e57bbbf7d03c81 "latex"
+  "sotuken.tex" 1679011828 125550 90a48068bc94445d38223b1422119915 ""
+  "sotuken.toc" 1679011837 4554 e47dd041c5645f3e33121dac98d20c96 "latex"
   (generated)
   "sotuken.aux"
   "sotuken.dvi"

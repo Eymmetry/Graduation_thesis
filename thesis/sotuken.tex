@@ -121,7 +121,7 @@
 このスピン流生成方法は、Kobayasiらが\ce{Cu}/\ce{NiFe}二層膜にRayleigh型表面弾性波(R-SAW)を注入し、実証実験がなされた\cite{PhysRevLett.119.077202}。
 さらにKurimuneらは\ce{Cu}と\ce{Pt},\ce{Ti}におけるSAWによるSVC由来のスピン流を比較し、SVCを用いたスピン流生成においてSOIの影響は大きくはないと結論づけた\cite{PhysRevB.102.174413}。
 \section{研究目的}
-先行研究によってSAWによるSVCを介したスピン流生成が実験や理論から報告されているが、このスピン流生成法におけるSOIの寄与については以前として明らかになっていないところも多い。そこで本研究ではスピンホール角が正の材料と負の材料を用いて生成されるスピン流の量を評価することにより、SOIの寄与について調べた。
+先行研究によってSAWによるSVCを介したスピン流生成が実験や理論から報告されているが、このスピン流生成法におけるSOIの寄与については以前として明らかになっていないところも多い。そこで本研究ではスピンホール角が正の材料であるPtと負の材料であるMn、及び磁性層にNiFeを使用してそれぞれPt/NiFe/Mn、Pt/NiFe/Ptなる構成の試料を成膜し、生成されるスピン流の量を評価することにより、SOIの寄与について調べた。
 \chapter{原理}
 \section{Rayleigh波}
 \subsection{弾性体のひずみテンソル}
@@ -1430,7 +1430,7 @@ temple/.style={color=black,opacity=1}
 	\label{fig:sosisakusei}
 \end{figure}
 \section{測定方法}
-\subsection{ベクトルネットワークアナライザ測定}
+\subsection{ベクトルネットワークアナライザによるSパラメータ測定}
 本実験では被測定回路の高周波特性をベクトルネットワークアナライザ(Vector Network Analyzer: VNA)を用いて調べた。VNAにはPort1とPort2の2つの端子があり、2または1つの端子間の反射信号及び透過信号を測定することができる。VNAが測定できるパラメータはSパラメータとよばれ、本実験ではPort1からPort2への透過信号である$S_{21}$ を測定した。
 信号は位相差と振幅をもった複素数で表示されSパラメータの絶対値$\abs{S}$ をデシベルで表す表記は$\mathrm{LogMag}\,S$とよばれ以下のように表される。
 
@@ -1447,7 +1447,7 @@ temple/.style={color=black,opacity=1}
 \label{eq:z3}
 	\abs{x}\,\si{dBm}=10\log _{10}\left( \frac{\abs{P}\,/\si{\milli \watt}}{1 \,/\si{\milli \watt}} \right) 
 .\end{equation}
-の関係が成り立つ。本実験での入力パワーはすべて$P_\text{in} =\SI{-5}{dBm}=1 ^{-0.5}\,mW=\SI{0.32}{\milli \watt}$で行った。
+の関係が成り立つ。本実験での入力パワーはすべて$P_\text{in} =\SI{-5}{dBm}=1\times 10^{-0.5}\,\mathrm{mW}=\SI{0.32}{\milli \watt}$で行った。
 
 また、本実験では被測定試料に磁場を掃引し、周波数を変えて$S_{21}$ パラメータの変化を測定した。
 \eqref{eq:158}の吸収エネルギーを評価するためにまず次のようなトレース演算を行った。
@@ -1455,7 +1455,7 @@ temple/.style={color=black,opacity=1}
 \label{eq:z4}
 	\Delta P_{21}(f,H):=\abs{\bm{P}_{21}(f,H)-\bm{P}_{21}(f,H_\text{ref} )}
 .\end{equation}
-ここで$\bm{P}_{21}(f,H)$ は周波数$f$、掃引磁場$H$ における$S_{21}$ パラメータから計算される複素数表示した電力であり、$H_\text{ref} $ は参照磁場であり本実験で用いた\ce{NiFe}の磁化が飽和するのに十分な大きさである$\mu_0 H=\SI{30}{\milli \tesla}$とした(図\ref{fig:sefig-sefig-002-jpeg})。
+ここで$\bm{P}_{21}(f,H)$ は周波数$f$、掃引磁場$H$ における$S_{21}$ パラメータから計算される複素数表示した電力であり、$H_\text{ref} $ は参照磁場であり本実験で用いた\ce{NiFe}の磁化が飽和するのに十分な大きさである$\mu_0 H=\SI{30}{\milli \tesla}$とした。このトレース演算は図\ref{fig:sefig-sefig-002-jpeg}のようになっている。
 このようなトレース演算をすることにより磁場に依存しない信号を取り除くことができる。
 さらにこれを次のように規格化した。
 \begin{equation}
