@@ -1,0 +1,5 @@
+1.LiNbO3/Pt/NiFe/Pt キズ
+2.LiNbO3/Pt/NiFe    エッジ
+3.LiNbO3/Mn/NiFe    エッジ
+4.LiNbO3/Pt/NiFe/Mn エッジ 
+5.LiNbO3/NiFe       キズ
